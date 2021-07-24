@@ -4,6 +4,6 @@ include 'model/CategoriaSuministro.php';
 
 $catSuministroId = (int) $_POST['idCategoria'];
 $catSuministro = new CategoriaSuministro();
-$catSuministro = $catSuministro->selectCategoriaSuministro($catSuministroId);
-$catSuministro = $catSuministro[0];
+$catSelect = $catSuministro->selectCategoriaSuministro($catSuministroId);
+$catSuministro = $catSelect[0];
 include "view/singleCategoriaSuministro.php";

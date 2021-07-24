@@ -3,7 +3,7 @@
 include "model/CategoriaSuministro.php";
 
 $lastCategoria = new CategoriaSuministro();
-$lastId = $lastCategoria->selectLastId();
+$lastId = $lastCategoria->selectLast();
 $newId = (int) $lastId[0]->id;
 $newId++;
 

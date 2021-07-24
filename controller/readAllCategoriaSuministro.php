@@ -3,5 +3,5 @@
 include 'model/CategoriaSuministro.php';
 
 $catSuministro = new CategoriaSuministro();
-$catSuministro = $catSuministro->selectAllCategoriaSuministro();
+$allCategoriaSuministro = $catSuministro->selectAllCategoriaSuministro();
 include 'view/allCategoriaSuministro.php';

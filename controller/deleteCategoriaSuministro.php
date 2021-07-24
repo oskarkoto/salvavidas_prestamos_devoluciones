@@ -11,11 +11,11 @@ if (isset($_GET['answer'])) {
        include "view/singleCategoriaSuministro.php"; 
     }    
 } else {
-    $idCategoria = $_GET['uEmail'];
     $idCategoria = (int) $_GET['idCategoria'];
     $viewCategoria = new CategoriaSuministro(); 
-    $viewCategoria = $viewCategoria->selectCategoriaSuministro($idCategoria);
-    $myCategoria = new CategoriaSuministro($viewCategoria[0]->idCategoria, $viewCategoria[0]->descripcionCantegoria);
+    $selectCategoria = $viewCategoria->selectCategoriaSuministro($idCategoria);
+    $viewCategoria = $selectCategoria[0];
+    $myCategoria = new CategoriaSuministro($viewCategoria->idCategoria, $viewCategoria->descripcionCantegoria);
     include "view/confirmDeleteCategoriaSuministro.php";
 }
 

@@ -93,4 +93,20 @@ class UnidadesSuministro {
         $resultDel = $pdo->open()->query($queryDelete);
         return $resultDel->execute();
     }
+
+    /**
+     * Last UnidadesSuministro on DB
+     * @return UnidadesSuministro list
+     */
+    function selectLast() {
+        $query = "SELECT * FROM unidadesSuministro ORDER BY idUnidades DESC LIMIT 1";
+        $pdo = new Connection();
+        $pdo = $pdo->open();
+        $result = $pdo->query($query);
+        $rows = [];
+        foreach ($result->fetchAll() as $row) {
+            $rows[] = new UnidadesSuministro($row['Unidades'], $row['cantidad']);
+        }
+        return $rows;
+    }
 }

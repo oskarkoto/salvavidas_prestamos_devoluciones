@@ -2,7 +2,7 @@
 include "model/CategoriaSuministro.php";
 
 if ($_POST) {
-    $myCategoria = new CategoriaSuministro($_POST['idCategoria'], $_POST['descripcionCategoria']);
+    $myCategoria = new CategoriaSuministro((int)$_POST['idCategoria'], $_POST['descripcionCategoria']);
     if ($myCategoria->updateCategoriaSuministro()){
         include "view/sucessEditCategoriaSuministro.php";
     } else {
@@ -12,7 +12,8 @@ if ($_POST) {
 } else {
     $myCategoriaId = (int) $_GET['idCategoria'];
     $viewCategoria = new CategoriaSuministro();
-    $viewCategoria = $viewCategoria->selectCategoriaSuministro($myCategoriaId);
-    $myCategoria = new CategoriaSuministro($viewCategoria[0]->idCategoria, $viewCategoria[0]->descripcionCantegoria);
+    $selectCategoria = $viewCategoria->selectCategoriaSuministro($myCategoriaId);
+    $viewCategoria = $selectCategoria[0];
+    $myCategoria = new CategoriaSuministro($viewCategoria->idCategoria, $viewCategoria->descripcionCantegoria);
     include "view/updateCategoriaSuministro.php";
 }

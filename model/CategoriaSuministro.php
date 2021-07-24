@@ -100,7 +100,7 @@ class CategoriaSuministro {
      * Last CategoriaSuministro on DB
      * @return CategoriaSuministro list
      */
-    function selectLastId() {
+    function selectLast() {
         $query = "SELECT * FROM categoriaSuministro ORDER BY idCategoria DESC LIMIT 1";
         $pdo = new Connection();
         $pdo = $pdo->open();
