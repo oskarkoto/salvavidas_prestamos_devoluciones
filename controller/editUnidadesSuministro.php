@@ -2,7 +2,7 @@
 include "model/UnidadesSuministro.php";
 
 if ($_POST) {
-    $myUnidades = new UnidadesSuministro((int)$_POST['idUnidades'], (int)$_POST['descripcionCategoria']);
+    $myUnidades = new UnidadesSuministro((int)$_POST['idUnidades'], (int)$_POST['cantidad']);
     if ($myUnidades->updateUnidadesSuministro()){
         include "view/sucessEditUnidadesSuministro.php";
     } else {
