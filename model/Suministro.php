@@ -82,7 +82,29 @@ class Suministro {
             $row['idCondicionActual'], $row['idEstadoInventario'],$row['fechaInclusion']);
         }
         return $rows;
-    }      
+    }  
+    
+    /**
+     * Get TipoSuministro de Suministro from DB
+     * @param int $idCategoria
+     * @return CategoriaSuministro list
+     */
+    function selectTipoSuministroSuministro($myTipoSuministroId = "") {
+        $query = "SELECT * FROM tipoSuministro";
+        if ($myTipoSuministroId) {
+            $query .= " where idTipoSuministroId = '$myTipoSuministroId'";
+        }
+        $pdo = new Connection();
+        $pdo = $pdo->open();
+        $result = $pdo->query($query);
+        $rowsTS = [];
+        foreach ($result->fetchAll() as $rowTS) {
+            $rowsTS[] = new TipoSuministro($rowTS['idTipoSuministro'], $rowTS['nombreTipoSuministro'],
+                $rowTS['descripcionTipoSuministro'], $rowTS['idCategoria'],$rowTS['idUnidades'], 
+                $rowTS['marcaTipoSuministro'],$rowTS['existenciaMinima']);
+        }
+        return $rowsTS;
+    }
     
     /**
      * Update Suministro information

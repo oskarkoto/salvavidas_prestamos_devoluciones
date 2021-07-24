@@ -1,6 +1,8 @@
 <?php
 
 include_once "model/Connection.php";
+include_once "model/CategoriaSuministro.php";
+include_once "model/UnidadesSuministro.php";
 
 /**
  * Manage Unidades de Suministro
