@@ -19,7 +19,6 @@ class PrestamoSuministro {
 
     /**
      * Inserta Prestamo de Suministro en DB.
-     * @return boolean
     **/
     function insertPrestamoSuministro() {
         $pdo = new Connection();

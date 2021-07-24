@@ -22,7 +22,6 @@ class Prestamo {
 
     /**
      * Inserta Prestamo en DB.
-     * @return boolean
     **/
     function insertPrestamo() {
         $pdo = new Connection();

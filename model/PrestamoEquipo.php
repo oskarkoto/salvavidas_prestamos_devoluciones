@@ -19,7 +19,7 @@ class PrestamoEquipo {
 
     /**
      * Inserta Prestamo de Equipo en DB.
-     * @return boolean
+
     **/
     function insertPrestamoEquipo() {
         $pdo = new Connection();
