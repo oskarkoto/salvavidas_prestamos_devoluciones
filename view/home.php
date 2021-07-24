@@ -5,7 +5,7 @@
             <!--Content Container Starts-->
             <div id="contentElement" class="col-xs-12 col-sm-8 col-md-8 col-lg-8 col-xl-8 justify-content-center">
                 <div class="row">
-                    <p> <br>Sistema de prestamos y devoluciones<br>Enjoy!<br><br>
+                    <p> <br>Sistema de prestamos y devoluciones<br><br>
                         .Go to <span style="color:yellow" onclick="window.location.href = '?c=readBlogs';">Blog</span> to read all entries<br>
                         .Go to <span style="color:yellow" onclick="window.location.href = '?c=createBlog';">Add blog</span> to add a personal entry</p>
                 </div>

@@ -95,4 +95,20 @@ class CategoriaSuministro {
         $resultDel = $pdo->open()->query($queryDelete);
         return $resultDel->execute();
     }
+
+    /**
+     * Last CategoriaSuministro on DB
+     * @return CategoriaSuministro list
+     */
+    function selectLastId() {
+        $query = "SELECT * FROM categoriaSuministro ORDER BY idCategoria DESC LIMIT 1";
+        $pdo = new Connection();
+        $pdo = $pdo->open();
+        $result = $pdo->query($query);
+        $rows = [];
+        foreach ($result->fetchAll() as $row) {
+            $rows[] = new CategoriaSuministro($row['idCategoria'], $row['descripcionCategoria']);
+        }
+        return $rows;
+    }
 }
