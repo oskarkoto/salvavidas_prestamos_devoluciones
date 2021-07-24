@@ -1,8 +1,6 @@
 <?php
 
 include_once "model/Connection.php";
-include_once "model/CategoriaSuministro.php";
-include_once "model/UnidadesSuministro.php";
 
 /**
  * Manage Unidades de Suministro
@@ -92,6 +90,46 @@ class TipoSuministro {
             $row['marcaTipoSuministro'],$row['existenciaMinima']);
         }
         return $rows;
+    }
+    
+    /**
+     * Get Categoria de Tipo de suministro from DB
+     * @param int $idCategoria
+     * @return CategoriaSuministro list
+     */
+    function selectCategoriaTipoSuministro($myCategoriaId = 0) {
+        $query = "SELECT * FROM categoriaSuministro";
+        if ($myCategoriaId) {
+            $query .= " where idCategoria = '$myCategoriaId'";
+        }
+        $pdo = new Connection();
+        $pdo = $pdo->open();
+        $result = $pdo->query($query);
+        $rowsCat = [];
+        foreach ($result->fetchAll() as $rowCat) {
+            $rowsCat[] = new CategoriaSuministro($rowCat['idCategoria'], $rowCat['descripcionCategoria']);
+        }
+        return $rowsCat;
+    }
+    
+    /**
+     * Get UnidadesSuministro de Tipo de Suministro from DB
+     * @param int $idUnidades
+     * @return UnidadesSuministro list
+     */
+    function selectUnidadesTipoSuministro($myUnidadesId = 0) {
+        $query = "SELECT * FROM unidadesSuministro";
+        if ($myUnidadesId) {
+            $query .= " where idCategoria = '$myUnidadesId'";
+        }
+        $pdo = new Connection();
+        $pdo = $pdo->open();
+        $result = $pdo->query($query);
+        $rowsUnidades = [];
+        foreach ($result->fetchAll() as $rowUnidades) {
+            $rowsUnidades[] = new CategoriaSuministro($rowUnidades['idUnidades'], $rowUnidades['cantidad']);
+        }
+        return $rowsUnidades;
     }      
     
     /**
