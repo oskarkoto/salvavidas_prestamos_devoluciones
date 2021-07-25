@@ -37,6 +37,8 @@ class EstadoDevolucion {
             $rows[] = new EstadoDevolucion($row['idEstadoDevolucion'], $row['descripcionEstadoDevolucion']);
         }
         return $rows;
+
+        
     }      
         
     /**
@@ -45,6 +47,9 @@ class EstadoDevolucion {
      **/
     function seleccionarEstadoDevolucion($idEstadoDevolucion = 0) {
         $query = "SELECT * FROM estadodevolucion";
+        if ($idEstadoDevolucion) {
+            $query .= " where idEstadoDevolucion = '$idEstadoDevolucion'";
+        }
         $pdo = new Connection();
         $pdo = $pdo->open();
         $result = $pdo->query($query);
@@ -53,6 +58,7 @@ class EstadoDevolucion {
             $rows[] = new EstadoDevolucion($row['idEstadoDevolucion'], $row['descripcionEstadoDevolucion']);
         }
         return $rows;
+
     }      
     
     /**

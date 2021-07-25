@@ -52,12 +52,16 @@ class PrestamoEquipo {
      **/
     function seleccionarPrestamoEquipo($idPrestamoEquipo = 0) {
         $query = "SELECT * FROM prestamoequipo";
+        if ($idPrestamoEquipo) {
+            $query .= " where idPrestamoEquipo = '$idPrestamoEquipo'";
+        }
         $pdo = new Connection();
         $pdo = $pdo->open();
         $result = $pdo->query($query);
         $rows = [];
         foreach ($result->fetchAll() as $row) {
-            $rows[] = new PrestamoEquipo($row['idPrestamoEquipo'], $row['idPrestamo'],$row['idEquipo'],$row['idEstadoDevolucion']);
+            $rows[] = new PrestamoEquipo($row['idPrestamoEquipo'], $row['idPrestamo'],
+            $row['idEquipo'],$row['idEstadoDevolucion']);
         }
         return $rows;
     }      

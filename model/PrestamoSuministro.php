@@ -51,12 +51,16 @@ class PrestamoSuministro {
      **/
     function seleccionarPrestamoSuministro($idPrestamoSuministro = 0) {
         $query = "SELECT * FROM prestamosuministro";
+        if ($idPrestamoSuministro) {
+            $query .= " where idPrestamoSuministro = '$idPrestamoSuministro'";
+        }
         $pdo = new Connection();
         $pdo = $pdo->open();
         $result = $pdo->query($query);
         $rows = [];
         foreach ($result->fetchAll() as $row) {
-            $rows[] = new PrestamoSuministro($row['idPrestamoSuministro'], $row['idPrestamo'],$row['idSuministro'],$row['idEstadoDevolucion']);
+            $rows[] = new PrestamoSuministro($row['idPrestamoSuministro'], $row['idPrestamo'],
+            $row['idSuministro'],$row['idEstadoDevolucion']);
         }
         return $rows;
     }      

@@ -52,16 +52,20 @@ class Prestamo {
      * Retorna un prestamo disponible en la base de datos. 
      * Hace una lista de detalles.
      **/
-    function seleccionarPrestamo($idPrestamo = 0) {
+    function seleccionarPrestamo($idPrestamo = "") {
         $query = "SELECT * FROM prestamo";
+        if ($idPrestamo) {
+            $query .= " where idPrestamo = '$idPrestamo'";
+        }
         $pdo = new Connection();
         $pdo = $pdo->open();
         $result = $pdo->query($query);
         $rows = [];
         foreach ($result->fetchAll() as $row) {
-            $rows[] = new Prestamo($row['idPrestamo'], $row['idTecnico'],$row['fechaPrestamo'],$row['fechaEsperadaDevolucion'],$row['cliente']);
+            $rows[] = new Suministro($row['idPrestamo'], $row['idTecnico'],$row['fechaPrestamo'],
+            $row['fechaEsperadaDevolucion'],$row['cliente']);
         }
-        return $rows;
+        return $rows; 
     }      
     
     /**

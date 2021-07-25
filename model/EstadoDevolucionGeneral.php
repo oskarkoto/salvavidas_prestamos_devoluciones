@@ -45,14 +45,18 @@ class EstadoDevolucionGen {
     **/
     function seleccionarEstadoDevolucionGen($idEstadoDevolucionGeneral = 0) {
         $query = "SELECT * FROM estadodevoluciongeneral";
+        if ($idEstadoDevolucionGeneral) {
+            $query .= " where idEstadoDevolucionGeneral = '$idEstadoDevolucionGeneral'";
+        }
         $pdo = new Connection();
         $pdo = $pdo->open();
         $result = $pdo->query($query);
         $rows = [];
         foreach ($result->fetchAll() as $row) {
-            $rows[] = new EstadoDevolucionGeneral($row['idEstadoDevolucionGeneral'], $row['descripcionEstadoDevolucionGeneral']);
+            $rows[] = new EstadoDevolucionGeneral($row['idEstadoDevolucionGeneral'], 
+            $row['descripcionEstadoDevolucionGeneral']);
         }
-        return $rows;
+        return $rows;   
     }      
     
     /**

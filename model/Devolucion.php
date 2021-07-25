@@ -51,12 +51,16 @@ class Devolucion {
      **/
     function seleccionarDevolucion($idDevolucion = 0) {
         $query = "SELECT * FROM devolucion";
+        if ($idDevolucion) {
+            $query .= " where idDevolucion = '$idDevolucion'";
+        }
         $pdo = new Connection();
         $pdo = $pdo->open();
         $result = $pdo->query($query);
         $rows = [];
         foreach ($result->fetchAll() as $row) {
-            $rows[] = new Devolucion($row['idDevolucion'], $row['idPrestamo'],$row['fechaRealDevolucion'],$row['fechaRealDevolucion']);
+            $rows[] = new Devolucion($row['idDevolucion'], $row['idPrestamo'],
+            $row['fechaRealDevolucion'],$row['fechaRealDevolucion']);
         }
         return $rows;
     }      
