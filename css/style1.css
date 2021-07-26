@@ -6,6 +6,25 @@
     margin-top: 10px;
 }
 
+#ListaCompleta #Add{
+    padding: 1rem;
+}
+
+
+#ListaCompleta .add{
+    margin-left: 30rem;
+    margin-right: 0px;
+    padding: 0.2rem 2rem;
+    text-align: right;
+    background: green;  
+    color: #fff;
+    text-decoration: none;
+    width: 50%;
+    box-shadow: 2px 3px 3px black;
+    font-family: "Georgia";
+    font-weight: bold;
+ }
+
 #tablaLista{
     margin: auto;
     text-align: center;
@@ -38,3 +57,4 @@
   .upside .Inicio:hover{
     background: #2b1515;
   }
+

@@ -6,7 +6,9 @@
     <div class="card-title">
         <h2> DEVOLUCIONES</h2>
     </div>
-    
+    <div class="card-subtitle" id="Add">
+        <a href="index.php" class="add">+ Añadir</a>
+    </div>
     <table class="table">
         <thead>
             <tr>
