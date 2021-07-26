@@ -14,7 +14,7 @@ class Devolucion {
         $this->idDevolucion = $idDevolucion;
         $this->idPrestamo = $idPrestamo;
         $this->fechaRealDevolucion = $fechaRealDevolucion;
-        $this->fechaRealDevolucion = $idEstadoDevolucionGeneral;
+        $this->idEstadoDevolucionGeneral = $idEstadoDevolucionGeneral;
     }
 
     /**
@@ -23,7 +23,7 @@ class Devolucion {
     function insertDevolucion() {
         $pdo = new Connection();
         $pdo = $pdo->open();
-        $query = "INSERT INTO devolucion (idDevolucion, idPrestamo,fechaRealDevolucion,fechaRealDevolucion) VALUES ('{$this->idDevolucion}','{$this->idPrestamo}','{$this->fechaRealDevolucion}','{$this->fechaRealDevolucion}')";
+        $query = "INSERT INTO devolucion (idDevolucion, idPrestamo,fechaRealDevolucion,idEstadoDevolucionGeneral) VALUES ('{$this->idDevolucion}','{$this->idPrestamo}','{$this->fechaRealDevolucion}','{$this->idEstadoDevolucionGeneral}')";
         $result = $pdo->prepare($query);
         return $result->execute();
     }
@@ -39,7 +39,7 @@ class Devolucion {
         $result = $pdo->query($query);
         $rows = [];
         foreach ($result->fetchAll() as $row) {
-            $rows[] = new Devolucion($row['idDevolucion'], $row['idPrestamo'],$row['fechaRealDevolucion'],$row['fechaRealDevolucion']);
+            $rows[] = new Devolucion($row['idDevolucion'], $row['idPrestamo'],$row['fechaRealDevolucion'],$row['idEstadoDevolucionGeneral']);
         }
         return $rows;
     }      
@@ -60,7 +60,7 @@ class Devolucion {
         $rows = [];
         foreach ($result->fetchAll() as $row) {
             $rows[] = new Devolucion($row['idDevolucion'], $row['idPrestamo'],
-            $row['fechaRealDevolucion'],$row['fechaRealDevolucion']);
+            $row['fechaRealDevolucion'],$row['idEstadoDevolucionGeneral']);
         }
         return $rows;
     }      

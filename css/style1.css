@@ -1,0 +1,40 @@
+/* CSS para vistas de All y Detalle */
+
+/* ALL */
+
+#ListaCompleta{
+    margin-top: 10px;
+}
+
+#tablaLista{
+    margin: auto;
+    text-align: center;
+}
+
+#row-prestamos{
+    margin: auto;
+    text-align: center;
+    font-family: 'Lucida Sans';
+}
+
+.upside{
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.upside .Inicio {
+    margin-top: 10px;
+    padding: 0.8rem 2rem;
+    text-align: center;
+    background: #221010;  
+    color: #cfcfcf;
+    text-decoration: none;
+    width: 50%;
+    box-shadow: 2px 3px 3px black;
+    font-family: "Georgia";
+    font-weight: bold;
+  }
+
+  .upside .Inicio:hover{
+    background: #2b1515;
+  }

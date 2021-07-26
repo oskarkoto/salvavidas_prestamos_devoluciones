@@ -1,0 +1,95 @@
+/* CSS para index, home, footer y header */
+
+/* Index */
+body{
+    background-image: url("../img/wallpaper.jpg");  
+    background-position: center;
+    background-attachment: fixed;
+    background-size:cover;
+}
+
+/* Header */
+#idheader{
+    background-color: #8d1725;
+    color:white;
+    box-shadow: 2px 3px 3px black;
+    outline: none !important;
+    border: none;
+}
+
+#idheader .nav-link {
+    color: whitesmoke ;
+}
+
+#toggler{
+    color: whitesmoke ;
+}
+
+/* Footer */
+.footer{ 
+    background-image: url("../img/footer-background.jpg");  
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    color: white;
+    text-align: center; 
+}
+
+/* Home */
+
+#menuPrincipal{
+    padding: 2rem;
+}
+
+.card{
+    margin: auto;   
+    width: fit-content; 
+}
+
+.card .card-title {
+    background-image: url("../img/card-title-wallpaper.jpg"); 
+    color: whitesmoke;
+    text-align: center;
+    font-family: "Arial Black";
+}
+
+.card .card-title h2 {
+    text-shadow: 2px 2px 2px #2b1515;
+    padding: 1rem;
+}
+
+#OpcionesMP{
+    margin-top: 0.3rem;
+    margin-bottom: 0.5rem;
+    padding: 0.7rem;
+}
+
+#OpcionesMP .card-link{
+    margin: auto;
+    padding: 0.8rem 2rem;
+    text-align: center;
+    background:  #2b1515;  
+    color: #fff;
+    text-decoration: none;
+    width: 50%;
+    transition: all .3s ease;
+    box-shadow: 2px 3px 3px black;
+    font-family: "Georgia";
+    font-weight: bold;
+    
+}
+
+#OpcionesMP .card-link:hover{
+    background: #6b3333;
+    padding: 1rem 1.6rem;
+    margin: auto;
+    box-shadow: 2px 3px 3px black;
+    text-align: center;
+}
+
+#OpcionesMP .dropdown-divider{
+    margin-top: 0.51rem;
+    margin-bottom: 0.5rem;
+    padding: 2px;
+}

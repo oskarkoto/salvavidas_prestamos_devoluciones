@@ -6,13 +6,13 @@ class Reporte {
     
     public $idReporte;
     public $tituloReporte;
-    public $tipoReporte;
+    public $idTipoReporte;
     public $fechaReporte;
 
-    public function __construct($idReporte = 0, $tituloReporte = "",$tipoReporte = 0,$fechaReporte= "") {
+    public function __construct($idReporte = 0, $tituloReporte = "",$idTipoReporte = 0,$fechaReporte= "") {
         $this->idReporte = $idReporte;
         $this->tituloReporte = $tituloReporte;
-        $this->tipoReporte = $tipoReporte;
+        $this->idTipoReporte = $idTipoReporte;
         $this->fechaReporte = $fechaReporte;
     }
 
@@ -22,7 +22,7 @@ class Reporte {
     function insertReporte() {
         $pdo = new Connection();
         $pdo = $pdo->open();
-        $query = "INSERT INTO reporte (idReporte, tituloReporte,tipoReporte,fechaReporte) VALUES ('{$this->idReporte}','{$this->tituloReporte}','{$this->tipoReporte}','{$this->fechaReporte}')";
+        $query = "INSERT INTO reporte (idReporte, tituloReporte,idTipoReporte,fechaReporte) VALUES ('{$this->idReporte}','{$this->tituloReporte}','{$this->idTipoReporte}','{$this->fechaReporte}')";
         $result = $pdo->prepare($query);
         return $result->execute();
     }
@@ -38,7 +38,7 @@ class Reporte {
         $result = $pdo->query($query);
         $rows = [];
         foreach ($result->fetchAll() as $row) {
-            $rows[] = new Prestamo($row['idReporte'], $row['tituloReporte'],$row['tipoReporte'],$row['fechaReporte']);
+            $rows[] = new Reporte($row['idReporte'], $row['tituloReporte'],$row['idTipoReporte'],$row['fechaReporte']);
         }
         return $rows;
     }         

@@ -1,8 +1,9 @@
 <!--Footer Starts-->
-<footer id="siteFooter" class="container-fluid" style="width: 100%; bottom: 0; position:absolute">
-    <div class="container" align="center">
-    <h4>SALVAVIDAS - Oscar Coto, Steven Dávila, Juan Gaitán, Teresita Guido, Mauricio Mondragón</h4>
-    <p>Una colaboración de Salvavidas y la Universidad Latina de Costa Rica.</p>
-    </div> 
-</footer>
+<footer id="footer" class="footer">
+    <p>SALVAVIDAS &  OSCAR COTO, STEVEN DAVILA, JUAN GAITAN, TERESITA GUIDO, MAURICIO MONDRAGON
+    <br>    
+    Una colaboración de Salvavidas y la Universidad Latina de Costa Rica. Todos los derechos reservados.
+    </p> 
+ </footer>
 <!--Footer Ends-->
+
