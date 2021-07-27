@@ -9,7 +9,7 @@ class EstadoDevolucionGen {
 
     public function __construct($idEstadoDevolucionGeneral = 0, $descripcionEstadoDevolucionGeneral = "") {
         $this->idEstadoDevolucionGeneral = $idEstadoDevolucionGeneral;
-        $this->descripcionEstadoDevolucion = $descripcionEstadoDevolucion;
+        $this->descripcionEstadoDevolucionGeneral = $descripcionEstadoDevolucionGeneral;
     }
 
     /**
@@ -34,7 +34,7 @@ class EstadoDevolucionGen {
         $result = $pdo->query($query);
         $rows = [];
         foreach ($result->fetchAll() as $row) {
-            $rows[] = new EstadoDevolucionGeneral($row['idEstadoDevolucionGeneral'], $row['descripcionEstadoDevolucionGeneral']);
+            $rows[] = new EstadoDevolucionGen($row['idEstadoDevolucionGeneral'], $row['descripcionEstadoDevolucionGeneral']);
         }
         return $rows;
     }      
@@ -53,7 +53,7 @@ class EstadoDevolucionGen {
         $result = $pdo->query($query);
         $rows = [];
         foreach ($result->fetchAll() as $row) {
-            $rows[] = new EstadoDevolucionGeneral($row['idEstadoDevolucionGeneral'], 
+            $rows[] = new EstadoDevolucionGen($row['idEstadoDevolucionGeneral'], 
             $row['descripcionEstadoDevolucionGeneral']);
         }
         return $rows;   

@@ -62,7 +62,7 @@ class Prestamo {
         $result = $pdo->query($query);
         $rows = [];
         foreach ($result->fetchAll() as $row) {
-            $rows[] = new Suministro($row['idPrestamo'], $row['idTecnico'],$row['fechaPrestamo'],
+            $rows[] = new Prestamo($row['idPrestamo'], $row['idTecnico'],$row['fechaPrestamo'],
             $row['fechaEsperadaDevolucion'],$row['cliente']);
         }
         return $rows; 

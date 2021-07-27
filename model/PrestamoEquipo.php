@@ -1,4 +1,4 @@
-<!--Modelo de prestamo de equipo.-->
+<!--Modelo de prestamo de equipo. -->
 <?php
 include_once "model/Connection.php";
 

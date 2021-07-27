@@ -7,6 +7,11 @@
         <h2> REPORTES</h2>
     </div>
     <div class="card-subtitle" id="Add">
+        <label for="search">Buscar: </label>
+        <select class="form-select-sm" name="forma" onchange="location = this.value;">
+            <option value="?c=detalleAllReporte"selected>Reporte</option>
+            <option value="?c=detalleAllTipoReporte">Tipo Reporte</option>
+        </select>
         <a href="index.php" class="add">+ Añadir</a>
     </div>
     <table class="table">

@@ -2,8 +2,8 @@
 <?php
 include 'model/EstadoDevolucionGeneral.php';
 
-$estadoDevolucionGeneralId = $_POST['idEstadoDevolucionGeneral'];
-$sEstadoDevolucionGeneral = new Prestamo();
+$estadoDevolucionGeneralId = $_GET['idEstadoDevolucionGeneral'];
+$sEstadoDevolucionGeneral = new EstadoDevolucionGen();
 $selectEstadoDevolucionGeneral = $sEstadoDevolucionGeneral->seleccionarAllEstadoDevolucionGen($estadoDevolucionGeneralId);
 $sEstadoDevolucionGeneral = $selectEstadoDevolucionGeneral[0];
 

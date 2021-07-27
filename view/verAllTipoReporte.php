@@ -1,17 +1,16 @@
-<!-- Vista de Todos los prestamos -->
+<!-- Vista de TODOS los Tipos de Reporte -->
 <div class="upside">
     <a href="index.php" class="Inicio">« Inicio</a>
 </div>
 <div class="card" id="ListaCompleta">
     <div class="card-title">
-        <h2> PRESTAMOS</h2>
+        <h2> TIPO REPORTE</h2>
     </div>
     <div class="card-subtitle" id="Add">
         <label for="search">Buscar: </label>
-        <select name="forma" onchange="location = this.value;">
-            <option value="?c=detalleAllPrestamo" selected>Préstamo</option>
-            <option value="?c=detalleAllPrestamoEquipo">Préstamo de Equipo</option>
-            <option value="?c=detalleAllPrestamoSuministro">Préstamo de Suministro</option>
+        <select class="form-select-sm" name="forma" onchange="location = this.value;">
+            <option value="?c=detalleAllReporte">Reporte</option>
+            <option value="?c=detalleAllTipoReporte"selected>Tipo Reporte</option>
         </select>
         <a href="index.php" class="add">+ Añadir</a>
     </div>
@@ -19,32 +18,30 @@
         <thead>
             <tr>
                 <th scope="col">ID</th>
-                <th scope="col">Tecnico</th>
-                <th scope="col">Fecha Prestamo</th>
-                <th scope="col">Fecha Devolucion</th>
-                <th scope="col">Cliente</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Detalle</th>
+                <th scope="col">Query</th>
                 <th scope="col">Opciones</th>
             </tr>
         </thead>
         <tbody>
         <?php
-        foreach ($allPrestamo as $value) {    
+        foreach ($allTipoReporte as $value) {    
         ?>
             <tr>
-                <td><?php echo $value->idPrestamo; ?></td>
-                <td><?php echo $value->idTecnico; ?></td>
-                <td><?php echo $value->fechaPrestamo; ?></td>
-                <td><?php echo $value->fechaEsperadaDevolucion; ?></td>
-                <td><?php echo $value->cliente; ?></td>
+                <td><?php echo $value->idTipoReporte; ?></td>
+                <td><?php echo $value->nombreTipoReporte; ?></td>
+                <td><?php echo $value->detalleTipoReporte; ?></td>
+                <td><?php echo $value->queryTipoReporte; ?></td>
                 <td>
-                <a class="ver" id="ver" href="?c=detallePrestamo&idPrestamo=<?php echo $value->idPrestamo; ?>">
+                <a class="ver" id="ver" href="?c=detalleTipoReporte&idTipoReporte=<?php echo $value->idTipoReporte; ?>">
                 <!-- Icono Info -->
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-card-text" viewBox="0 0 16 16">
                 <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
                 <path d="M3 5.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 8zm0 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z"/>
                 </svg> Ver
                 </a>
-                <a class="eliminar" id="eliminar" href="?c=eliminarPrestamo&idPrestamo=<?php echo $value->idPrestamo; ?>">
+                <a class="eliminar" id="eliminar" href="?c=eliminarTipoReporte&idTipoReporte=<?php echo $value->idTipoReporte; ?>">
                 <!-- Icono Eliminar -->
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                 <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>

@@ -2,6 +2,6 @@
 <?php
 include 'model/EstadoDevolucionGeneral.php';
 
-$EstadoDevolucionGnrl = new EstadoDevolucionGeneral();
+$EstadoDevolucionGnrl = new EstadoDevolucionGen();
 $allEstadoDevolucionGnrl = $EstadoDevolucionGnrl->seleccionarEstadoDevolucionGen();
-include 'view/VerAllEstadoDevolucionGnrl.php';
+include 'view/verAllEstadoDevolucionGnrl.php';

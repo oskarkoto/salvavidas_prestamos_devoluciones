@@ -2,7 +2,7 @@
 <?php
 include 'model/TipoReporte.php';
 
-$tipoReporteId = $_POST['idTipoReporte'];
+$tipoReporteId = $_GET['idTipoReporte'];
 $sTipoReporte = new TipoReporte();
 $selectTipoReporte = $sTipoReporte->seleccionarTipoReporte($tipoReporteId);
 $sTipoReporte = $selectTipoReporte[0];

@@ -77,7 +77,7 @@ body{
     box-shadow: 2px 3px 3px black;
     font-family: "Georgia";
     font-weight: bold;
-    
+    border-radius: 1rem;
 }
 
 #OpcionesMP .card-link:hover{
@@ -86,6 +86,7 @@ body{
     margin: auto;
     box-shadow: 2px 3px 3px black;
     text-align: center;
+    border-radius: 1rem;
 }
 
 #OpcionesMP .dropdown-divider{

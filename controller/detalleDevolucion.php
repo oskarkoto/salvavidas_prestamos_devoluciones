@@ -2,7 +2,7 @@
 <?php
 include 'model/Devolucion.php';
 
-$devolucionId = $_POST['idDevolucion'];
+$devolucionId = $_GET['idDevolucion'];
 $sDevolucion = new Devolucion();
 $selectDevolucion = $sDevolucion->seleccionarDevolucion($devolucionId);
 $sDevolucion = $selectDevolucion[0];

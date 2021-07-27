@@ -2,7 +2,7 @@
 <?php
 include 'model/PrestamoEquipo.php';
 
-$prestamoEquipoId = $_POST['idPrestamoEquipo'];
+$prestamoEquipoId = $_GET['idPrestamoEquipo'];
 $sPrestamoEquipo = new PrestamoEquipo();
 $selectPrestamoEquipo = $sPrestamoEquipo->seleccionarPrestamoEquipo($prestamoEquipoId);
 $sPrestamoEquipo = $selectPrestamoEquipo[0];

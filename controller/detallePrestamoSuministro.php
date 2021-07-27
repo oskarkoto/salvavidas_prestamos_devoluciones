@@ -2,7 +2,7 @@
 <?php
 include 'model/PrestamoSuministro.php';
 
-$prestamoSuministroId = $_POST['idPrestamoSuministro'];
+$prestamoSuministroId = $_GET['idPrestamoSuministro'];
 $sPrestamoSuministro = new PrestamoSuministro();
 $selectPrestamoSuministro = $sPrestamoSuministro->seleccionarPrestamoSuministro($prestamoSuministroId);
 $sPrestamoSuministro = $selectPrestamoSuministro[0];
