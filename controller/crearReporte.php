@@ -1,17 +1,20 @@
 <!--Controlador para crear Reporte.-->
 <?php
-
 include 'model/Reporte.php';
+include 'model/TipoReporte.php';
 
 if ($_POST) {
-    $form = new Reporte($_POST['idReporte'], $_POST['tituloReporte'], $_POST['tipoReporte'], $_POST['fechaReporte']);
+    $form = new Reporte($_POST['tituloReporte'], $_POST['idTipoReporte'], $_POST['fechaReporte']);
     if ($form->insertReporte()) {
-        $sReporte = $newReporte->seleccionarAllReporte();
-        include "view/VerAllReporte.php";
+        $Reporte = new Reporte();
+        $allReporte = $Reporte->seleccionarAllReporte();
+        include "view/verAllReporte.php";
     } else {
         $msgError = "ERROR creando Reporte.";
-        include "view/nuevoReporte.php";
+        include "view/crearReporte.php";
     }
 } else {
-    include "view/nuevoReporte.php";
+    $TipoReporte = new TipoReporte();
+    $allTipoReporte = $TipoReporte->seleccionarAllTipoReporte();
+    include "view/crearReporte.php";
 }

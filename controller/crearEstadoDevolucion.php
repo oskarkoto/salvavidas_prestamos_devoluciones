@@ -6,13 +6,13 @@ include 'model/EstadoDevolucion.php';
 if ($_POST) {
     $form = new EstadoDevolucion($_POST['idEstadoDevolucion'], $_POST['descripcionEstadoDevolucion']);
     if ($form->insertEstadoDevolucion()) {
-        $sEstadoDevolucion = $newEstadoDevolucion->seleccionarEstadoDevolucion($newEstadoDevolucion->idEstadoDevolucion);
-        $sEstadoDevolucion = $sEstadoDevolucion[0];
+        $selectEstadoDevolucion = $form->seleccionarEstadoDevolucion($form->idEstadoDevolucion);
+        $form = $selectEstadoDevolucion[0];
         include "view/verDetalleEstadoDevolucion.php";
     } else {
         $msgError = "ERROR creando Estado de Devolución.";
-        include "view/nuevoEstadoDevolucion.php";
+        include "view/crearEstadoDevolucion.php";
     }
 } else {
-    include "view/nuevoEstadoDevolucion.php";
+    include "view/crearEstadoDevolucion.php";
 }

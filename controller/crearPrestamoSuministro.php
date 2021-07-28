@@ -1,18 +1,26 @@
 <!--Controlador para crear Prestamo de Suministro.-->
 <?php
-
 include 'model/PrestamoSuministro.php';
+include 'model/Prestamo.php';
+include 'model/Suministro.php';
+include 'model/EstadoDevolucion.php';
 
 if ($_POST) {
     $form = new PrestamoSuministro($_POST['idSuministroEquipo'], $_POST['idSuministro'], $_POST['idSuministro'], $_POST['idEstadoDevolucion']);
     if ($form->insertPrestamoSuministro()) {
-        $sPrestamoSuministro = $newPrestamoSuministro->seleccionarPrestamoSuministro($newPrestamoSuministro->idPrestamoSuministro);
-        $sPrestamoSuministro = $sPrestamoSuministro[0];
+        $selectPrestamoSuministro = $form->seleccionarPrestamoSuministro($form->idPrestamoSuministro);
+        $form = $selectPrestamoSuministro[0];
         include "view/verDetallePrestamoSuministro.php";
     } else {
         $msgError = "ERROR creando Prestamo de Suministro.";
-        include "view/nuevoPrestamoSuministro.php";
+        include "view/crearPrestamoSuministro.php";
     }
 } else {
-    include "view/nuevoPrestamoSuministro.php";
+    $Prestamo = new Prestamo();
+    $allPrestamo = $Prestamo->seleccionarAllPrestamo();
+    $Suministro = new Suministro();
+    $allSuministro = $Suministro->seleccionarAllSuministro();
+    $EstadoDevolucion = new EstadoDevolucion();
+    $allEstadoDevolucion = $EstadoDevolucion->seleccionarAllEstadoDevolucion();
+    include "view/crearPrestamoSuministro.php";
 }

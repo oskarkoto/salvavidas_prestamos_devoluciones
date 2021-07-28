@@ -1,18 +1,26 @@
 <!--Controlador para crear Prestamo de Equipo.-->
 <?php
-
 include 'model/PrestamoEquipo.php';
+include 'model/Prestamo.php';
+include 'model/Equipo.php';
+include 'model/EstadoDevolucion.php';
 
 if ($_POST) {
     $form = new PrestamoEquipo($_POST['idPrestamoEquipo'], $_POST['idPrestamo'], $_POST['idEquipo'], $_POST['idEstadoDevolucion']);
     if ($form->insertPrestamoEquipo()) {
-        $sPrestamoEquipo = $newPrestamoEquipo->seleccionarPrestamoEquipo($newPrestamoEquipo->idPrestamoEquipo);
-        $sPrestamoEquipo = $sPrestamoEquipo[0];
+        $selectPrestamoEquipo = $form->seleccionarPrestamoEquipo($form->idPrestamoEquipo);
+        $form = $selectPrestamoEquipo[0];
         include "view/verDetallePrestamoEquipo.php";
     } else {
         $msgError = "ERROR creando Prestamo de Equipo.";
-        include "view/nuevoPrestamoEquipo.php";
+        include "view/crearPrestamoEquipo.php";
     }
 } else {
-    include "view/nuevoPrestamoEquipo.php";
+    $Prestamo = new Prestamo();
+    $allPrestamo = $Prestamo->seleccionarAllPrestamo();
+    $Equipo = new Equipo();
+    $allEquipo = $Equipo->seleccionarAllEquipo();
+    $EstadoDevolucion = new EstadoDevolucion();
+    $allEstadoDevolucion = $EstadoDevolucion->seleccionarAllEstadoDevolucion();
+    include "view/crearPrestamoEquipo.php";
 }

@@ -13,7 +13,7 @@
             <strong>ID: </strong> <?php echo $value->idEstadoDevolucionGeneral; ?></p>
                 <div class="dropdown-divider"></div>
         <p class="card-subtitle mb-2" id="card-subtitle">
-            <strong>Detalle: </strong> <?php echo $value->descripcionEstadoDevolucionGeneral; ?></p>
+            <strong>Descripción: </strong> <?php echo $value->descripcionEstadoDevolucionGeneral; ?></p>
                     <div class="dropdown-divider"></div>
     </div>    
     <div class="card-dfooter">        
