@@ -30,6 +30,12 @@
     border-radius: 1rem;
  }
 
+ #ListaCompleta .add:hover{
+    background: #a53e4a;  
+    color: #fff;
+    box-shadow: 2px 3px 3px black;
+ }
+
 #tablaLista{
     margin: auto;
     text-align: center;
@@ -93,7 +99,7 @@
 
 #ListaCompleta #ver{
     margin-right: 1rem;
-    padding: 0.2rem 2rem;
+    padding: 0.1rem 1rem;
     text-align: center;
     background: #f2f2f2;  
     color: black;
@@ -105,9 +111,15 @@
     border-radius: 1rem;
 }
 
+#ListaCompleta #ver:hover{
+    background: black;  
+    color: white;
+    box-shadow: 2px 3px 3px black;
+}
+
 #ListaCompleta #eliminar{
-    margin-right: 1rem;
-    padding: 0.2rem 2rem;
+    margin-right: 0.5rem;
+    padding: 0.1rem 2rem;
     text-align: center;
     background: #dc2c41;  
     color: white;
@@ -119,6 +131,13 @@
     border-radius: 1rem;
 }
 
+#ListaCompleta #eliminar:hover{
+    background: #cc2236;  
+    color: white;
+    box-shadow: 2px 3px 3px black;
+}
+
 .table{
     text-align: center;
 }
+

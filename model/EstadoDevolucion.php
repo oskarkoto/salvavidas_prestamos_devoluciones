@@ -66,17 +66,21 @@ class EstadoDevolucion {
      * NO se requiere en el sistema.
      */
     function actualizarEstadoDevolucion(){
-        //NO se requiere en el sistema.
+        $queryUpdate = "UPDATE estadodevolucion SET idEstadoDevolucion = '{$this->idEstadoDevolucion}', descripcionEstadoDevolucion = '{$this->descripcionEstadoDevolucion}' WHERE idEstadoDevolucion = '{$this->idEstadoDevolucion}'";
+        $pdo = new Connection();
+        $result = $pdo->open()->query($queryUpdate);
+        return $result;
     }
     
     /**
      * Elimina un estado de devolucion de la base de datos.
      * NO se requiere en el sistema.
      */
-    function eliminarEstadoDevolucion($idEstadoDevolucion){
+    function eliminarEstadoDevolucion($idEstadoDevolucion = ""){
+        $id = $idEstadoDevolucion;
         $pdo = new Connection();
-        $queryDelete = "DELETE FROM estadodevolucion WHERE idEstadoDevolucion = '{$idEstadoDevolucion}'";        
-        $resultDel = $pdo->open()->query($queryDelete);
-        return $resultDel->execute();
+        $queryDelete = "DELETE FROM estadodevolucion WHERE idEstadoDevolucion = '{$id}'";        
+        $result = $pdo->open()->query($queryDelete);
+        return $result->execute();
     }
 }

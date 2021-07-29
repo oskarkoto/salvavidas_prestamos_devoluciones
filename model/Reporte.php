@@ -55,7 +55,7 @@ class Reporte {
      * Elimina un reporte de la base de datos.
      * NO se requiere en el sistema.
      */
-    function eliminarReporte($idReporte){
+    function eliminarReporte($idReporte = 0){
         $pdo = new Connection();
         $queryDelete = "DELETE FROM reporte WHERE idReporte = '{$idReporte}'";        
         $resultDel = $pdo->open()->query($queryDelete);

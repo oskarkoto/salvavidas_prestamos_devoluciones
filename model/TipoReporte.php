@@ -66,24 +66,22 @@ class TipoReporte {
     /**
      * Actualiza la información del tipo de reporte.
      */
-    function actualizarTipoReporte(){
+    function actualizarTipoReporte(){  
+        $queryUpdate = "UPDATE tiporeporte SET idTipoReporte = '{$this->idTipoReporte}', nombreTipoReporte = '{$this->nombreTipoReporte}', detalleTipoReporte = '{$this->detalleTipoReporte}', queryTipoReporte = '{$this->queryTipoReporte}' WHERE idTipoReporte = '{$this->idTipoReporte}'";
         $pdo = new Connection();
-        $pdo = $pdo->connect();
-        $query = "UPDATE tiporeporte SET idTipoReporte = '{$this->idTipoReporte}', nombreTipoReporte = '{$this->nombreTipoReporte}'"
-                . "detalleTipoReporte = '{$this->detalleTipoReporte}', queryTipoReporte = '{$this->queryTipoReporte}' WHERE idTipoReporte = $idTipoReporte";
-        $results = $pdo->prepare($query);
-        return $results->execute();
+        $result = $pdo->open()->query($queryUpdate);
+        return $result;
     }
     
     /**
      * Elimina un reporte de la base de datos.
-     * NO se requiere en el sistema.
      */
-    function eliminarTipoReporte($idTipoReporte){
+    function eliminarTipoReporte($idTipoReporte = ""){
+        $id = $idTipoReporte;
         $pdo = new Connection();
-        $pdo = $pdo->connect();
-        $queryDelete = "DELETE FROM tiporeporte WHERE idTipoReporte = '{$idTipoReporte}'";        
-        $results = $pdo->prepare($queryDelete);
-        return $results->execute();
+        //delete categoria de suministro with idCategoria = $idCategoria from categoriaSuministro table
+        $queryDelete = "DELETE FROM tiporeporte WHERE idTipoReporte = '{$id}'";        
+        $result = $pdo->open()->query($queryDelete);
+        return $result->execute();  
     }
 }

@@ -30,7 +30,6 @@
                 <th scope="col">Título</th>
                 <th scope="col">Tipo de Reporte</th>
                 <th scope="col">Fecha</th>
-                <th scope="col">Opciones</th>
             </tr>
         </thead>
         <tbody>
@@ -42,7 +41,6 @@
                 <td><?php echo $value->tituloReporte; ?></td>
                 <td><?php echo $value->idTipoReporte; ?></td>
                 <td><?php echo $value->fechaReporte; ?></td>
-                <td>Ver</td>
             </tr>
         <?php } ?>
         </tbody>

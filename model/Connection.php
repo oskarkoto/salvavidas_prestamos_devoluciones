@@ -1,11 +1,9 @@
 <?php
-
 include "model/config.php";
 
 /**
  * Manage DB Connection
- *
- * 
+
  */
 class Connection {
 

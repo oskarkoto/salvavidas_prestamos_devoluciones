@@ -23,18 +23,18 @@
         </svg> Añadir
         </a>
     </div>
-    <table class="table">
+    <table class="table" id="table">
         <thead>
             <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Detalle</th>
-                <th scope="col">Query</th>
-                <th scope="col">Opciones</th>
+                <th scope="col-sm-3">ID</th>
+                <th scope="col-sm-3">Nombre</th>
+                <th scope="col-sm-3">Detalle</th>
+                <th scope="col-sm-3">Query</th>
+                <th scope="col-sm-7">Opciones</th>
             </tr>
         </thead>
         <tbody>
-        <?php
+        <?php 
         foreach ($allTipoReporte as $value) {    
         ?>
             <tr>
@@ -44,11 +44,18 @@
                 <td><?php echo $value->queryTipoReporte; ?></td>
                 <td>
                 <a class="ver" id="ver" href="?c=detalleTipoReporte&idTipoReporte=<?php echo $value->idTipoReporte; ?>">
-                <!-- Icono Info -->
+                <!-- Icono Ver -->
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-card-text" viewBox="0 0 16 16">
                 <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
                 <path d="M3 5.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 8zm0 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z"/>
                 </svg> Ver
+                </a>
+                <a class="editar" id="ver" href="?c=actualizarTipoReporte&idTipoReporte=<?php echo $value->idTipoReporte; ?>">
+                <!-- Icono Actualizar -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-card-text" viewBox="0 0 16 16">
+                <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+                <path d="M3 5.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 8zm0 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z"/>
+                </svg> Editar
                 </a>
                 <a class="eliminar" id="eliminar" href="?c=eliminarTipoReporte&idTipoReporte=<?php echo $value->idTipoReporte; ?>">
                 <!-- Icono Eliminar -->
@@ -59,7 +66,7 @@
                 </a>    
                 </td>
             </tr>
-        <?php } ?>
-        </tbody>
-    </table>
+        </tbody>  
+        <?php } ?>    
+    </table> 
 </div>

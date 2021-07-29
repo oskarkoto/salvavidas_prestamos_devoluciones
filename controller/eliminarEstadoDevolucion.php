@@ -2,21 +2,14 @@
 <?php
 include "model/EstadoDevolucion.php";
 
-if (isset($_GET['idEstadoDevolucion'])) {
-    $viewEstadoDevolucion = new EstadoDevolucion();    
-    if ($viewEstadoDevolucion->eliminarEstadoDevolucion($idEstadoDevolucion)){
+    $idEstadoDevolucion = $_GET['idEstadoDevolucion'];
+    $EstadoDevolucion = new EstadoDevolucion();    
+    if ($EstadoDevolucion->eliminarEstadoDevolucion($idEstadoDevolucion)){
         $msg = "EXITO borrando el estado de devolución.";
-        include "view/VerAllEstadoDevolucion.php";
+        $allEstadoDevolucion = $EstadoDevolucion->seleccionarAllEstadoDevolucion();
+        include 'view/verAllEstadoDevolucion.php';
     } else {
        $msgError = "ERROR borrando el estado de devolución.";
-       include "view/detalleEstadoDevolucion.php"; 
+        $allEstadoDevolucion = $EstadoDevolucion->seleccionarAllEstadoDevolucion();
+        include 'view/verAllEstadoDevolucion.php';
     }    
-} else {
-    $idEstadoDevolucion = $_GET['idEstadoDevolucion'];
-    $viewEstadoDevolucion = new EstadoDevolucion(); 
-    $selectEstadoDevolucion = $viewEstadoDevolucion->seleccionarEstadoDevolucion($idEstadoDevolucion);
-    $viewEstadoDevolucion = $selectEstadoDevolucion[0];
-    $myEstadoDevolucion = new EstadoDevolucion($viewEstadoDevolucion->idEstadoDevolucion, 
-    $viewEstadoDevolucion->descripcionEstadoDevolucion);
-    include "view/detalleEstadoDevolucion.php";
-}

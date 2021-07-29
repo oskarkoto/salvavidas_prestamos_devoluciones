@@ -64,7 +64,10 @@ class EstadoDevolucionGen {
      * NO se requiere en el sistema.
     **/
     function actualizarEstadoDevolucionGen(){
-        //NO se requiere en el sistema.
+        $queryUpdate = "UPDATE estadodevoluciongeneral SET idEstadoDevolucionGeneral = '{$this->idEstadoDevolucionGeneral}', descripcionEstadoDevolucion = '{$this->descripcionEstadoDevolucionGeneral}' WHERE idEstadoDevolucionGeneral = '{$this->idEstadoDevolucionGeneral}'";
+        $pdo = new Connection();
+        $result = $pdo->open()->query($queryUpdate);
+        return $result;
     }
     
     /**
@@ -72,9 +75,10 @@ class EstadoDevolucionGen {
      * NO se requiere en el sistema.
     **/
     function eliminarEstadoDevolucionGen($idEstadoDevolucionGeneral){
+        $id = $idEstadoDevolucionGeneral;
         $pdo = new Connection();
-        $queryDelete = "DELETE FROM estadodevoluciongeneral WHERE idEstadoDevolucionGeneral = '{$idEstadoDevolucionGeneral}'";        
-        $resultDel = $pdo->open()->query($queryDelete);
-        return $resultDel->execute();
+        $queryDelete = "DELETE FROM estadodevoluciongeneral WHERE idEstadoDevolucionGeneral = '{$id}'";        
+        $result = $pdo->open()->query($queryDelete);
+        return $result->execute();
     }
 }

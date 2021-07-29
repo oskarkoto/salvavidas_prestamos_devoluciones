@@ -7,22 +7,16 @@ include "model/TipoReporte.php";
 **/
 
 if ($_POST) {
-    $myTipoReporte = new TipoReporte($_POST['idTipoReporte'], $_POST['nombreTipoReporte'], $_POST['detalleTipoReporte'], $_POST['queryTipoReporte']);
-    if ($myTipoReporte->actualizarTipoReporte()){
-        $msg = "EXITO. Se editó el tipo de reporte.";
-        include "view/VerAllTipoReporte.php";
-    } else {
-       $msgError = "ERROR editando el tipo de Reporte.";
-       include "view/actualizarTipoReporte.php"; 
+    $sTipoReporte = new TipoReporte($_POST['idTipoReporte'],$_POST['nombreTipoReporte'], $_POST['detalleTipoReporte'], $_POST['queryTipoReporte']);
+    if ($sTipoReporte->actualizarTipoReporte()){
+        $selectTipoReporte = $sTipoReporte->seleccionarTipoReporte($_POST['idTipoReporte']);
+        $sTipoReporte = $selectTipoReporte[0];
+        include "view/verDetalleTipoReporte.php";
     }    
+    
 } else {
-    $myTipoReporteId = $_GET['idTipoReporte'];
-    $viewTipoReporte = new TipoReporte();
-    $selectTipoReporte = $viewTipoReporte->seleccionarTipoReporte($myTipoReporteId);
-    $viewTipoReporte = $selectTipoReporte[0];
-    $myTipoReporte = new TipoReporte($myTipoReporte->idTipoReporte, 
-        $viewTipoReporte->nombreTipoReporte,
-        $viewTipoReporte->detalleTipoReporte,
-        $viewTipoReporte->queryTipoReporte);
+    $sTipoReporte = new TipoReporte();
+    $selectTipoReporte = $sTipoReporte->seleccionarTipoReporte($_GET['idTipoReporte']);
+    $sTipoReporte = $selectTipoReporte[0];
     include "view/actualizarTipoReporte.php";
 }
