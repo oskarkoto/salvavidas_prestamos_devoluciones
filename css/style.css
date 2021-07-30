@@ -18,8 +18,31 @@ body{
 }
 
 #idheader .nav-link {
+    font-family: "Georgia";
+    font-weight: bold;
     color: whitesmoke ;
+    text-shadow: 2px 3px 3px #2b1515;
 }
+
+#idheader .nav-link:hover {
+    color: rgb(158, 158, 158) ;
+    
+}
+
+.dropdown-item{
+    background-color: white;
+    color:black;
+    font-family: "Georgia";
+    font-weight: bold;
+    text-shadow: 2px 3px 3px gray;
+}
+
+.dropdown-item:hover{
+    background-color: #8d1725;
+    color:white;
+    text-shadow: 2px 3px 3px black;
+}
+
 
 #toggler{
     color: whitesmoke ;
@@ -47,11 +70,25 @@ body{
     width: fit-content; 
 }
 
-.card .card-title {
+.card .card-home-title {
     background-image: url("../img/card-title-wallpaper.jpg"); 
     color: whitesmoke;
     text-align: center;
     font-family: "Arial Black";
+    box-shadow: 0px 2px 2px black;
+}
+
+.card .card-home-title h2 {
+    text-shadow: 2px 2px 2px #2b1515;
+    padding: 1rem;
+}
+
+.card .card-title {
+    background-image: url("../img/card-subtitle-wallpaper.jpg"); 
+    color: whitesmoke;
+    text-align: center;
+    font-family: "Arial Black";
+    box-shadow: 2px 3px 3px black;
 }
 
 .card .card-title h2 {

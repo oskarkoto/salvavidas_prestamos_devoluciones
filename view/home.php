@@ -3,7 +3,7 @@
         <div class="row">
             <img src="img/LogoSV.png" class="rounded mx-auto d-block" alt="Logo_Salvavidas" style="width:25rem">
         </div>
-        <div class="card-title">
+        <div class="card-home-title">
             <h2>Sistema de Gestión de Préstamos y Devoluciones</h2>
         </div>      
         <div class="container" id="OpcionesMP">
