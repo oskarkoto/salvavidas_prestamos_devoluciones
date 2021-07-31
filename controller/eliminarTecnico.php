@@ -1,3 +1,4 @@
+<!--Controlador para eliminar un Tecnico.-->
 <?php
   include "Model/Tecnico.php";
 

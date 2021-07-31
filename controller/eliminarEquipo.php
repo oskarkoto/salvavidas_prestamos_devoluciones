@@ -1,3 +1,4 @@
+<!--Controlador para eliminar un Equipo.-->
 <?php
   include "Model/Equipo.php";
 

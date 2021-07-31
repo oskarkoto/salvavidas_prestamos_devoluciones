@@ -1,5 +1,6 @@
+<!--Controlador para eliminar un Tipo de Equipo.-->
 <?php
-  include "Model/Tipo_Equipo.php";
+  include "Model/TipoEquipo.php";
 
   $idTipoEquipo = $_GET['idTipoEquipo'];
   $TipoEquipo = new TipoEquipo();    
