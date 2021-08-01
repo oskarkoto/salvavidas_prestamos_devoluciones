@@ -2,20 +2,20 @@
 include 'Model/TipoEquipo.php';
 
 if ($_POST) {
-
-  $tipoequipo = new TipoEquipo(
-    $_POST['idTipoEquipo'],
-    $_POST['nombreTipoEquipo'],
-    $_POST['descripcionTipoEquipo'],
-    $_POST['marcaTipoEquipo'],
-    $_POST['existenciaMinima']
-  );
-  $tipoequipo->create_tipo_equipo();
-  $rows = $tipoequipo->read_tipo_equipo();
+  // Validaciones, instancias de objetos, calculos matematicos
+  $form = new TipoEquipo( $_POST['idTipoEquipo'], $_POST['nombreTipoEquipo'], $_POST['descripcionTipoEquipo'],
+      $_POST['marcaTipoEquipo'], $_POST['existenciaMinima']);
+      
+  if($form->create_tipo_equipo()){
+    $selectTipoEquipo  = $form->read_tipo_equipo($form->idTipoEquipo);
+    $form = $selectTipoEquipo[0];
+    include "view/verDetalleTipoEquipo.php";
+  } else {
+    $msgError = "ERROR creando el Tipo de equipo.";
+    include "view/crearTipoEquipo.php";
+  }
+} else {  
   include 'view/crearTipoEquipo.php';
-} else {
-    $msg= "ERROR al crear el tipo de equipo";
-    $TipoEquipo = new TipoEquipo();
-    $allTipoEquipo = $TipoEquipo->seleccionarAllTipoEquipo(); 
-    include "view/verAllTipoEquipo.php";
 }
+
+

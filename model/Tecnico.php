@@ -1,7 +1,6 @@
 <!--Modelo de Tecnicos.-->
 <?php
-
-include "Model/Connection.php";
+include_once "Model/Connection.php";
 
 class Tecnico
 {
@@ -90,7 +89,6 @@ class Tecnico
   {
     $idTecnico =  ($idTecnico) ? $idTecnico : $this->idTecnico;
     $sql = "DELETE FROM tecnico WHERE idTecnico = '$idTecnico'";
-    echo $sql;
     $pdo = new connection();
     $pdo = $pdo->open();
     return $pdo->query($sql);
@@ -98,14 +96,10 @@ class Tecnico
 
   function update_tecnicos()
   {
-    $sql = "UPDATE tecnico SET primerNombre = '$this->primerNombre', segundoNombre = '$this->segundoNombre',"
-      . " primerApellido='$this->primerApellido', segundoApellido='$this->segundoApellido', password='$this->password'"
-      . " telefono='$this->telefono', correoElectronico='$this->correoElectronico', direccion='$this->direccion'"
-      . " fechaInclusion='$this->fechaInclusion' WHERE idTecnico='$this->idTecnico'";
-    echo $sql;
-    $pdo = new connection();
-    $pdo = $pdo->open();
-    return $pdo->query($sql);
+    $sql = "UPDATE tecnico SET primerNombre = '{$this->primerNombre}', segundoNombre = '{$this->segundoNombre}', primerApellido='{$this->primerApellido}', segundoApellido='{$this->segundoApellido}', telefono='{$this->telefono}', correoElectronico='{$this->correoElectronico}', direccion='{$this->direccion}', fechaInclusion='{$this->fechaInclusion}' WHERE idTecnico='{$this->idTecnico}'";
+    $pdo = new Connection();
+    $result = $pdo->open()->query($sql);
+    return $result;
   }
 
   function get_attribute_tecnico($primerNombre)

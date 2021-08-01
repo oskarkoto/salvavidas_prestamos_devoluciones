@@ -1,6 +1,6 @@
 <!--Modelo de Tecnicos.-->
 <?php
-include "Model/Connection.php";
+include_once "Model/Connection.php";
 
 class TipoEquipo
 {
@@ -82,7 +82,6 @@ class TipoEquipo
   {
     $idTipoEquipo =  ($idTipoEquipo) ? $idTipoEquipo : $this->idTipoEquipo;
     $sql = "DELETE FROM tipoequipo WHERE idTipoEquipo = '$idTipoEquipo'";
-    echo $sql;
     $pdo = new connection();
     $pdo = $pdo->open();
     return $pdo->query($sql);
