@@ -20,4 +20,3 @@ if (isset($_GET['answer'])) {
         $viewTipoSuministro->idUnidades, $viewTipoSuministro->marcaTipoSuministro,$viewTipoSuministro->existenciaMinima);
     include "view/confirmDeleteTipoSuministro.php";
 }
-
