@@ -1,7 +1,6 @@
 <!--Controlador para actualizar un Tipo de Suministro.-->
 <?php
 include "model/TipoSuministro.php";
-include 'model/CategoriaSuministro.php';
 
 if ($_POST) {
     $sTipoSuministro = new TipoSuministro($_POST['idTipoSuministro'], $_POST['nombreTipoSuministro'], $_POST['descripcionTipoSuministro'], 

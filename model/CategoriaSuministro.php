@@ -1,19 +1,12 @@
 <?php
+
 include_once "model/Connection.php";
 
-/**
- * Manage Categoria de Suministro
- */
 class CategoriaSuministro {
 
     public $idCategoria;
     public $descripcionCategoria;
-    
-    /**
-     * Initial values
-     * @param int $idCategoria
-     * @param string $descripcionCategoria
-     */
+
     public function __construct($id = 0, $descripcion = "") {
         $this->idCategoria = $id;
         $this->descripcionCategoria = $descripcion;
@@ -26,7 +19,7 @@ class CategoriaSuministro {
     function insertCategoriaSuministro() {
         $pdo = new Connection();
         $pdo = $pdo->open();
-        $query = "INSERT INTO categoriaSuministro (idCategoria, descripcionCantegoria) VALUES ('{$this->idCategoria}','{$this->descripcionCategoria}')";
+        $query = "INSERT INTO categoriasuministro (idCategoria, descripcionCantegoria) VALUES ('{$this->idCategoria}','{$this->descripcionCategoria}')";
         $result = $pdo->prepare($query);
         return $result->execute();
     }
@@ -37,13 +30,13 @@ class CategoriaSuministro {
      * @return CategoriaSuministro list
      */
     function selectAllCategoriaSuministro() {
-        $query = "SELECT * FROM categoriaSuministro";
+        $query = "SELECT * FROM categoriasuministro";
         $pdo = new Connection();
         $pdo = $pdo->open();
         $result = $pdo->query($query);
         $rows = [];
         foreach ($result->fetchAll() as $row) {
-            $rows[] = new UnidadesSuministro($row['idCategoria'], $row['descripcionCategoria']);
+            $rows[] = new CategoriaSuministro($row['idCategoria'], $row['descripcionCategoria']);
         }
         return $rows;
     }      
@@ -55,7 +48,7 @@ class CategoriaSuministro {
      * @return CategoriaSuministro list
      */
     function selectCategoriaSuministro($id = 0) {
-        $query = "SELECT * FROM categoriaSuministro";
+        $query = "SELECT * FROM categoriasuministro";
         if ($id) {
             $query .= " where idCategoria = '$id'";
         }
@@ -64,7 +57,7 @@ class CategoriaSuministro {
         $result = $pdo->query($query);
         $rows = [];
         foreach ($result->fetchAll() as $row) {
-            $rows[] = new UnidadesSuministro($row['idCategoria'], $row['descripcionCategoria']);
+            $rows[] = new CategoriaSuministro($row['idCategoria'], $row['descripcionCategoria']);
         }
         return $rows;
     }      
@@ -74,7 +67,7 @@ class CategoriaSuministro {
      * @return result of update
      */
     function updateCategoriaSuministro(){
-        $query = "UPDATE categoriaSuministro "
+        $query = "UPDATE categoriasuministro "
                 . "SET descripcionCategoria='{$this->descripcionCategoria}'" 
                 . "where idCategoria='{$this->idCategoria}'";
         $pdo = new Connection();
@@ -90,7 +83,7 @@ class CategoriaSuministro {
     function deleteCategoriaSuministro($idCategoria){
         $pdo = new Connection();
         //delete categoria de suministro with idCategoria = $idCategoria from categoriaSuministro table
-        $queryDelete = "DELETE FROM categoriaSuministro WHERE idCategoria = '{$idCategoria}'";        
+        $queryDelete = "DELETE FROM categoriasuministro WHERE idCategoria = '{$idCategoria}'";        
         $resultDel = $pdo->open()->query($queryDelete);
         return $resultDel->execute();
     }
@@ -100,7 +93,7 @@ class CategoriaSuministro {
      * @return CategoriaSuministro list
      */
     function selectLast() {
-        $query = "SELECT * FROM categoriaSuministro ORDER BY idCategoria DESC LIMIT 1";
+        $query = "SELECT * FROM categoriasuministro ORDER BY idCategoria DESC LIMIT 1";
         $pdo = new Connection();
         $pdo = $pdo->open();
         $result = $pdo->query($query);

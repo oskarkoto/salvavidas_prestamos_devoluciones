@@ -2,9 +2,7 @@
 <?php
 
 include 'model/Suministro.php';
-include 'model/TipoSuministro.php';
-include 'model/CondicionActual.php';
-include 'model/EstadoInventario';
+
 
 if ($_POST) {
     $form = new Suministro($_POST['idSuministro'], $_POST['idTipoSuministro'],

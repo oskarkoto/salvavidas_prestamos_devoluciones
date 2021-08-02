@@ -1,8 +1,7 @@
 <?php
+
 include 'model/Suministro.php';
-include 'model/TipoSuministro.php';
-include 'model/CondicionActual.php';
-include 'model/EstadoInventario.php';
+
 
     $Suministro = new Suministro();
     $allSuministro = $Suministro->selectAllSuministro();

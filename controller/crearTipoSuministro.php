@@ -2,7 +2,6 @@
 <?php
 
 include 'model/TipoSuministro.php';
-include 'model/CategoriaSuministro.php';
 
 if ($_POST) {
     $form = new TipoSuministro($_POST['idTipoSuministro'], $_POST['nombreTipoSuministro'],
