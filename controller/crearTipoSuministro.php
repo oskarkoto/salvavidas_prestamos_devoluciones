@@ -1,19 +1,27 @@
+<!--Controlador para crear un Tipo de Suministro.-->
 <?php
 
-include "model/TipoSuministro.php";
+include 'model/TipoSuministro.php';
+include 'model/CategoriaSuministro.php';
 
 if ($_POST) {
-    $newTipoSuministro = new TipoSuministro($_POST['idTipoSuministro'], $_POST['nombreTipoSuministro'],
-        $_POST['descripcionTipoSuministro'], (int)$_POST['idCategoria'],(int)$_POST['idUnidades'],
-        $_POST['marcaTipoSuministro'], (int)$_POST['existenciaMinima']);
-    if ($newTipoSuministro->insertTipoSuministro()) {
-        $tSuministro = $newTipoSuministro->selectTipoSuministro($newTipoSuministro->id);
-        $tSuministro = $tSuministro[0];
-        include "view/singleTipoSuministro.php";
+    $form = new TipoSuministro($_POST['idTipoSuministro'], $_POST['nombreTipoSuministro'],
+    $_POST['descripcionTipoSuministro'],$_POST['idCategoria'],$_POST['idUnidades'],
+    $_POST['marcaTipoSuministro'],$_POST['existenciaMinima']);
+    if ($form->insertTipoSuministro()) {
+        $selectTipoSuministro = $form->selectTipoSuministro($form->idTipoSuministro);
+        $form = $selectTipoSuministro[0];
+        //Select de categoria
+        $CategoriaSuministro = new CategoriaSuministro();
+        $allCategoriaSuministro = $CategoriaSuministro->selectAllCategoriaSuministro();
+        include "view/verDetalleTipoSuministro.php";
     } else {
-        $msgError = "ERROR creando Tipo de Suministro.";
-        include "view/newTipoSuministro.php";
+        $msgError = "ERROR creando el Tipo de Suministro.";
+        include "view/crearSuministro.php";
     }
 } else {
-    include "view/newTipoSuministro.php";
+    //Select de categoria
+    $CategoriaSuministro = new CategoriaSuministro();
+    $allCategoriaSuministro = $CategoriaSuministro->selectAllCategoriaSuministro();
+    include 'view/crearTipoSuministro.php';
 }

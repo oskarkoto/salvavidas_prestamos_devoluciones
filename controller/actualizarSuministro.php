@@ -1,22 +1,21 @@
+<!--Controlador para actualizar un Suministro.-->
 <?php
 include "model/Suministro.php";
 
 if ($_POST) {
-    $mySuministro = new Suministro($_POST['idSuministro'], $_POST['idTipoSuministro'],
-        (int)$_POST['idCondicionActual'], (int)$_POST['idEstadoInventario'],$_POST['fechaInclusion']);
-    if ($mySuministro->updateSuministro()){
-        include "view/sucessEditSuministro.php";
-    } else {
-       $msgError = "ERROR editando el Suministro.";
-       include "view/updateSuministro.php"; 
+    $sSuministro = new Suministro($_POST['idSuministro'], $_POST['idTipoSuministro'],
+    $_POST['idCondicionActual'], $_POST['idEstadoInventario'],$_POST['fechaInclusion']);
+    if ($sSuministro->updateSuministro()){
+        $msg= "Se actualizó el suministro.";
+        $selectSuministro = $sSuministro->selectSuministro($_POST['idSuministro']);
+        $sSuministro = $selectSuministro[0];
+        include "view/verDetalleSuministro.php";
     }    
+    
 } else {
-    $mySuministroId = $_GET['idSuministro'];
-    $viewSuministro = new Suministro();
-    $selectSuministro = $viewSuministro->selectSuministro($myTipoSuministroId);
-    $viewSuministro = $selectSuministro[0];
-    $mySuministro = new Suministro($viewSuministro->idSuministro, $viewSuministro->idTipoSuministro, 
-        $viewSuministro->idCondicionActual, $viewSuministro->idEstadoInventario,
-        $viewSuministro->fechaInclusion);
-    include "view/updateSuministro.php";
+    $sSuministro = new EstadoDevolucion();
+    $selectSuministro = $sSuministro->selectSuministro($_GET['idSuministro']);
+    $sSuministro = $selectSuministro[0];
+    include "view/actualizarSuministro.php";
 }
+

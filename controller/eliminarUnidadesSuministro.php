@@ -1,21 +1,16 @@
+<!--Controlador para eliminar Unidades de Suministro.-->
 <?php
-include "model/UnidadesSuministro.php";
+  include "model/UnidadesSuministro.php";
 
-if (isset($_GET['answer'])) {
-    $idUnidades = (int) $_GET['idUnidades'];
-    $viewUnidades = new UnidadesSuministro();    
-    if ($viewUnidades->deleteUnidadesSuministro($idUnidades)){
-        include "view/successDeleteUnidadesSuministro.php";
-    } else {
-       $msgError = "ERROR borrando el item de Unidades de Suministro.";
-       include "view/singleUnidadesSuministro.php"; 
-    }    
-} else {
-    $idUnidades = (int) $_GET['idUnidades'];
-    $viewUnidades = new UnidadesSuministro(); 
-    $selectUnidades = $viewUnidades->selectUnidadesSuministro($idUnidades);
-    $viewUnidades = $selectUnidades[0];
-    $myUnidades = new UnidadesSuministro($viewUnidades->idUnidades, $viewUnidades->descripcionUnidades);
-    include "view/confirmDeleteUnidadesSuministro.php";
-}
+  $idUnidades = $_GET['idUnidades'];
+  $UnidadesSuministro = new UnidadesSuministro();    
+  if ($UnidadesSuministro->deleteUnidadesSuministro($idUnidades)){
+    $msg = "EXITO borrando la Unidad de Suministro.";
+    $allUnidadesSuministro = $UnidadesSuministro->selectAllUnidadesSuministro();
+      include 'view/verAllUnidadesSuministro.php';
+  } else {
+     $msgError = "ERROR borrando la Unidad de Suministro.";
+     $allUnidadesSuministro = $UnidadesSuministro->selectAllUnidadesSuministro();
+      include 'view/verAllUnidadesSuministro.php';
+  }    
 

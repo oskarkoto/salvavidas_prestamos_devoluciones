@@ -7,16 +7,16 @@ include_once "model/Connection.php";
  */
 class UnidadesSuministro {
 
-    public $idUnidades;
     public $cantidad;
-    
+    public $idUnidades;
+
     /**
      * Initial values
      * @param int $idUnidades
      * @param int $cantidad
      */
-    public function __construct($id = 0, $cantidad = 0) {
-        $this->idUnidades = $id;
+    public function __construct($cantidad = 0,$idUnidades = 0) {  
+        $this->idUnidades = $idUnidades;
         $this->cantidad = $cantidad;
     }
 
@@ -27,7 +27,7 @@ class UnidadesSuministro {
     function insertUnidadesSuministro() {
         $pdo = new Connection();
         $pdo = $pdo->open();
-        $query = "INSERT INTO unidadesSuministro (idUnidades, cantidad) VALUES ('{$this->idUnidades}','{$this->cantidad}')";
+        $query = "INSERT INTO unidadesSuministro (cantidad) VALUES ('{$this->cantidad}')";
         $result = $pdo->prepare($query);
         return $result->execute();
     }
@@ -44,7 +44,7 @@ class UnidadesSuministro {
         $result = $pdo->query($query);
         $rows = [];
         foreach ($result->fetchAll() as $row) {
-            $rows[] = new UnidadesSuministro($row['idUnidades'], $row['cantidad']);
+            $rows[] = new UnidadesSuministro($row['cantidad'],$row['idUnidades']);
         }
         return $rows;
     }      
@@ -54,17 +54,17 @@ class UnidadesSuministro {
      * @param int $idUnidades
      * @return unidadesSuministro list
      */
-    function selectUnidadesSuministro($id = 0) {
+    function selectUnidadesSuministro($idUnidades = 0) {
         $query = "SELECT * FROM unidadesSuministro";
-        if ($id) {
-            $query .= " where idUnidades = '$id'";
+        if ($idUnidades) {
+            $query .= " where idUnidades = '$idUnidades'";
         }
         $pdo = new Connection();
         $pdo = $pdo->open();
         $result = $pdo->query($query);
         $rows = [];
         foreach ($result->fetchAll() as $row) {
-            $rows[] = new UnidadesSuministro($row['idUnidades'], $row['cantidad']);
+            $rows[] = new UnidadesSuministro($row['cantidad'],$row['idUnidades']);
         }
         return $rows;
     }      
@@ -86,7 +86,7 @@ class UnidadesSuministro {
      * @param int $idUnidades
      * @return result of deletion
      */
-    function deleteUnidadesSuministro($idUnidades){
+    function deleteUnidadesSuministro($idUnidades =""){
         $pdo = new Connection();
         //delete unidades de suministro with idUnidades = $idUnidades from unidadesSuministro table
         $queryDelete = "DELETE FROM unidadesSuministro WHERE idUnidades = '{$idUnidades}'";        
@@ -105,7 +105,7 @@ class UnidadesSuministro {
         $result = $pdo->query($query);
         $rows = [];
         foreach ($result->fetchAll() as $row) {
-            $rows[] = new UnidadesSuministro($row['Unidades'], $row['cantidad']);
+            $rows[] = new UnidadesSuministro($row['cantidad'], $row['idUnidades']);
         }
         return $rows;
     }

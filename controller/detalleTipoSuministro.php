@@ -1,9 +1,13 @@
 <?php
-
 include 'model/TipoSuministro.php';
+include 'model/CategoriaSuministro.php';
 
-$tSuministroId = $_POST['idTipoSuministro'];
-$tSuministro = new TipoSuministro();
-$tSelect = $tSuministro->selectTipoSuministro($tSuministroId);
-$tSuministro = $tSelect[0];
-include "view/singleTipoSuministro.php";
+$tSuministroId = $_GET['idTipoSuministro'];
+$TipoSuministro = new TipoSuministro();
+
+    $selectTipoSuministro = $TipoSuministro->selectTipoSuministro($tSuministroId);
+    $TipoSuministro = $selectTipoSuministro[0];
+    //Select de Categoria de Suministro
+    $CategoriaSuministro = new CategoriaSuministro();
+    $allCategoriaSuministro = $CategoriaSuministro->selectAllTipoSuministroCategoriaSuministro();
+    include "view/detalleTipoSuministro.php";

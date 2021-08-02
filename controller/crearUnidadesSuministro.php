@@ -1,22 +1,23 @@
+<!--Controlador para crear Unidades de Suministro.-->
 <?php
 
 include "model/UnidadesSuministro.php";
 
-$lastUnidades = new UnidadesSuministro();
-$lastId = $lastUnidades->selectLast();
-$newId = (int) $lastId[0]->id;
-$newId++;
-
 if ($_POST) {
-    $newUnidades = new UnidadesSuministro($newId, (int)$_POST['cantidad']);
-    if ($newUnidades->insertUnidadesSuministro()) {
-        $unidadesSuministro = $newUnidades->selectUnidadesSuministro($newUnidades->id);
-        $unidadesSuministro = $unidadesSuministro[0];
-        include "view/singleUnidadesSuministro.php";
+    $form = new UnidadesSuministro($_POST['cantidad']);
+    if ($form->insertUnidadesSuministro()) {
+        $allUnidadesSum = $form->selectAllUnidadesSuministro();
+        include "view/verAllUnidadesSuministro.php";
     } else {
-        $msgError = "ERROR creando item de Unidades Suministro.";
-        include "view/newUnidadesSuministro.php";
+        $msgError = "ERROR creando el Tipo de Suministro.";
+        //Select de categoria
+        $CategoriaSuministro = new CategoriaSuministro();
+        $allCategoriaSuministro = $CategoriaSuministro->selectAllCategoriaSuministro();
+        include "view/crearUnidadesSuministro.php";
     }
 } else {
-    include "view/newUnidadesSuministro.php";
+    //Select de categoria
+    $CategoriaSuministro = new CategoriaSuministro();
+    $allCategoriaSuministro = $CategoriaSuministro->selectAllCategoriaSuministro();
+    include 'view/crearUnidadesSuministro.php';
 }

@@ -1,19 +1,20 @@
+<!--Controlador para actualizar las Unidades de Suministro.-->
 <?php
 include "model/UnidadesSuministro.php";
 
 if ($_POST) {
-    $myUnidades = new UnidadesSuministro((int)$_POST['idUnidades'], (int)$_POST['cantidad']);
-    if ($myUnidades->updateUnidadesSuministro()){
-        include "view/sucessEditUnidadesSuministro.php";
-    } else {
-       $msgError = "ERROR editando el item de Unidades de Suministro.";
-       include "view/updateUnidadesSuministro.php"; 
+    $sUnidadesSum = new UnidadesSuministro($_POST['idUnidades'],$_POST['cantidad']);
+    if ($sUnidadesSum->updateSuministro()){
+        $msg= "Se actualizó la unidad de suministro.";
+        $selectUnidadesSum = $sUnidadesSum->selectUnidadesSuministro($_POST['idUnidades']);
+        $sUnidadesSum = $selectUnidadesSum[0];
+        include "view/verDetalleUnidadesSuministro.php";
     }    
+    
 } else {
-    $myUnidadesId = (int) $_GET['idCategoria'];
-    $viewUnidades = new UnidadesSuministro();
-    $selectUnidades = $viewUnidades->selectUnidadesSuministro($myUnidadesId);
-    $viewUnidades = $selectUnidades[0];
-    $myUnidades = new UnidadesSuministro($viewUnidades->idUnidades, $viewUnidades->cantidad);
-    include "view/updateUnidadesSuministro.php";
+    $sUnidadesSum = new UnidadesSuministro();
+    $selectUnidadesSum = $sUnidadesSum->selectUnidadesSuministro($_GET['idUnidades']);
+    $sUnidadesSum = $selectUnidadesSum[0];
+    include "view/actualizarUnidadesSuministro.php";
 }
+
