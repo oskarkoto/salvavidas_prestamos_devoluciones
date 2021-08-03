@@ -7,11 +7,17 @@
   if ($TipoSuministro->deleteTipoSuministro($idTipoSuministro)){
     $msg = "EXITO borrando el Suministro.";
     $allTipoSuministro = $TipoSuministro->selectAllTipoSuministro();
-      include 'view/verAllTipoSuministro.php';
+    //Categoria de Suministro
+    $CategoriaSuministro = new CategoriaSuministro();
+    $allCategoriaSuministro = $CategoriaSuministro->selectAllCategoriaSuministro();
+    //Select Unidades de Suministro
+    $UnidadesSuministro = new UnidadesSuministro();
+    $allUnidadesSuministro = $UnidadesSuministro->selectAllUnidadesSuministro();       
+    include 'view/verAllTipoSuministro.php';
   } else {
      $msgError = "ERROR borrando el Suministro.";
-     $allTipoSuministro = $TipoSuministro->selectAllTipoSuministro();
-      include 'view/verAllTipoSuministro.php';
+     $allTipoSuministro = $TipoSuministro->selectAllTipoSuministro(); 
+     include 'view/verAllTipoSuministro.php';
   }    
 
 

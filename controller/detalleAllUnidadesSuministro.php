@@ -3,4 +3,4 @@ include 'model/UnidadesSuministro.php';
 
     $UnidadesSuministro = new UnidadesSuministro();
     $allUnidadesSuministro = $UnidadesSuministro->selectAllUnidadesSuministro();
-    include 'view/detalleAllUnidadesSuministro.php';
+    include 'view/verAllUnidadesSuministro.php';

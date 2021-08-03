@@ -1,6 +1,5 @@
 <!--Controlador para crear un Tipo de Suministro.-->
 <?php
-
 include 'model/TipoSuministro.php';
 
 if ($_POST) {
@@ -13,6 +12,9 @@ if ($_POST) {
         //Select de categoria
         $CategoriaSuministro = new CategoriaSuministro();
         $allCategoriaSuministro = $CategoriaSuministro->selectAllCategoriaSuministro();
+        //Select de Unidades de Suministro
+        $UnidadesSuministro = new UnidadesSuministro();
+        $allUnidadesSuministro = $UnidadesSuministro->selectAllUnidadesSuministro();
         include "view/verDetalleTipoSuministro.php";
     } else {
         $msgError = "ERROR creando el Tipo de Suministro.";
@@ -22,5 +24,8 @@ if ($_POST) {
     //Select de categoria
     $CategoriaSuministro = new CategoriaSuministro();
     $allCategoriaSuministro = $CategoriaSuministro->selectAllCategoriaSuministro();
+    //Select de Unidades de Suministro
+    $UnidadesSuministro = new UnidadesSuministro();
+    $allUnidadesSuministro = $UnidadesSuministro->selectAllUnidadesSuministro();    
     include 'view/crearTipoSuministro.php';
 }

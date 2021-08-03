@@ -1,5 +1,4 @@
 <?php
-
 include 'model/Suministro.php';
 
 
@@ -14,4 +13,4 @@ include 'model/Suministro.php';
     //Select de Estado en Inventario
     $EstadoInventario = new EstadoInventario();
     $allEstadoInventario = $EstadoInventario->seleccionarAllEstadoInventario();
-    include 'view/detalleAllSuministro.php';
+    include 'view/verAllSuministro.php';

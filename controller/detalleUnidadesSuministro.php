@@ -1,5 +1,4 @@
 <?php
-
 include 'model/UnidadesSuministro.php';
 
 $unidadesSuministroId = (int) $_POST['idUnidades'];

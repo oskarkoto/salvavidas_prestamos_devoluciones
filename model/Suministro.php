@@ -1,7 +1,9 @@
 <?php
 
 include_once "model/Connection.php";
-
+include_once "model/TipoSuministro.php";
+include_once "model/CondicionActual.php";
+include_once "model/EstadoInventario.php";
 /**
  * Manage Suministro
  */

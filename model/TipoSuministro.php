@@ -26,9 +26,9 @@ class TipoSuministro {
      * @param string $marcaTipoSuministro
      * @param int $existenciaMinima
      */
-    public function __construct($id = "", $nombre = "", $descripcion = "", $idCategoria = 0, $idUnidades = 0, 
+    public function __construct($idTipoSuministro = "", $nombre = "", $descripcion = "", $idCategoria = 0, $idUnidades = 0, 
     $marca = "", $existencia = 0) {
-        $this->idTipoSuministro = $id;
+        $this->idTipoSuministro = $idTipoSuministro;
         $this->nombreTipoSuministro = $nombre;
         $this->descripcionTipoSuministro = $descripcion;
         $this->idCategoria = $idCategoria;
@@ -44,7 +44,7 @@ class TipoSuministro {
     function insertTipoSuministro() {
         $pdo = new Connection();
         $pdo = $pdo->open();
-        $query = "INSERT INTO tipoSuministro (idTipoSuministro, nombreTipoSuministro, descripcionTipoSuministro,"
+        $query = "INSERT INTO tiposuministro (idTipoSuministro, nombreTipoSuministro, descripcionTipoSuministro,"
         . "idCategoria, idUnidades, marcaTipoSuministro, existenciaMinima) VALUES "
         . "('{$this->idTipoSuministro}','{$this->nombreTipoSuministro}','{$this->descripcionTipoSuministro}','{$this->idCategoria}',"
         . "'{$this->idUnidades}','{$this->marcaTipoSuministro}','{$this->existenciaMinima}')";
@@ -58,7 +58,7 @@ class TipoSuministro {
      * @return TipoSuministro list
      */
     function selectAllTipoSuministro() {
-        $query = "SELECT * FROM tipoSuministro";
+        $query = "SELECT * FROM tiposuministro";
         $pdo = new Connection();
         $pdo = $pdo->open();
         $result = $pdo->query($query);
@@ -76,10 +76,10 @@ class TipoSuministro {
      * @param int $idTipoSuministro
      * @return tipoSuministro list
      */
-    function selectTipoSuministro($id = "") {
-        $query = "SELECT * FROM tipoSuministro";
-        if ($id) {
-            $query .= " where idTipoSuministro = '$id'";
+    function selectTipoSuministro($idTipoSuministro = "") {
+        $query = "SELECT * FROM tiposuministro";
+        if ($idTipoSuministro) {
+            $query .= " where idTipoSuministro = '$idTipoSuministro'";
         }
         $pdo = new Connection();
         $pdo = $pdo->open();
@@ -91,61 +91,17 @@ class TipoSuministro {
             $row['marcaTipoSuministro'],$row['existenciaMinima']);
         }
         return $rows;
-    }
-    
-    /**
-     * Get Categoria de Tipo de suministro from DB
-     * @param int $idCategoria
-     * @return CategoriaSuministro list
-     */
-    function selectCategoriaTipoSuministro($myCategoriaId = 0) {
-        $query = "SELECT * FROM categoriaSuministro";
-        if ($myCategoriaId) {
-            $query .= " where idCategoria = '$myCategoriaId'";
-        }
-        $pdo = new Connection();
-        $pdo = $pdo->open();
-        $result = $pdo->query($query);
-        $rowsCat = [];
-        foreach ($result->fetchAll() as $rowCat) {
-            $rowsCat[] = new CategoriaSuministro($rowCat['idCategoria'], $rowCat['descripcionCategoria']);
-        }
-        return $rowsCat;
-    }
-    
-    /**
-     * Get UnidadesSuministro de Tipo de Suministro from DB
-     * @param int $idUnidades
-     * @return UnidadesSuministro list
-     */
-    function selectUnidadesTipoSuministro($myUnidadesId = 0) {
-        $query = "SELECT * FROM unidadesSuministro";
-        if ($myUnidadesId) {
-            $query .= " where idCategoria = '$myUnidadesId'";
-        }
-        $pdo = new Connection();
-        $pdo = $pdo->open();
-        $result = $pdo->query($query);
-        $rowsUnidades = [];
-        foreach ($result->fetchAll() as $rowUnidades) {
-            $rowsUnidades[] = new CategoriaSuministro($rowUnidades['idUnidades'], $rowUnidades['cantidad']);
-        }
-        return $rowsUnidades;
-    }      
+    }   
     
     /**
      * Update tipoSuministro information
      * @return result of update
      */
     function updateTipoSuministro(){
-        $query = "UPDATE tipoSuministro "
-                . "SET nombreTipoSuministro='{$this->nombreTipoSuministro},'"
-                . "descripcionTipoSuministro='{$this->descripcionTipoSuministro}', idCategoria='{$this->idCategoria},"
-                . "idUnidades='{$this->idUnidades}', marcaTipoSuministro='{$this->marcaTipoSuministro}, existenciaMinima='{$this->existenciaMinima},"
-                . " where idTipoSuministro='{$this->idTipoSuministro}'";
+        $sql = "UPDATE tiposuministro SET nombreTipoSuministro = '{$this->nombreTipoSuministro}', descripcionTipoSuministro = '{$this->descripcionTipoSuministro}', idCategoria='{$this->idCategoria}', idUnidades='{$this->idUnidades}', marcaTipoSuministro='{$this->marcaTipoSuministro}', existenciaMinima='{$this->existenciaMinima}' WHERE idTipoSuministro ='{$this->idTipoSuministro}'";
         $pdo = new Connection();
-        $results = $pdo->open()->query($query);
-        return $results->execute();
+        $result = $pdo->open()->query($sql);
+        return $result;
     }
     
     /**
@@ -153,11 +109,12 @@ class TipoSuministro {
      * @param int $idTipoSuministro
      * @return result of deletion
      */
-    function deleteTipoSuministro($idTipo){
+    function deleteTipoSuministro($idTipoSuministro){
         $pdo = new Connection();
         //delete tipo de suministro with idTipoSuministro = $idTipo from tipoSuministro table
-        $queryDelete = "DELETE FROM tipoSuministro WHERE idTipoSuministro = '{$idTipo}'";        
+        $queryDelete = "DELETE FROM tipoSuministro WHERE idTipoSuministro = '{$idTipoSuministro}'";        
         $resultDel = $pdo->open()->query($queryDelete);
         return $resultDel->execute();
     }
 }
+

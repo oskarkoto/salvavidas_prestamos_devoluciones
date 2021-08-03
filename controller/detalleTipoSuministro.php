@@ -1,6 +1,5 @@
 <?php
 include 'model/TipoSuministro.php';
-include 'model/CategoriaSuministro.php';
 
 $tSuministroId = $_GET['idTipoSuministro'];
 $TipoSuministro = new TipoSuministro();
@@ -9,5 +8,8 @@ $TipoSuministro = new TipoSuministro();
     $TipoSuministro = $selectTipoSuministro[0];
     //Select de Categoria de Suministro
     $CategoriaSuministro = new CategoriaSuministro();
-    $allCategoriaSuministro = $CategoriaSuministro->selectAllTipoSuministroCategoriaSuministro();
-    include "view/detalleTipoSuministro.php";
+    $allCategoriaSuministro = $CategoriaSuministro->selectAllCategoriaSuministro();
+    //Select Unidades de Suministro
+    $UnidadesSuministro = new UnidadesSuministro();
+    $allUnidadesSuministro = $UnidadesSuministro->selectAllUnidadesSuministro();
+    include "view/verDetalleTipoSuministro.php";

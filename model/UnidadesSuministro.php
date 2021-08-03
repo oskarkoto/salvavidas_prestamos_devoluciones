@@ -38,7 +38,7 @@ class UnidadesSuministro {
      * @return unidadesSuministro list
      */
     function selectAllUnidadesSuministro() {
-        $query = "SELECT * FROM unidadesSuministro";
+        $query = "SELECT * FROM unidadessuministro";
         $pdo = new Connection();
         $pdo = $pdo->open();
         $result = $pdo->query($query);
@@ -55,7 +55,7 @@ class UnidadesSuministro {
      * @return unidadesSuministro list
      */
     function selectUnidadesSuministro($idUnidades = 0) {
-        $query = "SELECT * FROM unidadesSuministro";
+        $query = "SELECT * FROM unidadessuministro";
         if ($idUnidades) {
             $query .= " where idUnidades = '$idUnidades'";
         }
@@ -74,11 +74,10 @@ class UnidadesSuministro {
      * @return result of update
      */
     function updateUnidadesSuministro(){
-        $query = "UPDATE unidadesSuministro "
-                . "SET cantidad='{$this->cantidad}' where idUnidades='{$this->idUnidades}'";
+        $sql = "UPDATE unidadessuministro SET cantidad = '{$this->cantidad}' WHERE idUnidades = '{$this->idUnidades}'";
         $pdo = new Connection();
-        $results = $pdo->open()->query($query);
-        return $results->execute();
+        $result = $pdo->open()->query($sql);
+        return $result;
     }
     
     /**
@@ -89,7 +88,7 @@ class UnidadesSuministro {
     function deleteUnidadesSuministro($idUnidades =""){
         $pdo = new Connection();
         //delete unidades de suministro with idUnidades = $idUnidades from unidadesSuministro table
-        $queryDelete = "DELETE FROM unidadesSuministro WHERE idUnidades = '{$idUnidades}'";        
+        $queryDelete = "DELETE FROM unidadessuministro WHERE idUnidades = '{$idUnidades}'";        
         $resultDel = $pdo->open()->query($queryDelete);
         return $resultDel->execute();
     }
@@ -99,7 +98,7 @@ class UnidadesSuministro {
      * @return UnidadesSuministro list
      */
     function selectLast() {
-        $query = "SELECT * FROM unidadesSuministro ORDER BY idUnidades DESC LIMIT 1";
+        $query = "SELECT * FROM unidadessuministro ORDER BY idUnidades DESC LIMIT 1";
         $pdo = new Connection();
         $pdo = $pdo->open();
         $result = $pdo->query($query);
