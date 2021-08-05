@@ -1,3 +1,4 @@
+<!--Controlador para detallar todos los Tipos de Suministros.-->
 <?php
 include 'model/TipoSuministro.php';
 

@@ -1,3 +1,4 @@
+<!--Modelo de Categoria de Suministro.-->
 <?php
 
 include_once "model/Connection.php";

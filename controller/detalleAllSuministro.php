@@ -1,6 +1,6 @@
+<!--Controlador para detallar todos los Suministros.-->
 <?php
 include 'model/Suministro.php';
-
 
     $Suministro = new Suministro();
     $allSuministro = $Suministro->selectAllSuministro();

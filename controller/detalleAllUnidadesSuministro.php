@@ -1,3 +1,4 @@
+<!--Controlador para detallar todas las Unidades de Suministros.-->
 <?php
 include 'model/UnidadesSuministro.php';
 

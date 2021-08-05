@@ -1,3 +1,4 @@
+<!--Modelo de Suministro.-->
 <?php
 
 include_once "model/Connection.php";

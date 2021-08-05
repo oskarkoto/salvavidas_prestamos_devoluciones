@@ -1,3 +1,4 @@
+<!--Modelo de Tipo de Suministro.-->
 <?php
 include_once "model/Connection.php";
 include_once "model/CategoriaSuministro.php";

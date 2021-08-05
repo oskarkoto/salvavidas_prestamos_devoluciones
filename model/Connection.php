@@ -1,3 +1,4 @@
+<!--Modelo de Connection.-->
 <?php
 
 include "model/config.php";

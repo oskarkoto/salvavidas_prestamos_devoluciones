@@ -1,8 +1,6 @@
 <!--Controlador para crear Suministro.-->
 <?php
-
 include 'model/Suministro.php';
-
 
 if ($_POST) {
     $form = new Suministro($_POST['idSuministro'], $_POST['idTipoSuministro'],

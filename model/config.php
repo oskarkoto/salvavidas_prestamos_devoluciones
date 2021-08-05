@@ -1,3 +1,4 @@
+<!--Modelo de Config.-->
 <?php
 
 define("DB_NAME", "salvavidas");

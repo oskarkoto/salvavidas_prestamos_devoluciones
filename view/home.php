@@ -1,3 +1,4 @@
+<!-- Vista Home -->
 <div class="container-fluid" align="center" id="menuPrincipal">
     <div class="card">
         <div class="row">

@@ -1,3 +1,4 @@
+<!--Controlador para detallar un Suministro.-->
 <?php
 include 'model/Suministro.php';
 
