@@ -1,6 +1,7 @@
 <!--Modelo de prestamo de suministro.-->
 <?php
 include_once "model/Connection.php";
+include_once "model/Prestamo.php";
 
 class PrestamoSuministro {
     

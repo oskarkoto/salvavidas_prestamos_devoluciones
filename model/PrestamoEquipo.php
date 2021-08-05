@@ -1,6 +1,7 @@
 <!--Modelo de prestamo de equipo. -->
 <?php
 include_once "model/Connection.php";
+include_once "model/Prestamo.php";
 
 class PrestamoEquipo {
     

@@ -1,6 +1,7 @@
 <!--Modelo de reporte.-->
 <?php
 include_once "model/Connection.php";
+include_once "model/TipoReporte.php";
 
 class Reporte {
     

@@ -1,6 +1,7 @@
 <!--Modelo de devolucion.-->
 <?php
 include_once "model/Connection.php";
+include_once "model/EstadoDevolucionGeneral.php";
 
 class Devolucion {
     
