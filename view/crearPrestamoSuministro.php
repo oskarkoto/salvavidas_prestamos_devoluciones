@@ -25,9 +25,9 @@
             <div class="col-md-12 col-xl-12 col-sm-12" >
                 <label for="idSuministro" class='label_form'>Suministro:  </label>
                 <select class="col-sm-2 col-form-label" name="idSuministro" id="input_form" required>
-                <?php foreach ($allSuministro as $value) { ?>
-                    <option value="<?php echo $value->idSuministro; ?>"><?php echo $value->idSuministro; ?></option>
-                <?php } ?>
+                <?php foreach ($allSuministro as $suministro) {  foreach($allTipoSuministro as $tipo) { if ($suministro->idTipoSuministro == $tipo->idTipoSuministro) { ?>
+                    <option value="<?php echo $suministro->idSuministro; ?>"><?php echo $tipo->nombreTipoSuministro; ?></option>
+                    <?php } } } ?>
                 </select>
             </div>
             <div class="dropdown-divider" id="dropdown-divider-form"></div>

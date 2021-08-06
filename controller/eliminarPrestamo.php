@@ -2,21 +2,18 @@
 <?php
 include "model/Prestamo.php";
 
-if (isset($_GET['idPrestamo'])) {
-    $viewPrestamo = new Prestamo();    
-    if ($viewPrestamo->eliminarPrestamo($idPrestamo)){
-        $msg = "EXITO borrando el Préstamo.";
-        include "view/VerAllPrestamo.php";
-    } else {
-       $msgError = "ERROR borrando el Préstamo.";
-       include "view/detallePrestamo.php"; 
-    }    
+$idPrestamo = $_GET['idPrestamo'];
+$Prestamo = new Prestamo();    
+if ($Prestamo->eliminarPrestamo($idPrestamo)){
+  $msg = "EXITO borrando el Prestamo.";
+  $allPrestamo = $Prestamo->seleccionarAllPrestamo();
+  $Tecnico = new Tecnico();
+  $allTecnico = $Tecnico->seleccionarAllTecnico();
+    include 'view/verAllPrestamo.php';
 } else {
-    $idPrestamo = $_GET['idPrestamo'];
-    $viewPrestamo = new Prestamo(); 
-    $selectPrestamo = $viewPrestamo->seleccionarPrestamo($idPrestamo);
-    $viewPrestamo = $selectPrestamo[0];
-    $myPrestamo = new Prestamo($viewPrestamo->idPrestamo, $viewPrestamo->idTecnico, 
-        $viewPrestamo->fechaPrestamo, $viewPrestamo->fechaEsperadaDevolucion,$viewPrestamo->cliente);
-    include "view/detallePrestamo.php";
-}
+   $msgError = "ERROR borrando el Prestamo.";
+   $allPrestamo = $Prestamo->seleccionarAllPrestamo();
+   $Tecnico = new Tecnico();
+   $allTecnico = $Tecnico->seleccionarAllTecnico();
+    include 'view/verAllPrestamo.php';
+}    

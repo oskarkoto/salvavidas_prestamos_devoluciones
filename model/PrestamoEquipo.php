@@ -2,6 +2,9 @@
 <?php
 include_once "model/Connection.php";
 include_once "model/Prestamo.php";
+include_once "model/Equipo.php";
+include_once "model/TipoEquipo.php";
+include_once "model/EstadoDevolucion.php";
 
 class PrestamoEquipo {
     
@@ -12,7 +15,7 @@ class PrestamoEquipo {
 
 
     public function __construct($idPrestamoEquipo = 0, $idPrestamo = 0,$idEquipo = 0,$idEstadoDevolucion= 0) {
-        $this->idPrestamoEquipo = $idPrestamo;
+        $this->idPrestamoEquipo = $idPrestamoEquipo;
         $this->idPrestamo = $idPrestamo;
         $this->idEquipo = $idEquipo;
         $this->idEstadoDevolucion = $idEstadoDevolucion;
@@ -82,7 +85,7 @@ class PrestamoEquipo {
     function eliminarPrestamoEquipo($idPrestamoEquipo){
         $pdo = new Connection();
         $queryDelete = "DELETE FROM prestamoequipo WHERE idPrestamoEquipo = '{$idPrestamoEquipo}'";        
-        $resultDel = $pdo->open()->query($queryDelete);
-        return $resultDel->execute();
+        $pdo = $pdo->open();
+        return $pdo->query($queryDelete);
     }
 }

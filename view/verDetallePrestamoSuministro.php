@@ -16,10 +16,18 @@
             <strong>ID del Préstamo: </strong> <?php echo $value->idPrestamo; ?></p>
                     <div class="dropdown-divider"></div>
         <p class="card-subtitle mb-2" id="card-subtitle">
-            <strong> ID del Suministro: </strong><?php echo $value->idSuministro; ?></p>
+            <strong> Suministro: </strong>
+            <?php foreach ($allSuministro as $suministro) {  foreach($allTipoSuministro as $tipo) { if ($value->idSuministro == $suministro->idSuministro && $suministro->idTipoSuministro == $tipo->idTipoSuministro) { ?>
+                <td scope="row"><?php echo $tipo->nombreTipoSuministro; ?></td>
+            <?php } } } ?>
+        </p>
                 <div class="dropdown-divider"></div>    
         <p class="card-subtitle mb-2" id="card-subtitle">
-            <strong>Estado de devolución: </strong> <?php echo $value->idEstadoDevolucion; ?></p>
+            <strong>Estado de devolución: </strong> 
+            <?php foreach ($allEstadoDevolucion as $estado) { if ($value->idEstadoDevolucion  == $estado->idEstadoDevolucion) {?>
+                <?php echo $estado->descripcionEstadoDevolucion; ?>
+            <?php } } ?>
+        </p>
                 <div class="dropdown-divider"></div>
     </div>    
     <div class="card-dfooter">

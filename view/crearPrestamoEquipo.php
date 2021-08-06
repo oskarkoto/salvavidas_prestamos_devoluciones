@@ -25,9 +25,9 @@
             <div class="col-md-12 col-xl-12 col-sm-12" >
                 <label for="idEquipo" class='label_form'>Equipo:  </label>
                 <select class="col-sm-2 col-form-label" name="idEquipo" id="input_form" required>
-                <?php foreach ($allEquipo as $value) { ?>
-                    <option value="<?php echo $value->idEquipo; ?>"><?php echo $value->idEquipo; ?></option>
-                <?php } ?>
+                    <?php foreach ($allEquipo as $equipo) { foreach($allTipoEquipo as $tipo) { if ($equipo->idTipoEquipo == $tipo->idTipoEquipo) { ?>
+                        <option value="<?php echo $equipo->idEquipo; ?>"> <?php echo $tipo->nombreTipoEquipo; ?></option>
+                    <?php } } } ?>
                 </select>
             </div>
             <div class="dropdown-divider" id="dropdown-divider-form"></div>
@@ -38,7 +38,8 @@
                     <option value="<?php echo $value->idEstadoDevolucion; ?>"><?php echo $value->descripcionEstadoDevolucion; ?></option>
                 <?php } ?>
                 </select>
-            </div>            <div class="dropdown-divider" id="dropdown-divider-form"></div>
+            </div>            
+            <div class="dropdown-divider" id="dropdown-divider-form"></div>
         </div>
         <div class="form-button" align="center" >
             <button type="submit" class="btn btn-primary boton-form" id="submit-button">Agregar Préstamo de Equipo</button>

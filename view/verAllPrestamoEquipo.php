@@ -41,8 +41,12 @@
             <tr>
                 <td><?php echo $value->idPrestamoEquipo; ?></td>
                 <td><?php echo $value->idPrestamo; ?></td>
-                <td><?php echo $value->idEquipo; ?></td>
-                <td><?php echo $value->idEstadoDevolucion; ?></td>
+                <?php foreach ($allEquipo as $equipo) { foreach($allTipoEquipo as $tipo) { if ($value->idEquipo == $equipo->idEquipo && $equipo->idTipoEquipo == $tipo->idTipoEquipo) {?>
+                <td><?php echo $tipo->nombreTipoEquipo; ?></td>
+                <?php } } } ?>
+                <?php foreach ($allEstadoDevolucion as $estado) { if ($value->idEstadoDevolucion  == $estado->idEstadoDevolucion) {?>
+                <td><?php echo $estado->descripcionEstadoDevolucion; ?></td>
+                <?php } } ?>
                 <td>
                 <a class="ver" id="ver" href="?c=detallePrestamoEquipo&idPrestamoEquipo=<?php echo $value->idPrestamoEquipo; ?>">
                 <!-- Icono Info -->

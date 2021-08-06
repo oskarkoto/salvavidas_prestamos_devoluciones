@@ -7,7 +7,7 @@
             <h2>Sistema de Gestión de Préstamos y Devoluciones</h2>
         </div>      
         <div class="container" id="OpcionesMP">
-            <a href="?c=detalleAllInventario" class="card-link">Administrar Inventario</a>        
+            <a href="?c=detalleAllEquipo" class="card-link">Administrar Inventario</a>        
         </div>       
         <div class="container" id="OpcionesMP">
             <a href="?c=detalleAllTecnico" class="card-link">Administrar Técnicos</a>

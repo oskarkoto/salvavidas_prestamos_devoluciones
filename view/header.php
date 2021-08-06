@@ -27,10 +27,11 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="?c=detalleAllTecnico">Administrar Técnicos</a>
-          <a class="dropdown-item" href="?c=detalleAllInventario">Administrar Inventario</a>
+          <a class="dropdown-item" href="?c=detalleAllEquipo">Administrar Inventario</a>
         </div>
       </li>
     </ul>
   </div>
 </nav>
 <!--/Header-->
+

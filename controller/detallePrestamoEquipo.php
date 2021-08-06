@@ -4,7 +4,14 @@ include 'model/PrestamoEquipo.php';
 
 $prestamoEquipoId = $_GET['idPrestamoEquipo'];
 $sPrestamoEquipo = new PrestamoEquipo();
-$selectPrestamoEquipo = $sPrestamoEquipo->seleccionarPrestamoEquipo($prestamoEquipoId);
-$sPrestamoEquipo = $selectPrestamoEquipo[0];
-
-include 'view/verDetallePrestamoEquipo.php';
+        $selectPrestamoEquipo = $sPrestamoEquipo->seleccionarPrestamoEquipo($prestamoEquipoId);
+        $sPrestamoEquipo = $selectPrestamoEquipo[0];
+        $Equipo = new Equipo();
+        $allEquipo = $Equipo->seleccionarAllEquipo();
+        
+        $EstadoDevolucion = new EstadoDevolucion();
+        $allEstadoDevolucion = $EstadoDevolucion->seleccionarAllEstadoDevolucion();
+        
+        $TipoEquipo = new TipoEquipo();
+        $allTipoEquipo = $TipoEquipo->seleccionarAllTipoEquipo();
+        include 'view/verDetallePrestamoEquipo.php';

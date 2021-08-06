@@ -13,8 +13,11 @@
             <strong>ID: </strong> <?php echo $value->idPrestamo; ?></p>
                 <div class="dropdown-divider"></div>
         <p class="card-subtitle mb-2" id="card-subtitle">
-            <strong>ID Técnico: </strong> <?php echo $value->idTecnico; ?></p>
-                    <div class="dropdown-divider"></div>
+        <strong>Técnico: </strong>
+        <?php foreach ($allTecnico as $tecnico) { if ($tecnico->idTecnico == $value->idTecnico){ ?>
+             <?php echo $tecnico->primerNombre; ?> <?php echo $tecnico->primerApellido; ?></p>
+        <?php } } ?>
+                <div class="dropdown-divider"></div>
         <p class="card-subtitle mb-2" id="card-subtitle">
             <strong> Fecha del préstamo: </strong><?php echo $value->fechaPrestamo; ?></p>
                 <div class="dropdown-divider"></div>    

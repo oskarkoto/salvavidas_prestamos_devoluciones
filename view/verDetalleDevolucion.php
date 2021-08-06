@@ -19,9 +19,15 @@
             <strong> Fecha Real de Devolución: </strong><?php echo $value->fechaRealDevolucion; ?></p>
                 <div class="dropdown-divider"></div>    
         <p class="card-subtitle mb-2" id="card-subtitle">
-            <strong>Estado de Devolución General: </strong> <?php echo $value->idEstadoDevolucionGeneral; ?></p>
+            <strong>Estado de Devolución General: </strong> 
+            <?php foreach ($allEstadoDevGnrl as $valor2) {  
+                if ($value->idEstadoDevolucionGeneral == $valor2->idEstadoDevolucionGeneral) { ?>
+                    <?php echo $valor2->descripcionEstadoDevolucionGeneral	; ?>
+            <?php } } ?>
+        </p>
                 <div class="dropdown-divider"></div>
     </div>    
+    
     <div class="card-dfooter">        
         <a href="?c=eliminarDevolucion&idDevolucion=<?php echo $value->idDevolucion; ?>" class="card-link">Eliminar</a>
         <a href="?c=detalleAllDevolucion" class="card-link">Volver</a>

@@ -2,6 +2,8 @@
 <?php
 include 'model/Prestamo.php';
 
-$Prestamo = new Prestamo();
-$allPrestamo = $Prestamo->seleccionarAllPrestamo();
+    $Prestamo = new Prestamo();
+    $allPrestamo = $Prestamo->seleccionarAllPrestamo();
+    $Tecnico = new Tecnico();
+    $allTecnico = $Tecnico->seleccionarAllTecnico();
 include 'view/VerAllPrestamo.php';

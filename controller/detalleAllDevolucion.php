@@ -4,4 +4,9 @@ include 'model/Devolucion.php';
 
 $Devolucion = new Devolucion();
 $allDevolucion = $Devolucion->seleccionarAllDevolucion();
-include 'view/VerAllDevolucion.php';
+
+    $Prestamo = new Prestamo();
+    $allPrestamo = $Prestamo->seleccionarAllPrestamo();
+    $EstadoDevGnrl = new EstadoDevolucionGen();
+    $allEstadoDevGnrl = $EstadoDevGnrl->seleccionarAllEstadoDevolucionGen();
+    include 'view/VerAllDevolucion.php';

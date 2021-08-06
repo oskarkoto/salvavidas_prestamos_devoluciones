@@ -1,6 +1,7 @@
 <!--Modelo de prestamo.-->
 <?php
 include_once "model/Connection.php";
+include_once "model/Tecnico.php";
 
 class Prestamo {
     
@@ -83,7 +84,7 @@ class Prestamo {
     function eliminarPrestamo($idPrestamo){
         $pdo = new Connection();
         $queryDelete = "DELETE FROM prestamo WHERE idPrestamo = '{$idPrestamo}'";        
-        $resultDel = $pdo->open()->query($queryDelete);
-        return $resultDel->execute();
+        $pdo = $pdo->open();
+        return $pdo->query($queryDelete);
     }
 }

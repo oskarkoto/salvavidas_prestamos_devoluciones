@@ -1,6 +1,7 @@
 <!--Modelo de devolucion.-->
 <?php
 include_once "model/Connection.php";
+include_once 'model/Prestamo.php';
 include_once "model/EstadoDevolucionGeneral.php";
 
 class Devolucion {
@@ -81,7 +82,7 @@ class Devolucion {
     function eliminarDevolucion($idDevolucion){
         $pdo = new Connection();
         $queryDelete = "DELETE FROM devolucion WHERE idDevolucion = '{$idDevolucion}'";        
-        $resultDel = $pdo->open()->query($queryDelete);
-        return $resultDel->execute();
+        $pdo = $pdo->open();
+        return $pdo->query($queryDelete);
     }
 }

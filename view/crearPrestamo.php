@@ -17,7 +17,7 @@
                 <label for="idTecnico" class='label_form'>Técnico responsable:  </label>
                 <select class="col-sm-2 col-form-label" name="idTecnico" id="input_form" required>
                 <?php foreach ($allTecnico as $value) { ?>
-                    <option value="<?php echo $value->idTecnico; ?>"><?php echo $value->primerNombre; ?>, <?php echo $value->primerApellido; ?></option>
+                    <option value="<?php echo $value->idTecnico; ?>"><?php echo $value->primerNombre; ?> <?php echo $value->primerApellido; ?></option>
                 <?php } ?>
                 </select>
             </div>
@@ -31,6 +31,11 @@
                 <label for="fechaEsperadaDevolucion" class='label_form'>Fecha de Devolución Esperada: </label>
                 <input type="date" class="col-sm-2 col-form-label" name="fechaEsperadaDevolucion" required>
             </div>
+            <div class="dropdown-divider" id="dropdown-divider-form"></div>
+            <div class="col-md-12 col-xl-12 col-sm-12" >
+                <label for="cliente" class='label_form'>Nombre del cliente: </label>
+                <input type="text" class="col-sm-2 col-form-label" id="input_form" name="cliente" placeholder="Nombre del cliente" required>
+            </div>  
             <div class="dropdown-divider" id="dropdown-divider-form"></div>
         </div>
         <div class="form-button" align="center" >

@@ -42,7 +42,10 @@
                 <td><?php echo $value->idDevolucion; ?></td>
                 <td><?php echo $value->idPrestamo; ?></td>
                 <td><?php echo $value->fechaRealDevolucion; ?></td>
-                <td><?php echo $value->idEstadoDevolucionGeneral; ?></td>
+                <?php foreach ($allEstadoDevGnrl as $valor2) {  
+                if ($value->idEstadoDevolucionGeneral == $valor2->idEstadoDevolucionGeneral) { ?>
+                    <td><?php echo $valor2->descripcionEstadoDevolucionGeneral	; ?></td>
+                <?php } } ?>
                 <td>
                 <a class="ver" id="ver" href="?c=detalleDevolucion&idDevolucion=<?php echo $value->idDevolucion; ?>">
                 <!-- Icono Info -->

@@ -4,7 +4,7 @@
 </div>
 <div class="card" id="ListaCompleta">
     <div class="card-title">
-        <h2> DETALLES DE PRESTAMO DE EQUIPO</h2>
+        <h2> DETALLES DE PRESTAMO DE EQUIPO </h2>
     </div>
     <?php
         foreach ($selectPrestamoEquipo as $value) {    ?>
@@ -16,10 +16,17 @@
             <strong>ID del Préstamo: </strong> <?php echo $value->idPrestamo; ?></p>
                     <div class="dropdown-divider"></div>
         <p class="card-subtitle mb-2" id="card-subtitle">
-            <strong> ID del Equipo: </strong><?php echo $value->idEquipo; ?></p>
+            <strong> Equipo: </strong>
+            <?php foreach ($allEquipo as $equipo) { foreach($allTipoEquipo as $tipo) { if ($value->idEquipo == $equipo->idEquipo && $equipo->idTipoEquipo == $tipo->idTipoEquipo) {?>
+                <?php echo $tipo->nombreTipoEquipo; ?>
+            <?php } } } ?> </p>
                 <div class="dropdown-divider"></div>    
         <p class="card-subtitle mb-2" id="card-subtitle">
-            <strong>Estado de devolución: </strong> <?php echo $value->idEstadoDevolucion; ?></p>
+            <strong>Estado de devolución: </strong> 
+            <?php foreach ($allEstadoDevolucion as $estado) { if ($value->idEstadoDevolucion  == $estado->idEstadoDevolucion) {?>
+                <?php echo $estado->descripcionEstadoDevolucion; ?>
+                <?php } } ?>
+        </p>
                 <div class="dropdown-divider"></div>
     </div>    
     <div class="card-dfooter">
@@ -28,3 +35,4 @@
     </div>
     <?php   }  ?>
 </div>
+

@@ -2,21 +2,37 @@
 <?php
 include "model/PrestamoSuministro.php";
 
-if (isset($_GET['idPrestamoSuministro'])) {
-    $viewPrestamoSuministro = new PrestamoSuministro();    
-    if ($viewPrestamoSuministro->eliminarPrestamoSuministro($idPrestamoSuministro)){
-        $msg = "EXITO borrando el Préstamo de suministro.";
-        include "view/VerAllPrestamoSuministro.php";
+$idPrestamoSuministro = $_GET['idPrestamoSuministro'];
+$PrestamoSuministro = new PrestamoSuministro();    
+    if ($PrestamoSuministro->eliminarPrestamoSuministro($idPrestamoSuministro)){
+        $msg = "EXITO borrando el Prestamo de Suministro.";
+        $allPrestamoSuministro = $PrestamoSuministro->seleccionarAllPrestamoSuministro();
+        $Prestamo = new Prestamo();
+        $allPrestamo = $Prestamo->seleccionarAllPrestamo();
+    
+        $Suministro = new Suministro();
+        $allSuministro = $Suministro->selectAllSuministro();
+    
+        $EstadoDevolucion = new EstadoDevolucion();
+        $allEstadoDevolucion = $EstadoDevolucion->seleccionarAllEstadoDevolucion();
+    
+        $TipoSuministro = new TipoSuministro();
+        $allTipoSuministro = $TipoSuministro->selectAllTipoSuministro();
+            include 'view/verAllPrestamoSuministro.php';
     } else {
-       $msgError = "ERROR borrando el Préstamo.";
-       include "view/detallePrestamoSuministro.php"; 
+        $msgError = "ERROR borrando el Prestamo.";
+        $allPrestamoSuministro = $PrestamoSuministro->seleccionarAllPrestamoSuministro();
+        $Prestamo = new Prestamo();
+        $allPrestamo = $Prestamo->seleccionarAllPrestamo();
+    
+        $Suministro = new Suministro();
+        $allSuministro = $Suministro->selectAllSuministro();
+    
+        $EstadoDevolucion = new EstadoDevolucion();
+        $allEstadoDevolucion = $EstadoDevolucion->seleccionarAllEstadoDevolucion();
+    
+        $TipoSuministro = new TipoSuministro();
+        $allTipoSuministro = $TipoSuministro->selectAllTipoSuministro();
+            include 'view/verAllPrestamoSuministro.php';
     }    
-} else {
-    $idPrestamoSuministro = $_GET['idPrestamoSuministro'];
-    $viewPrestamoSuministro = new PrestamoSuministro(); 
-    $selectPrestamoSuministro = $viewPrestamoSuministro->seleccionarPrestamoSuministro($idPrestamoSuministro);
-    $viewPrestamoSuministro = $selectPrestamoSuministro[0];
-    $myPrestamoSuministro = new PrestamoSuministro($viewPrestamoSuministro->idPrestamoSuministro, $viewPrestamoSuministro->idPrestamo, 
-        $viewPrestamoSuministro->idSuministro, $viewPrestamoSuministro->idEstadoDevolucion);
-    include "view/detallePrestamoSuministro.php";
-}
+

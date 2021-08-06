@@ -2,6 +2,9 @@
 <?php
 include_once "model/Connection.php";
 include_once "model/Prestamo.php";
+include_once "model/Suministro.php";
+include_once "model/TipoSuministro.php";
+include_once "model/EstadoDevolucion.php";
 
 class PrestamoSuministro {
     
@@ -81,7 +84,7 @@ class PrestamoSuministro {
     function eliminarPrestamoSuministro($idPrestamoSuministro){
         $pdo = new Connection();
         $queryDelete = "DELETE FROM prestamosuministro WHERE idPrestamoSuministro = '{$idPrestamoSuministro}'";        
-        $resultDel = $pdo->open()->query($queryDelete);
-        return $resultDel->execute();
+        $pdo = $pdo->open();
+        return $pdo->query($queryDelete);
     }
 }

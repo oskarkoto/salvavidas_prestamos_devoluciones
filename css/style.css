@@ -67,8 +67,10 @@ body{
 
 .card{
     margin: auto;   
-    width: fit-content; 
+    width: 100%; 
+    display: flexbox;
 }
+
 
 .card .card-home-title {
     background-image: url("../img/card-title-wallpaper.jpg"); 

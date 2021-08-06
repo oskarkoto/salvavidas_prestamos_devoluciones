@@ -4,7 +4,20 @@ include 'model/PrestamoSuministro.php';
 
 $prestamoSuministroId = $_GET['idPrestamoSuministro'];
 $sPrestamoSuministro = new PrestamoSuministro();
-$selectPrestamoSuministro = $sPrestamoSuministro->seleccionarPrestamoSuministro($prestamoSuministroId);
-$sPrestamoSuministro = $selectPrestamoSuministro[0];
+
+    $selectPrestamoSuministro = $sPrestamoSuministro->seleccionarPrestamoSuministro($prestamoSuministroId);
+    $sPrestamoSuministro = $selectPrestamoSuministro[0];
+
+    $Prestamo = new Prestamo();
+    $allPrestamo = $Prestamo->seleccionarAllPrestamo();
+
+    $Suministro = new Suministro();
+    $allSuministro = $Suministro->selectAllSuministro();
+
+    $EstadoDevolucion = new EstadoDevolucion();
+    $allEstadoDevolucion = $EstadoDevolucion->seleccionarAllEstadoDevolucion();
+
+    $TipoSuministro = new TipoSuministro();
+    $allTipoSuministro = $TipoSuministro->selectAllTipoSuministro();
 
 include 'view/verDetallePrestamoSuministro.php';

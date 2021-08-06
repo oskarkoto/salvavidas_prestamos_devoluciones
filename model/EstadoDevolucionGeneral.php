@@ -78,7 +78,7 @@ class EstadoDevolucionGen {
         $id = $idEstadoDevolucionGeneral;
         $pdo = new Connection();
         $queryDelete = "DELETE FROM estadodevoluciongeneral WHERE idEstadoDevolucionGeneral = '{$id}'";        
-        $result = $pdo->open()->query($queryDelete);
-        return $result->execute();
+        $pdo = $pdo->open();
+        return $pdo->query($queryDelete);
     }
 }
