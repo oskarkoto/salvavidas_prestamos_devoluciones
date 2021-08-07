@@ -1,6 +1,9 @@
 <!--Modelo de Equipo.-->
 <?php
-include_once "Model/Connection.php";
+include_once "model/Connection.php";
+include_once "model/TipoEquipo.php";
+include_once "model/CondicionActual.php";
+include_once "model/EstadoInventario.php";
 
 class Equipo
 {
@@ -81,7 +84,6 @@ class Equipo
   {
     $idEquipo =  ($idEquipo) ? $idEquipo : $this->idEquipo;
     $sql = "DELETE FROM equipo WHERE idEquipo = '$idEquipo'";
-    echo $sql;
     $pdo = new connection();
     $pdo = $pdo->open();
     return $pdo->query($sql);
@@ -89,10 +91,7 @@ class Equipo
 
   public function update_equipo()
   {
-    $sql = "UPDATE equipo SET idEquipo = '$this->idEquipo', idTipoEquipo = '$this->idTipoEquipo',"
-      . " idCondicionActual='$this->idCondicionActual', idEstadoInventario='$this->idEstadoInventario',"
-      . " fechaInclusion='$this->fechaInclusion' WHERE idEquipo='$this->idEquipo'";
-    echo $sql;
+    $sql = "UPDATE equipo SET idEquipo = '{$this->idEquipo}', idTipoEquipo = '{$this->idTipoEquipo}', idCondicionActual='{$this->idCondicionActual}', idEstadoInventario='{$this->idEstadoInventario}', fechaInclusion='{$this->fechaInclusion}' WHERE idEquipo='{$this->idEquipo}'";
     $pdo = new connection();
     $pdo = $pdo->open();
     return $pdo->query($sql);

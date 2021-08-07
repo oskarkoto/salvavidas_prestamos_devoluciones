@@ -5,7 +5,7 @@ include 'model/Suministro.php';
 $suministroId = $_GET['idSuministro'];
 $sSuministro = new Suministro();
 
-    $selectSuministro = $sSuministro->selectSuministro($tSuministroId);
+    $selectSuministro = $sSuministro->selectSuministro($suministroId);
     $sSuministro = $selectSuministro[0];
     //Select de Tipo Suministro
     $TipoSuministro = new TipoSuministro();
@@ -16,4 +16,4 @@ $sSuministro = new Suministro();
     //Select de Estado en Inventario
     $EstadoInventario = new EstadoInventario();
     $allEstadoInventario = $EstadoInventario->seleccionarAllEstadoInventario();
-    include "view/detalleSuministro.php";
+    include "view/verDetalleSuministro.php";

@@ -33,6 +33,7 @@
     </div>    
     <div class="card-dfooter">        
         <a href="?c=eliminarTipoSuministro&idTipoSuministro=<?php echo $value->idTipoSuministro; ?>" class="card-link">Eliminar</a>
+        <a href="?c=actualizarTipoSuministro&idTipoSuministro=<?php echo $value->idTipoSuministro; ?>" class="card-link">Editar</a>
         <a href="?c=detalleAllTipoSuministro" class="card-link">Volver</a>
     </div>
     <?php   }  ?>

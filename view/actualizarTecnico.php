@@ -64,7 +64,7 @@
             </div>     
         </div>    
         <div class="form-button" align="center" style="margin-bottom: 5rem;">
-            <button type="submit" class="btn btn-primary boton-form" id="submit-button">Actualizar Datos</button>
+            <button type="submit" class="btn btn-primary boton-form" id="submit-button">Actualizar</button>
         </div>
     </form>
     <?php } ?>

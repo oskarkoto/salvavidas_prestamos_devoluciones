@@ -24,7 +24,6 @@
         </div>
         <div class="form-button" align="center" >
             <button type="submit" class="btn btn-primary boton-form" id="submit-button">Actualizar</button>
-            <a class="cancelar" id="cancelar" href="?c=detalleEstadoDevolucion&idEstadoDevolucion=<?php echo $value->idEstadoDevolucion; ?>">Cancelar</a>
         </div>
     </form>
     <?php } ?>

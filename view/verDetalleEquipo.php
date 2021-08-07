@@ -10,13 +10,25 @@
         foreach ($selectEquipo as $value) {    ?>
     <div class="card-body">      
         <p class="card-subtitle mb-2" id="card-subtitle">
-            <strong>Tipo de Equipo: </strong> <?php echo $value->idTipoEquipo; ?></p>
+            <strong>Tipo de Equipo: </strong> 
+            <?php foreach ($allTipoEquipo as $tipo) { if ($value->idTipoEquipo == $tipo->idTipoEquipo) {?>
+                <?php echo $tipo->nombreTipoEquipo; ?>
+            <?php } } ?>
+        </p>
                 <div class="dropdown-divider"></div>
         <p class="card-subtitle mb-2" id="card-subtitle">
-            <strong>Condición actual: </strong> <?php echo $value->idCondicionActual; ?></p>
+            <strong>Condición actual: </strong>
+            <?php foreach ($allCondicionActual as $condicion) { if ($value->idCondicionActual == $condicion->idCondicionActual) { ?>
+                <?php echo $condicion->descripcionCondicionActual; ?>
+            <?php } } ?>
+        </p>
                     <div class="dropdown-divider"></div>
         <p class="card-subtitle mb-2" id="card-subtitle">
-            <strong>Estado en inventario: </strong> <?php echo $value->idEstadoInventario; ?></p>
+            <strong>Estado en inventario: </strong>
+            <?php foreach ($allEstadoInventario as $estado) { if ($value->idEstadoInventario == $estado->idEstadoInventario) { ?>
+                <td><?php echo $estado->descripcionEstadoInventario; ?></td>
+            <?php } } ?>
+        </p>
                 <div class="dropdown-divider"></div>                    
         <p class="card-subtitle mb-2" id="card-subtitle">
             <strong> Fecha de Inclusión: </strong><?php echo $value->fechaInclusion; ?></p>
@@ -24,6 +36,7 @@
     </div>    
     <div class="card-dfooter">        
         <a href="?c=eliminarEquipo&idEquipo=<?php echo $value->idEquipo; ?>" class="card-link">Eliminar</a>
+        <a href="?c=actualizarEquipo&idEquipo=<?php echo $value->idEquipo; ?>" class="card-link">Editar</a>
         <a href="?c=detalleAllEquipo" class="card-link">Volver</a>
     </div>
     <?php   }  ?>

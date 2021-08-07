@@ -53,7 +53,7 @@
             <div class="dropdown-divider" id="dropdown-divider-form"></div>
         </div>     
         <div class="form-button" align="center" style="margin-bottom: 5rem;">
-            <button type="submit" class="btn btn-primary boton-form" id="submit-button">Agregar Suministro</button>
+            <button type="submit" class="btn btn-primary boton-form" id="submit-button">Agregar</button>
         </div>
     </form>
 </div>

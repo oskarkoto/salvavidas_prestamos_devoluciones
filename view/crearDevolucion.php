@@ -38,7 +38,7 @@
             <div class="dropdown-divider" id="dropdown-divider-form"></div>
         </div>
         <div class="form-button" align="center" >
-            <button type="submit" class="btn btn-primary boton-form" id="submit-button">Agregar Devolución</button>
+            <button type="submit" class="btn btn-primary boton-form" id="submit-button">Agregar</button>
         </div>
     </form>
 </div>

@@ -89,10 +89,7 @@ class TipoEquipo
 
   public function update_tipo_equipo()
   {
-    $sql = "UPDATE tipoequipo SET idTipoEquipo = '$this->idTipoEquipo', nombreTipoEquipo = '$this->nombreTipoEquipo',"
-      . " descripcionTipoEquipo='$this->descripcionTipoEquipo', marcaTipoEquipo='$this->marcaTipoEquipo',"
-      . " existenciaMinima='$this->existenciaMinima' WHERE idTipoEquipo='$this->idTipoEquipo'";
-    echo $sql;
+    $sql = "UPDATE tipoequipo SET idTipoEquipo = '{$this->idTipoEquipo}', nombreTipoEquipo = '{$this->nombreTipoEquipo}', descripcionTipoEquipo='{$this->descripcionTipoEquipo}', marcaTipoEquipo='{$this->marcaTipoEquipo}', existenciaMinima='{$this->existenciaMinima}' WHERE idTipoEquipo='{$this->idTipoEquipo}'";
     $pdo = new connection();
     $pdo = $pdo->open();
     return $pdo->query($sql);

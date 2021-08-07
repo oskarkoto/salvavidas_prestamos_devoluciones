@@ -1,6 +1,5 @@
 <!--Modelo de Suministro.-->
 <?php
-
 include_once "model/Connection.php";
 include_once "model/TipoSuministro.php";
 include_once "model/CondicionActual.php";
@@ -25,12 +24,12 @@ class Suministro {
      * @param int $idEstadoInventario
      * @param date $fechaInclusion
      */
-    public function __construct($id = "", $tipo = "", $condicion = 0, $inventario = 0, $fecha = "") {
-        $this->idSuministro = $id;
-        $this->idTipoSuministro = $tipo;
-        $this->idCondicionActual = $condicion;
-        $this->idEstadoInventario = $inventario;
-        $this->fechaInclusion = $fecha;
+    public function __construct($idSuministro = "", $idTipoSuministro = "", $idCondicionActual = 0, $idEstadoInventario = 0, $fechaInclusion = "") {
+        $this->idSuministro = $idSuministro;
+        $this->idTipoSuministro = $idTipoSuministro;
+        $this->idCondicionActual = $idCondicionActual;
+        $this->idEstadoInventario = $idEstadoInventario;
+        $this->fechaInclusion = $fechaInclusion;
     }
 
     /**
@@ -71,10 +70,10 @@ class Suministro {
      * @param int $idSuministro
      * @return Suministro list
      */
-    function selectSuministro($id = "") {
+    function selectSuministro($idSuministro = "") {
         $query = "SELECT * FROM suministro";
-        if ($id) {
-            $query .= " where idSuministro = '$id'";
+        if ($idSuministro) {
+            $query .= " where idSuministro = '$idSuministro'";
         }
         $pdo = new Connection();
         $pdo = $pdo->open();
@@ -114,14 +113,10 @@ class Suministro {
      * @return result of update
      */
     function updateSuministro(){
-        $query = "UPDATE suministro "
-                . "SET idTipoSuministro='{$this->idTipoSuministro},'"
-                . "idCondicionActual='{$this->idCondicionActual}', idEstadoInventario='{$this->idEstadoInventario},"
-                . "fechaInclusion='{$this->fechaInclusion}'"
-                . " where idSuministro='{$this->idSuministro}'";
+        $sql = "UPDATE suministro SET idTipoSuministro = '{$this->idTipoSuministro}', idCondicionActual='{$this->idCondicionActual}', idEstadoInventario='{$this->idEstadoInventario}', fechaInclusion='{$this->fechaInclusion}' where idSuministro='{$this->idSuministro}'";
         $pdo = new Connection();
-        $results = $pdo->open()->query($query);
-        return $results->execute();
+        $result = $pdo->open()->query($sql);
+        return $result;
     }
     
     /**
@@ -129,11 +124,11 @@ class Suministro {
      * @param int $idSuministro
      * @return result of deletion
      */
-    function deleteSuministro($idSuministro){
-        $pdo = new Connection();
+    function deleteSuministro($idSuministro = 0){
         //delete suministro with idSuministro = $idSuministro from suministro table
-        $queryDelete = "DELETE FROM suministro WHERE idSuministro = '{$idSuministro}'";        
-        $resultDel = $pdo->open()->query($queryDelete);
-        return $resultDel->execute();
+        $queryDelete = "DELETE FROM suministro WHERE idSuministro = '{$idSuministro}'";       
+        $pdo = new Connection(); 
+        $pdo = $pdo->open();
+        return $pdo->query($queryDelete);
     }
 }

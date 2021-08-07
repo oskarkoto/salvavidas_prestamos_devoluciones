@@ -18,6 +18,7 @@
     </div>    
     <div class="card-dfooter">        
         <a href="?c=eliminarEstadoDevolucion&idEstadoDevolucionGeneral=<?php echo $value->idEstadoDevolucionGeneral; ?>" class="card-link">Eliminar</a>
+        <a href="?c=actualizarEstadoDevolucionGnrl&idEstadoDevolucionGeneral=<?php echo $value->idEstadoDevolucionGeneral; ?>" class="card-link">Editar</a>
         <a href="?c=detalleAllEstadoDevolucionGnrl" class="card-link">Volver</a>
     </div>
     <?php   }  ?>

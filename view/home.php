@@ -1,4 +1,4 @@
-<div class="container-fluid" align="center" id="menuPrincipal">
+<div class="container" align="center" id="menuPrincipal">
     <div class="card">
         <div class="row">
             <img src="img/LogoSV.png" class="rounded mx-auto d-block" alt="Logo_Salvavidas" style="width:25rem">

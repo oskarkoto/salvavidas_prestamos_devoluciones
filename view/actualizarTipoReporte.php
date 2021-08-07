@@ -34,7 +34,6 @@
         </div>
         <div class="form-button" align="center" >
             <button type="submit" class="btn btn-primary boton-form" id="submit-button">Actualizar</button>
-            <a class="cancelar" id="cancelar" href="?c=detalleTipoReporte&idTipoReporte=<?php echo $value->idTipoReporte; ?>">Cancelar</a>
         </div>
     </form>
     <?php } ?>

@@ -8,12 +8,11 @@ include "model/EstadoDevolucionGeneral.php";
 
 if ($_POST) {
     $sEstadoDevolucionGeneral = new EstadoDevolucionGen($_POST['idEstadoDevolucionGeneral'],$_POST['descripcionEstadoDevolucionGeneral']);
-    if ($sEstadoDevolucionGeneral->actualizarEstadoDevolucion()){
+    if ($sEstadoDevolucionGeneral->actualizarEstadoDevolucionGen()){
         $selectEstadoDevolucionGeneral = $sEstadoDevolucionGeneral->seleccionarEstadoDevolucionGen($_POST['idEstadoDevolucionGeneral']);
         $sEstadoDevolucionGeneral = $selectEstadoDevolucionGeneral[0];
         include "view/verDetalleEstadoDevolucionGnrl.php";
     }    
-    
 } else {
     $sEstadoDevolucionGeneral = new EstadoDevolucionGen();
     $selectEstadoDevolucionGeneral = $sEstadoDevolucionGeneral->seleccionarEstadoDevolucionGen($_GET['idEstadoDevolucionGeneral']);

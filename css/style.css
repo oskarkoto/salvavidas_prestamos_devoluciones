@@ -63,6 +63,8 @@ body{
 
 #menuPrincipal{
     padding: 2rem;
+    margin: auto;   
+    width: 65%; 
 }
 
 .card{

@@ -43,10 +43,10 @@ class EstadoDevolucionGen {
      * Retorna un estado de devolucion general disponible en la base de datos. 
      * Hace una lista de detalles.
     **/
-    function seleccionarEstadoDevolucionGen($idEstadoDevolucionGeneral = 0) {
+    function seleccionarEstadoDevolucionGen($idEstadoDevolucionGeneral = "") {
         $query = "SELECT * FROM estadodevoluciongeneral";
         if ($idEstadoDevolucionGeneral) {
-            $query .= " where idEstadoDevolucionGeneral = '$idEstadoDevolucionGeneral'";
+            $query .= " WHERE idEstadoDevolucionGeneral = '$idEstadoDevolucionGeneral'";
         }
         $pdo = new Connection();
         $pdo = $pdo->open();
@@ -64,7 +64,7 @@ class EstadoDevolucionGen {
      * NO se requiere en el sistema.
     **/
     function actualizarEstadoDevolucionGen(){
-        $queryUpdate = "UPDATE estadodevoluciongeneral SET idEstadoDevolucionGeneral = '{$this->idEstadoDevolucionGeneral}', descripcionEstadoDevolucion = '{$this->descripcionEstadoDevolucionGeneral}' WHERE idEstadoDevolucionGeneral = '{$this->idEstadoDevolucionGeneral}'";
+        $queryUpdate = "UPDATE estadodevoluciongeneral SET descripcionEstadoDevolucionGeneral = '{$this->descripcionEstadoDevolucionGeneral}' WHERE idEstadoDevolucionGeneral = '{$this->idEstadoDevolucionGeneral}'";
         $pdo = new Connection();
         $result = $pdo->open()->query($queryUpdate);
         return $result;

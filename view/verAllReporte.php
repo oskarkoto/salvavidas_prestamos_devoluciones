@@ -39,7 +39,9 @@
             <tr>
                 <td><?php echo $value->idReporte; ?></td>
                 <td><?php echo $value->tituloReporte; ?></td>
-                <td><?php echo $value->idTipoReporte; ?></td>
+                <?php foreach ($allTipoReporte as $tiporeporte) { if ($value->idTipoReporte  == $tiporeporte->idTipoReporte) {?>
+                <td><?php echo $tiporeporte->nombreTipoReporte; ?></td>
+                <?php } }  ?>
                 <td><?php echo $value->fechaReporte; ?></td>
             </tr>
         <?php } ?>

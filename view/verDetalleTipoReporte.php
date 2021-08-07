@@ -10,9 +10,6 @@
         foreach ($selectTipoReporte as $value) {    ?>
     <div class="card-body">      
         <p class="card-subtitle mb-2" id="card-subtitle">
-            <strong>ID: </strong> <?php echo $value->idTipoReporte; ?></p>
-                <div class="dropdown-divider"></div>
-        <p class="card-subtitle mb-2" id="card-subtitle">
             <strong>Nombre: </strong> <?php echo $value->nombreTipoReporte; ?></p>
                     <div class="dropdown-divider"></div>
         <p class="card-subtitle mb-2" id="card-subtitle">

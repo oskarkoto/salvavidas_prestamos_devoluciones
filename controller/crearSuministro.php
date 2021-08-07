@@ -8,8 +8,26 @@ if ($_POST) {
     if ($form->insertSuministro()) {
         $selectSuministro = $form->selectSuministro($form->idSuministro);
         $form = $selectSuministro[0];
+        //Select de tipo suministro  
+        $TipoSuministro = new TipoSuministro();
+        $allTipoSuministro = $TipoSuministro->selectAllTipoSuministro();
+        //Select de estado de inventario
+        $EstadoInventario = new EstadoInventario();
+        $allEstadoInventario = $EstadoInventario->seleccionarAllEstadoInventario();
+        //Select de condicion actual
+        $CondicionActual = new CondicionActual();
+        $allCondicionActual = $CondicionActual->seleccionarAllCondicionActual();
         include "view/verDetalleSuministro.php";
     } else {
+        //Select de tipo suministro  
+        $TipoSuministro = new TipoSuministro();
+        $allTipoSuministro = $TipoSuministro->selectAllTipoSuministro();
+        //Select de estado de inventario
+        $EstadoInventario = new EstadoInventario();
+        $allEstadoInventario = $EstadoInventario->seleccionarAllEstadoInventario();
+        //Select de condicion actual
+        $CondicionActual = new CondicionActual();
+        $allCondicionActual = $CondicionActual->seleccionarAllCondicionActual();
         $msgError = "ERROR creando Suministro.";
         include "view/crearSuministro.php";
     }

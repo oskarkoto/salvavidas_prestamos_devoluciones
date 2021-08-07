@@ -28,6 +28,7 @@
     </div>    
     <div class="card-dfooter">        
         <a href="?c=eliminarTecnico&idTecnico=<?php echo $value->idTecnico; ?>" class="card-link">Eliminar</a>
+        <a href="?c=actualizarTecnico&idTecnico=<?php echo $value->idTecnico; ?>" class="card-link">Editar</a>
         <a href="?c=detalleAllTecnico" class="card-link">Volver</a>
     </div>
     <?php   }  ?>

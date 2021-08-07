@@ -2,6 +2,8 @@
 <?php
 include 'model/Reporte.php';
 
-$Reporte = new Reporte();
-$allReporte = $Reporte->seleccionarAllReporte();
-include 'view/VerAllReporte.php';
+    $Reporte = new Reporte();
+    $allReporte = $Reporte->seleccionarAllReporte();
+    $tipoReporte = new TipoReporte();
+    $allTipoReporte = $tipoReporte->seleccionarAllTipoReporte();
+    include 'view/VerAllReporte.php';
