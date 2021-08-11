@@ -110,4 +110,17 @@ class Tecnico
       return NULL;
     }
   }
+
+  function seleccionarUltimo() {
+    $query = "SELECT * FROM tecnico ORDER BY idTecnico DESC LIMIT 1";
+    $pdo = new Connection();
+    $pdo = $pdo->open();
+    $result = $pdo->query($query);
+    $rows = [];
+    foreach ($result->fetchAll() as $row) {
+        $rows[] = new Tecnico($row['idTecnico'], $row['primerNombre'],$row['segundoNombre'],$row['primerApellido'],$row['segundoApellido'],$row['telefono'],$row['correoElectronico'],$row['direccion'],$row['fechaInclusion']);
+    }
+    return $rows;
+}  
+
 }
