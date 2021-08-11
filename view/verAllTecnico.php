@@ -12,7 +12,17 @@
         <h2> TECNICOS </h2>
     </div>
     <div class="card-subtitle" id="Add">
-        
+        <div class="form-check" align="center">
+            <label for="order"  id="input-label">Ordenar por: </label>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1"> Ascendente </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                <label class="form-check-label" for="flexRadioDefault2"> Descendente </label>
+            </div>
+        </div>
         <a href="?c=crearTecnico" class="add">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
         <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
