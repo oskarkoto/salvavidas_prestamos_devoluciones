@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-07-2021 a las 06:29:09
--- Versión del servidor: 10.4.18-MariaDB
--- Versión de PHP: 8.0.3
+-- Tiempo de generación: 12-08-2021 a las 00:00:25
+-- Versión del servidor: 10.4.17-MariaDB
+-- Versión de PHP: 7.3.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,10 +29,20 @@ USE `salvavidas`;
 -- Estructura de tabla para la tabla `categoriasuministro`
 --
 
+DROP TABLE IF EXISTS `categoriasuministro`;
 CREATE TABLE `categoriasuministro` (
   `idCategoria` int(11) NOT NULL,
   `descripcionCategoria` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `categoriasuministro`
+--
+
+INSERT INTO `categoriasuministro` (`idCategoria`, `descripcionCategoria`) VALUES
+(1, 'Accesorio'),
+(2, 'Consumible'),
+(3, 'Repuesto');
 
 -- --------------------------------------------------------
 
@@ -40,10 +50,20 @@ CREATE TABLE `categoriasuministro` (
 -- Estructura de tabla para la tabla `condicionactual`
 --
 
+DROP TABLE IF EXISTS `condicionactual`;
 CREATE TABLE `condicionactual` (
   `idCondicionActual` int(11) NOT NULL,
   `descripcionCondicionActual` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `condicionactual`
+--
+
+INSERT INTO `condicionactual` (`idCondicionActual`, `descripcionCondicionActual`) VALUES
+(1, 'Perfecto estado'),
+(2, 'Dañado'),
+(3, 'Extraviado');
 
 -- --------------------------------------------------------
 
@@ -51,12 +71,20 @@ CREATE TABLE `condicionactual` (
 -- Estructura de tabla para la tabla `devolucion`
 --
 
+DROP TABLE IF EXISTS `devolucion`;
 CREATE TABLE `devolucion` (
   `idDevolucion` int(11) NOT NULL,
   `idPrestamo` int(11) NOT NULL,
-  `fechaRealDevolucion` datetime DEFAULT current_timestamp(),
+  `fechaRealDevolucion` date DEFAULT current_timestamp(),
   `idEstadoDevolucionGeneral` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `devolucion`
+--
+
+INSERT INTO `devolucion` (`idDevolucion`, `idPrestamo`, `fechaRealDevolucion`, `idEstadoDevolucionGeneral`) VALUES
+(1, 2, '2021-08-11', 2);
 
 -- --------------------------------------------------------
 
@@ -64,13 +92,25 @@ CREATE TABLE `devolucion` (
 -- Estructura de tabla para la tabla `equipo`
 --
 
+DROP TABLE IF EXISTS `equipo`;
 CREATE TABLE `equipo` (
   `idEquipo` varchar(25) NOT NULL,
   `idTipoEquipo` varchar(25) NOT NULL,
   `idCondicionActual` int(11) NOT NULL,
   `idEstadoInventario` int(11) NOT NULL,
-  `fechaInclusion` datetime DEFAULT current_timestamp()
+  `fechaInclusion` date DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `equipo`
+--
+
+INSERT INTO `equipo` (`idEquipo`, `idTipoEquipo`, `idCondicionActual`, `idEstadoInventario`, `fechaInclusion`) VALUES
+('1', '1', 1, 1, '2021-08-01'),
+('2', '2', 2, 2, '2021-07-27'),
+('3', '3', 1, 2, '2021-07-30'),
+('4', '4', 2, 2, '2021-08-07'),
+('5', '3', 1, 2, '2021-08-11');
 
 -- --------------------------------------------------------
 
@@ -78,10 +118,20 @@ CREATE TABLE `equipo` (
 -- Estructura de tabla para la tabla `estadodevolucion`
 --
 
+DROP TABLE IF EXISTS `estadodevolucion`;
 CREATE TABLE `estadodevolucion` (
   `idEstadoDevolucion` int(11) NOT NULL,
   `descripcionEstadoDevolucion` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `estadodevolucion`
+--
+
+INSERT INTO `estadodevolucion` (`idEstadoDevolucion`, `descripcionEstadoDevolucion`) VALUES
+(1, 'Perfecto Estado'),
+(2, 'Dañado'),
+(3, 'Extraviado');
 
 -- --------------------------------------------------------
 
@@ -89,10 +139,21 @@ CREATE TABLE `estadodevolucion` (
 -- Estructura de tabla para la tabla `estadodevoluciongeneral`
 --
 
+DROP TABLE IF EXISTS `estadodevoluciongeneral`;
 CREATE TABLE `estadodevoluciongeneral` (
   `idEstadoDevolucionGeneral` int(11) NOT NULL,
   `descripcionEstadoDevolucionGeneral` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `estadodevoluciongeneral`
+--
+
+INSERT INTO `estadodevoluciongeneral` (`idEstadoDevolucionGeneral`, `descripcionEstadoDevolucionGeneral`) VALUES
+(1, 'Prestado'),
+(2, 'Sin daños'),
+(3, 'Dañado'),
+(4, 'Extraviado');
 
 -- --------------------------------------------------------
 
@@ -100,10 +161,19 @@ CREATE TABLE `estadodevoluciongeneral` (
 -- Estructura de tabla para la tabla `estadoinventario`
 --
 
+DROP TABLE IF EXISTS `estadoinventario`;
 CREATE TABLE `estadoinventario` (
   `idEstadoInventario` int(11) NOT NULL,
   `descripcionEstadoInventario` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `estadoinventario`
+--
+
+INSERT INTO `estadoinventario` (`idEstadoInventario`, `descripcionEstadoInventario`) VALUES
+(1, 'En stock'),
+(2, 'Prestado');
 
 -- --------------------------------------------------------
 
@@ -111,13 +181,23 @@ CREATE TABLE `estadoinventario` (
 -- Estructura de tabla para la tabla `prestamo`
 --
 
+DROP TABLE IF EXISTS `prestamo`;
 CREATE TABLE `prestamo` (
   `idPrestamo` int(11) NOT NULL,
   `idTecnico` varchar(25) NOT NULL,
-  `fechaPrestamo` datetime DEFAULT current_timestamp(),
-  `fechaEsperadaDevolucion` datetime DEFAULT NULL,
+  `fechaPrestamo` date DEFAULT current_timestamp(),
+  `fechaEsperadaDevolucion` date DEFAULT NULL,
   `cliente` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `prestamo`
+--
+
+INSERT INTO `prestamo` (`idPrestamo`, `idTecnico`, `fechaPrestamo`, `fechaEsperadaDevolucion`, `cliente`) VALUES
+(1, '1', '2021-07-26', '2021-07-30', 'Adam'),
+(2, '1', '2021-07-27', '2021-07-31', 'Luisa'),
+(3, '2', '2021-08-03', '2021-08-20', 'Marianna');
 
 -- --------------------------------------------------------
 
@@ -125,6 +205,7 @@ CREATE TABLE `prestamo` (
 -- Estructura de tabla para la tabla `prestamoequipo`
 --
 
+DROP TABLE IF EXISTS `prestamoequipo`;
 CREATE TABLE `prestamoequipo` (
   `idPrestamoEquipo` int(11) NOT NULL,
   `idPrestamo` int(11) NOT NULL,
@@ -132,12 +213,38 @@ CREATE TABLE `prestamoequipo` (
   `idEstadoDevolucion` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `prestamoequipo`
+--
+
+INSERT INTO `prestamoequipo` (`idPrestamoEquipo`, `idPrestamo`, `idEquipo`, `idEstadoDevolucion`) VALUES
+(1, 1, '1', 1),
+(2, 1, '2', 2),
+(3, 2, '3', 1),
+(4, 3, '4', 1),
+(5, 1, '5', 1);
+
+--
+-- Disparadores `prestamoequipo`
+--
+DROP TRIGGER IF EXISTS `cambiarestadoequipo`;
+DELIMITER $$
+CREATE TRIGGER `cambiarestadoequipo` AFTER INSERT ON `prestamoequipo` FOR EACH ROW UPDATE equipo SET idEstadoInventario = 2 WHERE idEquipo = NEW.idEquipo
+$$
+DELIMITER ;
+DROP TRIGGER IF EXISTS `devolverestadoequipo`;
+DELIMITER $$
+CREATE TRIGGER `devolverestadoequipo` AFTER DELETE ON `prestamoequipo` FOR EACH ROW UPDATE equipo SET idEstadoInventario = 1 WHERE idEquipo = prestamoequipo.idEquipo
+$$
+DELIMITER ;
+
 -- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `prestamosuministro`
 --
 
+DROP TABLE IF EXISTS `prestamosuministro`;
 CREATE TABLE `prestamosuministro` (
   `idPrestamoSuministro` int(11) NOT NULL,
   `idPrestamo` int(11) NOT NULL,
@@ -145,18 +252,42 @@ CREATE TABLE `prestamosuministro` (
   `idEstadoDevolucion` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `prestamosuministro`
+--
+
+INSERT INTO `prestamosuministro` (`idPrestamoSuministro`, `idPrestamo`, `idSuministro`, `idEstadoDevolucion`) VALUES
+(1, 1, '2', 1),
+(2, 3, '3', 1),
+(3, 1, '1', 1);
+
 -- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `reporte`
 --
 
+DROP TABLE IF EXISTS `reporte`;
 CREATE TABLE `reporte` (
   `idReporte` int(11) NOT NULL,
   `tituloReporte` varchar(50) DEFAULT NULL,
   `idTipoReporte` int(11) NOT NULL,
-  `fechaReporte` datetime DEFAULT current_timestamp()
+  `fechaReporte` date DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `reporte`
+--
+
+INSERT INTO `reporte` (`idReporte`, `tituloReporte`, `idTipoReporte`, `fechaReporte`) VALUES
+(1, 'Primer Reporte', 4, '2021-07-23'),
+(2, 'Segundo Reporte', 3, '2021-07-28'),
+(3, 'Reporte de daños a Taladro', 1, '2021-07-28'),
+(4, 'Cuarto reporte', 4, '2021-07-22'),
+(5, 'Quinto Reporte', 4, '2021-07-20'),
+(6, 'Reporte 6', 2, '2021-07-02'),
+(7, 'Reporte 7', 3, '2021-06-28'),
+(8, 'Reporte 8', 4, '2021-08-11');
 
 -- --------------------------------------------------------
 
@@ -164,13 +295,24 @@ CREATE TABLE `reporte` (
 -- Estructura de tabla para la tabla `suministro`
 --
 
+DROP TABLE IF EXISTS `suministro`;
 CREATE TABLE `suministro` (
   `idSuministro` varchar(25) NOT NULL,
   `idTipoSuministro` varchar(25) NOT NULL,
   `idCondicionActual` int(11) NOT NULL,
   `idEstadoInventario` int(11) NOT NULL,
-  `fechaInclusion` datetime DEFAULT current_timestamp()
+  `fechaInclusion` date DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `suministro`
+--
+
+INSERT INTO `suministro` (`idSuministro`, `idTipoSuministro`, `idCondicionActual`, `idEstadoInventario`, `fechaInclusion`) VALUES
+('1', '1', 1, 1, '2021-07-27'),
+('2', '2', 1, 1, '2021-07-27'),
+('3', '3', 1, 2, '2021-08-03'),
+('4', '4', 1, 1, '2021-08-11');
 
 -- --------------------------------------------------------
 
@@ -178,6 +320,7 @@ CREATE TABLE `suministro` (
 -- Estructura de tabla para la tabla `tecnico`
 --
 
+DROP TABLE IF EXISTS `tecnico`;
 CREATE TABLE `tecnico` (
   `idTecnico` varchar(25) NOT NULL,
   `primerNombre` varchar(50) NOT NULL,
@@ -187,8 +330,16 @@ CREATE TABLE `tecnico` (
   `telefono` varchar(25) DEFAULT NULL,
   `correoElectronico` varchar(50) DEFAULT NULL,
   `direccion` varchar(500) DEFAULT NULL,
-  `fechaInclusion` datetime DEFAULT current_timestamp()
+  `fechaInclusion` date DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `tecnico`
+--
+
+INSERT INTO `tecnico` (`idTecnico`, `primerNombre`, `segundoNombre`, `primerApellido`, `segundoApellido`, `telefono`, `correoElectronico`, `direccion`, `fechaInclusion`) VALUES
+('1', 'Manuel', '', 'Echeverria', 'Nuñez', '60452103', 'manuchev@gmail.com', 'Lorem ipsum 50m Sur', '0000-00-00'),
+('2', 'Maria', 'Paola', 'Herrera', 'Chavarría', '2244-0321', 'majohecha@hotmail.com', 'Lorem ipsum, lorem ipsum 30m ...', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -196,6 +347,7 @@ CREATE TABLE `tecnico` (
 -- Estructura de tabla para la tabla `tipoequipo`
 --
 
+DROP TABLE IF EXISTS `tipoequipo`;
 CREATE TABLE `tipoequipo` (
   `idTipoEquipo` varchar(25) NOT NULL,
   `nombreTipoEquipo` varchar(50) NOT NULL,
@@ -204,12 +356,23 @@ CREATE TABLE `tipoequipo` (
   `existenciaMinima` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `tipoequipo`
+--
+
+INSERT INTO `tipoequipo` (`idTipoEquipo`, `nombreTipoEquipo`, `descripcionTipoEquipo`, `marcaTipoEquipo`, `existenciaMinima`) VALUES
+('1', 'Taladro', 'Lorem Ipsum', 'Lorem Ipsum', 4),
+('2', 'Desarmadores', 'Lorem ipsum', 'BLACK+DECKER', 10),
+('3', 'Multímetro', 'Lorem ipsum', 'Truper', 3),
+('4', 'Flexómetro', 'Lorem ipsum', 'Truper', 10);
+
 -- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `tiporeporte`
 --
 
+DROP TABLE IF EXISTS `tiporeporte`;
 CREATE TABLE `tiporeporte` (
   `idTipoReporte` int(11) NOT NULL,
   `nombreTipoReporte` varchar(50) NOT NULL,
@@ -217,12 +380,24 @@ CREATE TABLE `tiporeporte` (
   `queryTipoReporte` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `tiporeporte`
+--
+
+INSERT INTO `tiporeporte` (`idTipoReporte`, `nombreTipoReporte`, `detalleTipoReporte`, `queryTipoReporte`) VALUES
+(1, 'Daño de equipo', 'Se reporta daños en equipo', 'Lorem ipsum'),
+(2, 'Robo', 'Se reporta el robo de un suministro/equipo.', 'Lorem Ipsum'),
+(3, 'Informe de Técnico-Préstamos-Daños', 'Detalla \r\nlos técnicos que han efectuado devoluciones \r\ncon daños en el equipo.', 'Lorem Ipsum'),
+(4, 'Informe de Técnico-Préstamos-Pérdidas', 'Detalla los técnicos que han efectuado \r\ndevoluciones con pérdidas o robos en el \r\nequipo.', 'Lorem Ipsum'),
+(5, 'Detalle daño 5', 'Lorem ipsum', 'Query');
+
 -- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `tiposuministro`
 --
 
+DROP TABLE IF EXISTS `tiposuministro`;
 CREATE TABLE `tiposuministro` (
   `idTipoSuministro` varchar(25) NOT NULL,
   `nombreTipoSuministro` varchar(50) NOT NULL,
@@ -233,16 +408,39 @@ CREATE TABLE `tiposuministro` (
   `existenciaMinima` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `tiposuministro`
+--
+
+INSERT INTO `tiposuministro` (`idTipoSuministro`, `nombreTipoSuministro`, `descripcionTipoSuministro`, `idCategoria`, `idUnidades`, `marcaTipoSuministro`, `existenciaMinima`) VALUES
+('1', 'Cintas', 'Lorem Ipsum', 1, 2, 'Scotch', 5),
+('2', 'Cinta antielectrostática', 'Lorem impsum', 2, 2, 'Lorem ipsum 2', 1),
+('3', 'Alambre', 'Lorem ipsum', 2, 1, 'Trupper', 10),
+('4', 'Bombillas', 'Lorem ipsum', 2, 3, 'Sylvania', 10),
+('5', 'Gafas de seguridad', 'Lorem ipsum', 1, 4, 'ReadyMax', 10);
+
 -- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `unidadessuministro`
 --
 
+DROP TABLE IF EXISTS `unidadessuministro`;
 CREATE TABLE `unidadessuministro` (
   `idUnidades` int(11) NOT NULL,
   `cantidad` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `unidadessuministro`
+--
+
+INSERT INTO `unidadessuministro` (`idUnidades`, `cantidad`) VALUES
+(1, 1),
+(2, 2),
+(3, 10),
+(4, 5),
+(8, 15);
 
 --
 -- Índices para tablas volcadas
@@ -393,73 +591,73 @@ ALTER TABLE `unidadessuministro`
 -- AUTO_INCREMENT de la tabla `categoriasuministro`
 --
 ALTER TABLE `categoriasuministro`
-  MODIFY `idCategoria` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idCategoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `condicionactual`
 --
 ALTER TABLE `condicionactual`
-  MODIFY `idCondicionActual` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idCondicionActual` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `devolucion`
 --
 ALTER TABLE `devolucion`
-  MODIFY `idDevolucion` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idDevolucion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `estadodevolucion`
 --
 ALTER TABLE `estadodevolucion`
-  MODIFY `idEstadoDevolucion` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idEstadoDevolucion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `estadodevoluciongeneral`
 --
 ALTER TABLE `estadodevoluciongeneral`
-  MODIFY `idEstadoDevolucionGeneral` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idEstadoDevolucionGeneral` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `estadoinventario`
 --
 ALTER TABLE `estadoinventario`
-  MODIFY `idEstadoInventario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idEstadoInventario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `prestamo`
 --
 ALTER TABLE `prestamo`
-  MODIFY `idPrestamo` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idPrestamo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `prestamoequipo`
 --
 ALTER TABLE `prestamoequipo`
-  MODIFY `idPrestamoEquipo` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idPrestamoEquipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `prestamosuministro`
 --
 ALTER TABLE `prestamosuministro`
-  MODIFY `idPrestamoSuministro` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idPrestamoSuministro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `reporte`
 --
 ALTER TABLE `reporte`
-  MODIFY `idReporte` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idReporte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `tiporeporte`
 --
 ALTER TABLE `tiporeporte`
-  MODIFY `idTipoReporte` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idTipoReporte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `unidadessuministro`
 --
 ALTER TABLE `unidadessuministro`
-  MODIFY `idUnidades` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idUnidades` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Restricciones para tablas volcadas
