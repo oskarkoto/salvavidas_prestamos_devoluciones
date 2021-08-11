@@ -8,9 +8,10 @@ if ($_POST) {
     if ($form->insertEstadoDevolucion()) {
         $selectEstadoDevolucion = $form->seleccionarEstadoDevolucion($form->idEstadoDevolucion);
         $form = $selectEstadoDevolucion[0];
+        $msg = "NUEVO Estado de Devolución creado.";
         include "view/verDetalleEstadoDevolucion.php";
     } else {
-        $msgError = "ERROR creando Estado de Devolución.";
+        $msg = "ERROR creando Estado de Devolución.";
         include "view/crearEstadoDevolucion.php";
     }
 } else {

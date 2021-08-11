@@ -17,27 +17,33 @@
             <div class="col-md-12 col-xl-12 col-sm-12" >
                 <label for="idTipoSuministro" class='label_form'>Tipo:  </label>
                 <select class="col-sm-2 col-form-label" name="idTipoSuministro" id="input_form" required>
-                <?php foreach ($allTipoSuministro as $tipo) { ?>
+                <?php foreach ($allTipoSuministro as $tipo) { if ($tipo->idTipoSuministro == $value->idTipoSuministro){?>
+                    <option value="<?php echo $tipo->idTipoSuministro; ?>"selected><?php echo $tipo->nombreTipoSuministro; ?></option>
+                <?php } else { ?>
                     <option value="<?php echo $tipo->idTipoSuministro; ?>"><?php echo $tipo->nombreTipoSuministro; ?></option>
-                <?php } ?>
+                <?php } } ?>
                 </select>
             </div>
             <div class="dropdown-divider" id="dropdown-divider-form"></div>
             <div class="col-md-12 col-xl-12 col-sm-12" >
                 <label for="idCondicionActual" class='label_form'>Condición actual:  </label>
                 <select class="col-sm-2 col-form-label" name="idCondicionActual" id="input_form" required>
-                <?php foreach ($allCondicionActual as $condicion) { ?>
+                <?php foreach ($allCondicionActual as $condicion) { if ($condicion->idCondicionActual == $value->idCondicionActual){ ?>
+                    <option value="<?php echo $condicion->idCondicionActual; ?>" selected><?php echo $condicion->descripcionCondicionActual; ?></option>
+                <?php } else { ?>
                     <option value="<?php echo $condicion->idCondicionActual; ?>"><?php echo $condicion->descripcionCondicionActual; ?></option>
-                <?php } ?>
+                <?php } } ?>
                 </select>
             </div>
             <div class="dropdown-divider" id="dropdown-divider-form"></div>
             <div class="col-md-12 col-xl-12 col-sm-12" >
                 <label for="idEstadoInventario" class='label_form'>Estado en inventario:  </label>
                 <select class="col-sm-2 col-form-label" name="idEstadoInventario" id="input_form" required>
-                <?php foreach ($allEstadoInventario as $valor) { ?>
+                <?php foreach ($allEstadoInventario as $valor) {  if ($valor->idEstadoInventario == $value->idEstadoInventario){ ?>
                     <option value="<?php echo $valor->idEstadoInventario; ?>" selected><?php echo $valor->descripcionEstadoInventario; ?></option>    
-                <?php } ?>
+                <?php } else { ?>
+                    <option value="<?php echo $valor->idEstadoInventario; ?>"><?php echo $valor->descripcionEstadoInventario; ?></option>
+                <?php } } ?>
                 </select>
             </div>
             <div class="dropdown-divider" id="dropdown-divider-form"></div>

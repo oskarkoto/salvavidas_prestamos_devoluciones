@@ -11,6 +11,7 @@ if ($_POST) {
     if ($sEstadoDevolucionGeneral->actualizarEstadoDevolucionGen()){
         $selectEstadoDevolucionGeneral = $sEstadoDevolucionGeneral->seleccionarEstadoDevolucionGen($_POST['idEstadoDevolucionGeneral']);
         $sEstadoDevolucionGeneral = $selectEstadoDevolucionGeneral[0];
+        $msg = "Se actualizó el Estado de devolución general.";
         include "view/verDetalleEstadoDevolucionGnrl.php";
     }    
 } else {

@@ -5,11 +5,11 @@
   $idTecnico = $_GET['idTecnico'];
   $tecnico = new Tecnico();    
   if ($tecnico->delete_tecnicos($idTecnico)){
-    $msg = "EXITO borrando el Técnico.";
+    $msg = "ÉXITO al borrar el Técnico.";
     $allTecnico = $tecnico->seleccionarAllTecnico();
       include 'view/verAllTecnico.php';
   } else {
-     $msgError = "ERROR borrando el Técnico.";
-     $allTecnico = $Equipo->seleccionarAllTecnico();
+     $msg = "ERROR al borrar el Técnico.";
+     $allTecnico = $tecnico->seleccionarAllTecnico();
       include 'view/verAllTecnico.php';
   }    

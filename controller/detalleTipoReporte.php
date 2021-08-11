@@ -6,5 +6,6 @@ $tipoReporteId = $_GET['idTipoReporte'];
 $sTipoReporte = new TipoReporte();
 $selectTipoReporte = $sTipoReporte->seleccionarTipoReporte($tipoReporteId);
 $sTipoReporte = $selectTipoReporte[0];
+$msg = NULL;
 
 include 'view/verDetalleTipoReporte.php';

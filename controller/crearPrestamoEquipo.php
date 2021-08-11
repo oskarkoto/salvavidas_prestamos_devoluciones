@@ -7,13 +7,16 @@ if ($_POST) {
     if ($form->insertPrestamoEquipo()) {
         $selectPrestamoEquipo = $form->seleccionarPrestamoEquipo($form->idPrestamoEquipo);
         $form = $selectPrestamoEquipo[0];
+        $Equipo = new Equipo();
+        $allEquipo = $Equipo->seleccionarAllEquipo();
         $EstadoDevolucion = new EstadoDevolucion();
         $allEstadoDevolucion = $EstadoDevolucion->seleccionarAllEstadoDevolucion();
         $TipoEquipo = new TipoEquipo();
         $allTipoEquipo = $TipoEquipo->seleccionarAllTipoEquipo();
+        $msg = "NUEVO Préstamo de Equipo creado.";
         include "view/verDetallePrestamoEquipo.php";
     } else {
-        $msgError = "ERROR creando Prestamo de Equipo.";
+        $msg = "ERROR creando Prestamo de Equipo.";
         $Prestamo = new Prestamo();
         $allPrestamo = $Prestamo->seleccionarAllPrestamo();
         $Equipo = new Equipo();

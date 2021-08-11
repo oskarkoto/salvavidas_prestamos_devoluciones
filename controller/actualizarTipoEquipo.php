@@ -7,6 +7,7 @@
   if ($sTipoEquipo->update_tipo_equipo()){
       $selectTipoEquipo = $sTipoEquipo->read_tipo_equipo($_POST['idTipoEquipo']);
       $sTipoEquipo = $selectTipoEquipo[0];
+      $msg = "Se actualizó el Tipo de equipo.";
       include "view/verDetalleTipoEquipo.php";
   }    
   

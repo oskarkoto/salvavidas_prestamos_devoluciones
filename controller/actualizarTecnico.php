@@ -8,6 +8,7 @@
     if ($sTecnico->update_tecnicos()){
         $selectTecnico = $sTecnico->read_tecnicos($_POST['idTecnico']);
         $sTecnico = $selectTecnico[0];
+        $msg = "Se actualizó el Técnico.";
         include "view/verDetalleTecnico.php";
     }    
     

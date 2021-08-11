@@ -7,9 +7,10 @@ if ($_POST) {
     if ($form->insertTipoReporte()) {
         $selectTipoReporte = $form->seleccionarTipoReporte($form->idTipoReporte);
         $form = $selectTipoReporte[0];
+        $msg = "NUEVO Tipo de Reporte creado.";
         include "view/verDetalleTipoReporte.php";
     } else {
-        $msgError = "ERROR creando Reporte.";
+        $msg = "ERROR creando el Tipo de Reporte.";
         include "view/crearTipoReporte.php";
     }
 } else {

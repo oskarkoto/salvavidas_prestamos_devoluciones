@@ -15,9 +15,10 @@ if ($_POST) {
         //Select de Unidades de Suministro
         $UnidadesSuministro = new UnidadesSuministro();
         $allUnidadesSuministro = $UnidadesSuministro->selectAllUnidadesSuministro();
+        $msg = "NUEVO Tipo de Suministro creado.";
         include "view/verDetalleTipoSuministro.php";
     } else {
-        $msgError = "ERROR creando el Tipo de Suministro.";
+        $msg = "ERROR creando el Tipo de Suministro.";
         include "view/crearSuministro.php";
     }
 } else {

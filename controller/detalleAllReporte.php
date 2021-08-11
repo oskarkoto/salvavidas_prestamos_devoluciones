@@ -6,4 +6,5 @@ include 'model/Reporte.php';
     $allReporte = $Reporte->seleccionarAllReporte();
     $tipoReporte = new TipoReporte();
     $allTipoReporte = $tipoReporte->seleccionarAllTipoReporte();
+    $msg = NULL;
     include 'view/VerAllReporte.php';

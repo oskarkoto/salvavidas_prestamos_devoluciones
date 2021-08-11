@@ -16,4 +16,5 @@ include 'model/PrestamoSuministro.php';
 
     $TipoSuministro = new TipoSuministro();
     $allTipoSuministro = $TipoSuministro->selectAllTipoSuministro();
-include 'view/verAllPrestamoSuministro.php';
+    $msg = NULL;
+    include 'view/verAllPrestamoSuministro.php';

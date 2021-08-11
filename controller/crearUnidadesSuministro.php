@@ -7,9 +7,10 @@ if ($_POST) {
     $form = new UnidadesSuministro($_POST['cantidad']);
     if ($form->insertUnidadesSuministro()) {
         $allUnidadesSuministro = $form->selectAllUnidadesSuministro();
+        $msg = "NUEVA Unidad de Suministro creada.";
         include "view/verAllUnidadesSuministro.php";
     } else {
-        $msgError = "ERROR creando la Unidad de Suministro.";
+        $msg = "ERROR creando la Unidad de Suministro.";
         include "view/crearUnidadesSuministro.php";
     }
 } else {

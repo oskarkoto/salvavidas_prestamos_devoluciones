@@ -5,8 +5,8 @@ include "model/UnidadesSuministro.php";
 if ($_POST) {
     $UnidadesSuministro = new UnidadesSuministro($_POST['cantidad'],$_POST['idUnidades']);
     if ($UnidadesSuministro->updateUnidadesSuministro()){
-        $msg= "Se actualizó la unidad de suministro.";
         $allUnidadesSuministro = $UnidadesSuministro->selectAllUnidadesSuministro();
+        $msg= "Se actualizó la Unidad de suministro.";
         include "view/verAllUnidadesSuministro.php";
     }    
     

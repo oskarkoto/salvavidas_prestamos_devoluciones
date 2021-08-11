@@ -6,5 +6,6 @@ $estadoDevolucionGeneralId = $_GET['idEstadoDevolucionGeneral'];
 $sEstadoDevolucionGeneral = new EstadoDevolucionGen();
 $selectEstadoDevolucionGeneral = $sEstadoDevolucionGeneral->seleccionarEstadoDevolucionGen($estadoDevolucionGeneralId);
 $sEstadoDevolucionGeneral = $selectEstadoDevolucionGeneral[0];
+$msg = NULL;
 
 include 'view/verDetalleEstadoDevolucionGnrl.php';

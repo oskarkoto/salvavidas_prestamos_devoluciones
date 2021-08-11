@@ -8,4 +8,5 @@ $sDevolucion = new Devolucion();
     $sDevolucion = $selectDevolucion[0];
     $EstadoDevGnrl = new EstadoDevolucionGen();
     $allEstadoDevGnrl = $EstadoDevGnrl->seleccionarAllEstadoDevolucionGen();
+    $msg = NULL;
 include 'view/verDetalleDevolucion.php';

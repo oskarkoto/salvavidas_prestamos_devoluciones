@@ -4,4 +4,5 @@ include 'model/EstadoDevolucion.php';
 
 $estadoDevolucion = new EstadoDevolucion();
 $allEstadoDevolucion = $estadoDevolucion->seleccionarAllEstadoDevolucion();
+$msg = NULL;
 include 'view/verAllEstadoDevolucion.php';

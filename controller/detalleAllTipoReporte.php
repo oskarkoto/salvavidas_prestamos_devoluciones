@@ -4,4 +4,5 @@ include 'model/TipoReporte.php';
 
 $tipoReporte = new TipoReporte();
 $allTipoReporte = $tipoReporte->seleccionarAllTipoReporte();
+$msg = NULL;
 include 'view/verAllTipoReporte.php';

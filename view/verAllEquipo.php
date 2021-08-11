@@ -1,3 +1,8 @@
+<?php if ($msg != NULL){ ?>
+    <div class="alert alert-info" role="alert">
+        <h6 id = "alerta"><?php echo $msg; ?> </h6>
+    </div>
+<?php   }  ?>
 <!-- Vista de TODOS los Equipos. -->
 <div class="upside">
     <a href="index.php" class="Inicio">« Inicio</a>

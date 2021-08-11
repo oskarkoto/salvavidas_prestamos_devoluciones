@@ -9,4 +9,5 @@ $allDevolucion = $Devolucion->seleccionarAllDevolucion();
     $allPrestamo = $Prestamo->seleccionarAllPrestamo();
     $EstadoDevGnrl = new EstadoDevolucionGen();
     $allEstadoDevGnrl = $EstadoDevGnrl->seleccionarAllEstadoDevolucionGen();
+    $msg = NULL;
     include 'view/VerAllDevolucion.php';

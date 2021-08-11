@@ -5,7 +5,7 @@
   $idEquipo = $_GET['idEquipo'];
   $Equipo = new Equipo();    
   if ($Equipo->delete_equipo($idEquipo)){
-    $msg = "EXITO borrando el Equipo.";
+    $msg = "EXITO al borrar el Equipo.";
     $allEquipo = $Equipo->seleccionarAllEquipo();
     //Select de tipo equipo  
     $TipoEquipo = new TipoEquipo();
@@ -18,7 +18,7 @@
     $allCondicionActual = $CondicionActual->seleccionarAllCondicionActual();    
       include 'view/verAllEquipo.php';
   } else {
-    $msgError = "ERROR borrando el Equipo.";
+    $msg = "ERROR al borrar el Equipo.";
     $allEquipo = $Equipo->seleccionarAllEquipo();
     //Select de tipo equipo  
     $TipoEquipo = new TipoEquipo();

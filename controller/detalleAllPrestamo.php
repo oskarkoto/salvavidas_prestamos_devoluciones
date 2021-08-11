@@ -6,4 +6,5 @@ include 'model/Prestamo.php';
     $allPrestamo = $Prestamo->seleccionarAllPrestamo();
     $Tecnico = new Tecnico();
     $allTecnico = $Tecnico->seleccionarAllTecnico();
-include 'view/VerAllPrestamo.php';
+    $msg = NULL;
+    include 'view/VerAllPrestamo.php';

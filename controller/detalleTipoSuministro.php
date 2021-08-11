@@ -13,4 +13,5 @@ $TipoSuministro = new TipoSuministro();
     //Select Unidades de Suministro
     $UnidadesSuministro = new UnidadesSuministro();
     $allUnidadesSuministro = $UnidadesSuministro->selectAllUnidadesSuministro();
+    $msg = NULL;
     include "view/verDetalleTipoSuministro.php";

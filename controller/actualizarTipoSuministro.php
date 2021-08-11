@@ -14,7 +14,7 @@ if ($_POST) {
         //Select Unidades de Suministro
         $UnidadesSuministro = new UnidadesSuministro();
         $allUnidadesSuministro = $UnidadesSuministro->selectAllUnidadesSuministro();       
-
+        $msg = "Se actualizó el Tipo de Suministro.";
         include "view/verDetalleTipoSuministro.php";
     } 
 }   else {

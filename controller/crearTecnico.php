@@ -7,9 +7,10 @@ if ($_POST) {
   if($form->create_tecnico()){
     $selectTecnico  = $form->read_tecnicos($form->idTecnico);
     $form = $selectTecnico[0];
+    $msg = "NUEVO Técnico creado.";
     include "view/verDetalleTecnico.php";
   } else {
-    $msgError = "ERROR creando Estado de Devolución.";
+    $msg = "ERROR registrando Técnico.";
     include "view/crearTecnico.php";
   }
 } else {  

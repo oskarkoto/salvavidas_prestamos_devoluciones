@@ -15,6 +15,7 @@ if ($_POST) {
       //Select de condicion actual
       $CondicionActual = new CondicionActual();
       $allCondicionActual = $CondicionActual->seleccionarAllCondicionActual();
+      $msg = "Se actualizó el Equipo.";
       include "view/verDetalleEquipo.php";
   }    
   

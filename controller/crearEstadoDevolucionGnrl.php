@@ -7,9 +7,10 @@ if ($_POST) {
     if ($form->insertEstadoDevolucionGen()) {
         $selectEstadoDevolucionGeneral = $form->seleccionarEstadoDevolucionGen($form->idEstadoDevolucionGeneral);
         $form = $selectEstadoDevolucionGeneral[0];
+        $msg = "NUEVO Estado de Devolución General creado.";
         include "view/verDetalleEstadoDevolucionGnrl.php";
     } else {
-        $msgError = "ERROR creando Estado de Devolución.";
+        $msg = "ERROR creando Estado de Devolución General.";
         include "view/crearEstadoDevolucionGnrl.php";
     }
 } else {

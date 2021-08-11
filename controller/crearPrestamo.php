@@ -7,9 +7,12 @@ if ($_POST) {
     if ($form->insertPrestamo()) {
         $selectPrestamo = $form->seleccionarPrestamo($form->idPrestamo);
         $form = $selectPrestamo[0];
+        $Tecnico = new Tecnico();
+        $allTecnico = $Tecnico->seleccionarAllTecnico();
+        $msg = "NUEVO Préstamo creado.";
         include "view/verDetallePrestamo.php";
     } else {
-        $msgError = "ERROR creando Prestamo.";
+        $msg = "ERROR creando Prestamo.";
         $Tecnico = new Tecnico();
         $allTecnico = $Tecnico->seleccionarAllTecnico();
         include "view/crearPrestamo.php";

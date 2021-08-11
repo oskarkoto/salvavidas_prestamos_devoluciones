@@ -29,9 +29,9 @@
                     <label for="idCategoria" class='label_form'>Categoría: </label>
                     <select class="col-sm-2 col-form-label" name="idCategoria" id="input_form" required>
                         <?php foreach ($allCategoriaSuministro as $categoria) { if ($categoria->idCategoria == $value->idCategoria){ ?>
-                            <option value="<?php echo $value->idCategoria;?>" selected><?php echo $categoria->descripcionCategoria;?></option>
+                            <option value="<?php echo $categoria->idCategoria;?>" selected><?php echo $categoria->descripcionCategoria;?></option>
                             <?php } else { ?>
-                            <option value="<?php echo $value->idCategoria;?>" ><?php echo $categoria->descripcionCategoria;?></option>
+                            <option value="<?php echo $categoria->idCategoria;?>" ><?php echo $categoria->descripcionCategoria;?></option>
                         <?php } } ?>
                     </select>
                 </div>                
@@ -40,9 +40,9 @@
                     <label for="idUnidades" class='label_form'>Unidades: </label>
                     <select class="col-sm-2 col-form-label" name="idUnidades" id="input_form" required>
                         <?php foreach ($allUnidadesSuministro as $unidades) { if ($unidades->idUnidades == $value->idUnidades){ ?>
-                            <option value="<?php echo $value->idUnidades;?>" selected><?php echo $unidades->cantidad;?></option>
+                            <option value="<?php echo $unidades->idUnidades;?>" selected><?php echo $unidades->cantidad;?></option>
                             <?php } else { ?>
-                            <option value="<?php echo $value->idUnidades;?>" ><?php echo $unidades->cantidad;?></option>
+                            <option value="<?php echo $unidades->idUnidades;?>" ><?php echo $unidades->cantidad;?></option>
                         <?php } } ?>
                     </select>
                 </div>                

@@ -10,4 +10,5 @@ $allCategoriaSuministro = $CategoriaSuministro->selectAllCategoriaSuministro();
 //Select de Unidades de Suministro
 $UnidadesSuministro = new UnidadesSuministro();
 $allUnidadesSuministro = $UnidadesSuministro->selectAllUnidadesSuministro();
+$msg = NULL;
 include 'view/verAllTipoSuministro.php';

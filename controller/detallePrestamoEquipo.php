@@ -8,10 +8,9 @@ $sPrestamoEquipo = new PrestamoEquipo();
         $sPrestamoEquipo = $selectPrestamoEquipo[0];
         $Equipo = new Equipo();
         $allEquipo = $Equipo->seleccionarAllEquipo();
-        
         $EstadoDevolucion = new EstadoDevolucion();
-        $allEstadoDevolucion = $EstadoDevolucion->seleccionarAllEstadoDevolucion();
-        
+        $allEstadoDevolucion = $EstadoDevolucion->seleccionarAllEstadoDevolucion();        
         $TipoEquipo = new TipoEquipo();
         $allTipoEquipo = $TipoEquipo->seleccionarAllTipoEquipo();
+        $msg = NULL;
         include 'view/verDetallePrestamoEquipo.php';

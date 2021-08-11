@@ -5,7 +5,7 @@
   $idTipoSuministro = $_GET['idTipoSuministro'];
   $TipoSuministro = new TipoSuministro();    
   if ($TipoSuministro->deleteTipoSuministro($idTipoSuministro)){
-    $msg = "EXITO borrando el Suministro.";
+    $msg = "EXITO al borrar el Tipo de Suministro.";
     $allTipoSuministro = $TipoSuministro->selectAllTipoSuministro();
     //Categoria de Suministro
     $CategoriaSuministro = new CategoriaSuministro();
@@ -15,7 +15,7 @@
     $allUnidadesSuministro = $UnidadesSuministro->selectAllUnidadesSuministro();       
     include 'view/verAllTipoSuministro.php';
   } else {
-     $msgError = "ERROR borrando el Suministro.";
+     $msg = "ERROR al borrar el Tipo de Suministro.";
      $allTipoSuministro = $TipoSuministro->selectAllTipoSuministro(); 
      include 'view/verAllTipoSuministro.php';
   }    

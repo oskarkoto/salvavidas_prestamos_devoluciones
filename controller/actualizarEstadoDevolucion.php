@@ -11,6 +11,7 @@ if ($_POST) {
     if ($sEstadoDevolucion->actualizarEstadoDevolucion()){
         $selectEstadoDevolucion = $sEstadoDevolucion->seleccionarEstadoDevolucion($_POST['idEstadoDevolucion']);
         $sEstadoDevolucion = $selectEstadoDevolucion[0];
+        $msg = "Se actualizó el Estado de devolución.";
         include "view/verDetalleEstadoDevolucion.php";
     }    
     

@@ -17,9 +17,10 @@ if ($_POST) {
     //Select de condicion actual
     $CondicionActual = new CondicionActual();
     $allCondicionActual = $CondicionActual->seleccionarAllCondicionActual();
+    $msg = "NUEVO Equipo creado.";
     include "view/verDetalleEquipo.php";
   } else {
-    $msgError = "ERROR creando El equipo.";
+    $msg = "ERROR creando El Equipo.";
     //Select de tipo equipo  
     $TipoEquipo = new TipoEquipo();
     $allTipoEquipo = $TipoEquipo->seleccionarAllTipoEquipo();

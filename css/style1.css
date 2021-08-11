@@ -2,6 +2,11 @@
 
 /* ALL */
 
+#alerta{
+    font-family: "Georgia";
+    font-weight: bold;
+}
+
 .container{
     width: 100%;
 }

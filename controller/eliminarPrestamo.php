@@ -5,13 +5,13 @@ include "model/Prestamo.php";
 $idPrestamo = $_GET['idPrestamo'];
 $Prestamo = new Prestamo();    
 if ($Prestamo->eliminarPrestamo($idPrestamo)){
-  $msg = "EXITO borrando el Prestamo.";
+  $msg = "EXITO al borrar el Préstamo.";
   $allPrestamo = $Prestamo->seleccionarAllPrestamo();
   $Tecnico = new Tecnico();
   $allTecnico = $Tecnico->seleccionarAllTecnico();
     include 'view/verAllPrestamo.php';
 } else {
-   $msgError = "ERROR borrando el Prestamo.";
+   $msg = "ERROR al borrar el Préstamo.";
    $allPrestamo = $Prestamo->seleccionarAllPrestamo();
    $Tecnico = new Tecnico();
    $allTecnico = $Tecnico->seleccionarAllTecnico();

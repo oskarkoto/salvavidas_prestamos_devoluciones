@@ -5,7 +5,7 @@
   $idSuministro = $_GET['idSuministro'];
   $Suministro = new Suministro();    
     if ($Suministro->deleteSuministro($idSuministro)){
-      $msg = "EXITO borrando el Suministro.";
+      $msg = "EXITO al borrar el Suministro.";
       $allSuministro = $Suministro->selectAllSuministro();
       //Select de Tipo Suministro
       $TipoSuministro = new TipoSuministro();
@@ -18,7 +18,7 @@
       $allEstadoInventario = $EstadoInventario->seleccionarAllEstadoInventario();
         include 'view/verAllSuministro.php';
     } else {
-      $msgError = "ERROR borrando el Suministro.";
+      $msg = "ERROR al borrar el Suministro.";
       $allSuministro = $Suministro->selectAllSuministro();
       //Select de Tipo Suministro
       $TipoSuministro = new TipoSuministro();

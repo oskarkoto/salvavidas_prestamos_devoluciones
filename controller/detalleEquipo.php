@@ -15,4 +15,5 @@ $sEquipo = new Equipo();
     //Select de condicion actual
     $CondicionActual = new CondicionActual();
     $allCondicionActual = $CondicionActual->seleccionarAllCondicionActual();
+    $msg = NULL;
     include 'view/verDetalleEquipo.php';

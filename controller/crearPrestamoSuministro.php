@@ -20,8 +20,10 @@ if ($_POST) {
     
         $TipoSuministro = new TipoSuministro();
         $allTipoSuministro = $TipoSuministro->selectAllTipoSuministro();
+        $msg = "NUEVO Préstamo de Suministro creado.";
         include "view/verDetallePrestamoSuministro.php";
     } else {
+        $msg = "ERROR creando Préstamo de Suministro.";
         $Prestamo = new Prestamo();
         $allPrestamo = $Prestamo->seleccionarAllPrestamo();
         
@@ -32,8 +34,7 @@ if ($_POST) {
         $allEstadoDevolucion = $EstadoDevolucion->seleccionarAllEstadoDevolucion();
     
         $TipoSuministro = new TipoSuministro();
-        $allTipoSuministro = $TipoSuministro->selectAllTipoSuministro();
-        $msgError = "ERROR creando Prestamo de Suministro.";
+        $allTipoSuministro = $TipoSuministro->selectAllTipoSuministro();       
         include "view/crearPrestamoSuministro.php";
     }
 } else {

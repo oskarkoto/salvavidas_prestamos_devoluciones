@@ -9,9 +9,10 @@ if ($_POST) {
         $allReporte = $Reporte->seleccionarAllReporte();
         $TipoReporte = new TipoReporte();
         $allTipoReporte = $TipoReporte->seleccionarAllTipoReporte();
+        $msg = "NUEVO Reporte creado.";
         include "view/verAllReporte.php";
     } else {
-        $msgError = "ERROR creando Reporte.";
+        $msgError = "ERROR creando el Reporte.";
         include "view/crearReporte.php";
     }
 } else {

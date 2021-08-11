@@ -12,9 +12,10 @@ if ($_POST) {
         $allPrestamo = $Prestamo->seleccionarAllPrestamo();
         $EstadoDevGnrl = new EstadoDevolucionGen();
         $allEstadoDevGnrl = $EstadoDevGnrl->seleccionarAllEstadoDevolucionGen();
+        $msg = "NUEVA Devolución creada.";
         include "view/verDetalleDevolucion.php";
     } else {
-        $msgError = "ERROR creando Devolucion.";
+        $msg = "ERROR creando Devolucion.";
         $Prestamo = new Prestamo();
         $allPrestamo = $Prestamo->seleccionarAllPrestamo();
         $EstadoDevGnrl = new EstadoDevolucionGen();

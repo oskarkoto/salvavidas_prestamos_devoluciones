@@ -5,11 +5,11 @@
   $idTipoEquipo = $_GET['idTipoEquipo'];
   $TipoEquipo = new TipoEquipo();    
   if ($TipoEquipo->delete_tipo_equipo($idTipoEquipo)){
-    $msg = "EXITO borrando el Tipo de Equipo.";
+    $msg = "EXITO al borrar el Tipo de Equipo.";
     $allTipoEquipo = $TipoEquipo->seleccionarAllTipoEquipo();
       include 'view/verAllTipoEquipo.php';
   } else {
-     $msgError = "ERROR borrando el Tipo de Equipo.";
+     $msg = "ERROR al borrar el Tipo de Equipo.";
      $allTipoEquipo = $TipoEquipo->seleccionarAllTipoEquipo();
       include 'view/verAllTipoEquipo.php';
   }    

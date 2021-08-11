@@ -5,7 +5,7 @@ include "model/PrestamoSuministro.php";
 $idPrestamoSuministro = $_GET['idPrestamoSuministro'];
 $PrestamoSuministro = new PrestamoSuministro();    
     if ($PrestamoSuministro->eliminarPrestamoSuministro($idPrestamoSuministro)){
-        $msg = "EXITO borrando el Prestamo de Suministro.";
+        $msg = "EXITO al borrar el Préstamo de Suministro.";
         $allPrestamoSuministro = $PrestamoSuministro->seleccionarAllPrestamoSuministro();
         $Prestamo = new Prestamo();
         $allPrestamo = $Prestamo->seleccionarAllPrestamo();
@@ -20,7 +20,7 @@ $PrestamoSuministro = new PrestamoSuministro();
         $allTipoSuministro = $TipoSuministro->selectAllTipoSuministro();
             include 'view/verAllPrestamoSuministro.php';
     } else {
-        $msgError = "ERROR borrando el Prestamo.";
+        $msg = "ERROR al borrar el Préstamo de Suministro.";
         $allPrestamoSuministro = $PrestamoSuministro->seleccionarAllPrestamoSuministro();
         $Prestamo = new Prestamo();
         $allPrestamo = $Prestamo->seleccionarAllPrestamo();

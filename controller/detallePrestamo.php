@@ -9,4 +9,5 @@ $sPrestamo = new Prestamo();
     $sPrestamo = $selectPrestamo[0];
     $Tecnico = new Tecnico();
     $allTecnico = $Tecnico->seleccionarAllTecnico();
+    $msg = NULL;
 include 'view/verDetallePrestamo.php';

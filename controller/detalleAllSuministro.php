@@ -13,4 +13,5 @@ include 'model/Suministro.php';
     //Select de Estado en Inventario
     $EstadoInventario = new EstadoInventario();
     $allEstadoInventario = $EstadoInventario->seleccionarAllEstadoInventario();
+    $msg = NULL;
     include 'view/verAllSuministro.php';

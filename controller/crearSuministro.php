@@ -17,8 +17,10 @@ if ($_POST) {
         //Select de condicion actual
         $CondicionActual = new CondicionActual();
         $allCondicionActual = $CondicionActual->seleccionarAllCondicionActual();
+        $msg = "NUEVO Suministro creado.";
         include "view/verDetalleSuministro.php";
     } else {
+        $msg = "ERROR creando Suministro.";
         //Select de tipo suministro  
         $TipoSuministro = new TipoSuministro();
         $allTipoSuministro = $TipoSuministro->selectAllTipoSuministro();
@@ -27,8 +29,7 @@ if ($_POST) {
         $allEstadoInventario = $EstadoInventario->seleccionarAllEstadoInventario();
         //Select de condicion actual
         $CondicionActual = new CondicionActual();
-        $allCondicionActual = $CondicionActual->seleccionarAllCondicionActual();
-        $msgError = "ERROR creando Suministro.";
+        $allCondicionActual = $CondicionActual->seleccionarAllCondicionActual();        
         include "view/crearSuministro.php";
     }
 } else {

@@ -11,6 +11,7 @@ if ($_POST) {
     if ($sTipoReporte->actualizarTipoReporte()){
         $selectTipoReporte = $sTipoReporte->seleccionarTipoReporte($_POST['idTipoReporte']);
         $sTipoReporte = $selectTipoReporte[0];
+        $msg = "Se actualizó el Tipo de reporte.";
         include "view/verDetalleTipoReporte.php";
     }    
     

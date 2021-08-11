@@ -19,5 +19,6 @@ $sPrestamoSuministro = new PrestamoSuministro();
 
     $TipoSuministro = new TipoSuministro();
     $allTipoSuministro = $TipoSuministro->selectAllTipoSuministro();
-
+    $msg = NULL;
+    
 include 'view/verDetallePrestamoSuministro.php';
