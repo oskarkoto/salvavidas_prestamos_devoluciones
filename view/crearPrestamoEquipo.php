@@ -25,7 +25,7 @@
             <div class="col-md-12 col-xl-12 col-sm-12" >
                 <label for="idEquipo" class='label_form'>Equipo:  </label>
                 <select class="col-sm-2 col-form-label" name="idEquipo" id="input_form" required>
-                    <?php foreach ($allEquipo as $equipo) { foreach($allTipoEquipo as $tipo) { if ($equipo->idTipoEquipo == $tipo->idTipoEquipo) { ?>
+                    <?php foreach ($allEquipo as $equipo) { foreach($allTipoEquipo as $tipo) { if ($equipo->idTipoEquipo == $tipo->idTipoEquipo && $equipo->idEstadoInventario == 1) { ?>
                         <option value="<?php echo $equipo->idEquipo; ?>"> <?php echo $tipo->nombreTipoEquipo; ?></option>
                     <?php } } } ?>
                 </select>

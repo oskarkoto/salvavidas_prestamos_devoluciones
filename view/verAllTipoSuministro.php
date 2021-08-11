@@ -12,7 +12,7 @@
         <h2> TIPOS DE SUMINISTRO </h2>
     </div>
     <div class="card-subtitle" id="Add">
-        <label for="search">Buscar: </label>
+        <label for="search">Filtrar búsqueda por: </label>
         <select name="forma" onchange="location = this.value;">
             <option value="?c=detalleAllSuministro">Suministro</option>
             <option value="?c=detalleAllTipoSuministro" selected>Tipo de Suministro</option>

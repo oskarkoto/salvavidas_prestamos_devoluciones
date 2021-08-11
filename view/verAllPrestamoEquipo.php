@@ -12,7 +12,7 @@
         <h2>PRESTAMOS DE EQUIPO</h2>
     </div>
     <div class="card-subtitle" id="Add">
-        <label for="search">Buscar: </label>
+        <label for="search">Filtrar búsqueda por: </label>
         <select name="forma" onchange="location = this.value;">
             <option value="?c=detalleAllPrestamo" >Préstamo</option>
             <option value="?c=detalleAllPrestamoEquipo" selected>Préstamo de Equipo</option>

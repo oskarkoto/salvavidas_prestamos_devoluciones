@@ -12,7 +12,7 @@
         <h2> TIPO REPORTE</h2>
     </div>
     <div class="card-subtitle" id="Add">
-        <label for="search">Buscar: </label>
+        <label for="search">Filtrar búsqueda por: </label>
         <select class="form-select-sm" name="forma" onchange="location = this.value;">
             <option value="?c=detalleAllReporte">Reporte</option>
             <option value="?c=detalleAllTipoReporte"selected>Tipo Reporte</option>

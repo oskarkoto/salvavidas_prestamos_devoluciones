@@ -12,7 +12,7 @@
         <h2> ESTADO DEVOLUCION</h2>
     </div>
     <div class="card-subtitle" id="Add">
-        <label for="search">Buscar: </label>
+        <label for="search">Filtrar búsqueda por: </label>
         <select name="forma" onchange="location = this.value;">
             <option value="?c=detalleAllDevolucion">Devolución</option>
             <option value="?c=detalleAllEstadoDevolucionGnrl">Estados de Devolución General</option>
