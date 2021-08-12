@@ -17,6 +17,7 @@
             <option value="?c=detalleAllEquipo" selected>Equipo</option>
             <option value="?c=detalleAllTipoEquipo">Tipo de Equipo</option>
             <option value="?c=detalleAllSuministro">Suministro </option>
+            <option value="?c=detalleAllTipoSuministro">Tipo de Suministro </option>
         </select>
         <!-- Icono filtro -->
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-funnel-fill" viewBox="0 0 16 16">
