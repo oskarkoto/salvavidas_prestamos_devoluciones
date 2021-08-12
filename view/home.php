@@ -19,7 +19,7 @@
             <a href="?c=detalleAllPrestamo" class="card-link">Préstamos</a>
          </div>
          <div class="container" id="OpcionesMP">
-            <a href="?c=detalleAllReporte" class="card-link">Reportes</a>
+            <a href="?c=crearReporte" class="card-link">Reportes</a>
         </div>
     </div>
 </div>
