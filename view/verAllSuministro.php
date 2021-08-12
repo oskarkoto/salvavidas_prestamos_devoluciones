@@ -17,6 +17,7 @@
             <option value="?c=detalleAllSuministro" selected>Suministro</option>
             <option value="?c=detalleAllTipoSuministro">Tipo de Suministro</option>
             <option value="?c=detalleAllUnidadesSuministro">Unidades de Suministro</option>
+            <option value="?c=detalleAllTipoEquipo">Tipo de Equipo</option>
             <option value="?c=detalleAllEquipo">Equipo</option>
         </select>
         <!-- Icono filtro -->
