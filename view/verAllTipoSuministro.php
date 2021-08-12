@@ -14,11 +14,11 @@
     <div class="card-subtitle" id="Add">
         <label for="search">Filtrar búsqueda por: </label>
         <select name="forma" onchange="location = this.value;">
-            <option value="?c=detalleAllTipoSuministro" selected>Tipo de Suministro</option>
-            <option value="?c=detalleAllSuministro">Suministro</option>
-            <option value="?c=detalleAllUnidadesSuministro">Unidades de Suministro</option>
-            <option value="?c=detalleAllTipoEquipo">Tipo de Equipo</option>
             <option value="?c=detalleAllEquipo">Equipo</option>
+            <option value="?c=detalleAllTipoEquipo">Tipo de Equipo</option>
+            <option value="?c=detalleAllSuministro">Suministro </option>
+            <option value="?c=detalleAllTipoSuministro" selected>Tipo de Suministro </option>
+            <option value="?c=detalleAllUnidadesSuministro">Unidades de Suministro</option>
         </select>
         <!-- Icono filtro -->
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-funnel-fill" viewBox="0 0 16 16">
