@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-08-2021 a las 00:00:25
--- Versión del servidor: 10.4.17-MariaDB
--- Versión de PHP: 7.3.27
+-- Tiempo de generación: 12-08-2021 a las 07:12:39
+-- Versión del servidor: 10.4.18-MariaDB
+-- Versión de PHP: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,7 +29,6 @@ USE `salvavidas`;
 -- Estructura de tabla para la tabla `categoriasuministro`
 --
 
-DROP TABLE IF EXISTS `categoriasuministro`;
 CREATE TABLE `categoriasuministro` (
   `idCategoria` int(11) NOT NULL,
   `descripcionCategoria` varchar(50) NOT NULL
@@ -50,7 +49,6 @@ INSERT INTO `categoriasuministro` (`idCategoria`, `descripcionCategoria`) VALUES
 -- Estructura de tabla para la tabla `condicionactual`
 --
 
-DROP TABLE IF EXISTS `condicionactual`;
 CREATE TABLE `condicionactual` (
   `idCondicionActual` int(11) NOT NULL,
   `descripcionCondicionActual` varchar(50) DEFAULT NULL
@@ -71,7 +69,6 @@ INSERT INTO `condicionactual` (`idCondicionActual`, `descripcionCondicionActual`
 -- Estructura de tabla para la tabla `devolucion`
 --
 
-DROP TABLE IF EXISTS `devolucion`;
 CREATE TABLE `devolucion` (
   `idDevolucion` int(11) NOT NULL,
   `idPrestamo` int(11) NOT NULL,
@@ -84,7 +81,8 @@ CREATE TABLE `devolucion` (
 --
 
 INSERT INTO `devolucion` (`idDevolucion`, `idPrestamo`, `fechaRealDevolucion`, `idEstadoDevolucionGeneral`) VALUES
-(1, 2, '2021-08-11', 2);
+(1, 2, '2021-08-11', 2),
+(2, 1, '2021-08-11', 4);
 
 -- --------------------------------------------------------
 
@@ -92,7 +90,6 @@ INSERT INTO `devolucion` (`idDevolucion`, `idPrestamo`, `fechaRealDevolucion`, `
 -- Estructura de tabla para la tabla `equipo`
 --
 
-DROP TABLE IF EXISTS `equipo`;
 CREATE TABLE `equipo` (
   `idEquipo` varchar(25) NOT NULL,
   `idTipoEquipo` varchar(25) NOT NULL,
@@ -118,7 +115,6 @@ INSERT INTO `equipo` (`idEquipo`, `idTipoEquipo`, `idCondicionActual`, `idEstado
 -- Estructura de tabla para la tabla `estadodevolucion`
 --
 
-DROP TABLE IF EXISTS `estadodevolucion`;
 CREATE TABLE `estadodevolucion` (
   `idEstadoDevolucion` int(11) NOT NULL,
   `descripcionEstadoDevolucion` varchar(50) DEFAULT NULL
@@ -139,7 +135,6 @@ INSERT INTO `estadodevolucion` (`idEstadoDevolucion`, `descripcionEstadoDevoluci
 -- Estructura de tabla para la tabla `estadodevoluciongeneral`
 --
 
-DROP TABLE IF EXISTS `estadodevoluciongeneral`;
 CREATE TABLE `estadodevoluciongeneral` (
   `idEstadoDevolucionGeneral` int(11) NOT NULL,
   `descripcionEstadoDevolucionGeneral` varchar(50) DEFAULT NULL
@@ -161,7 +156,6 @@ INSERT INTO `estadodevoluciongeneral` (`idEstadoDevolucionGeneral`, `descripcion
 -- Estructura de tabla para la tabla `estadoinventario`
 --
 
-DROP TABLE IF EXISTS `estadoinventario`;
 CREATE TABLE `estadoinventario` (
   `idEstadoInventario` int(11) NOT NULL,
   `descripcionEstadoInventario` varchar(50) DEFAULT NULL
@@ -181,7 +175,6 @@ INSERT INTO `estadoinventario` (`idEstadoInventario`, `descripcionEstadoInventar
 -- Estructura de tabla para la tabla `prestamo`
 --
 
-DROP TABLE IF EXISTS `prestamo`;
 CREATE TABLE `prestamo` (
   `idPrestamo` int(11) NOT NULL,
   `idTecnico` varchar(25) NOT NULL,
@@ -205,7 +198,6 @@ INSERT INTO `prestamo` (`idPrestamo`, `idTecnico`, `fechaPrestamo`, `fechaEspera
 -- Estructura de tabla para la tabla `prestamoequipo`
 --
 
-DROP TABLE IF EXISTS `prestamoequipo`;
 CREATE TABLE `prestamoequipo` (
   `idPrestamoEquipo` int(11) NOT NULL,
   `idPrestamo` int(11) NOT NULL,
@@ -227,12 +219,10 @@ INSERT INTO `prestamoequipo` (`idPrestamoEquipo`, `idPrestamo`, `idEquipo`, `idE
 --
 -- Disparadores `prestamoequipo`
 --
-DROP TRIGGER IF EXISTS `cambiarestadoequipo`;
 DELIMITER $$
 CREATE TRIGGER `cambiarestadoequipo` AFTER INSERT ON `prestamoequipo` FOR EACH ROW UPDATE equipo SET idEstadoInventario = 2 WHERE idEquipo = NEW.idEquipo
 $$
 DELIMITER ;
-DROP TRIGGER IF EXISTS `devolverestadoequipo`;
 DELIMITER $$
 CREATE TRIGGER `devolverestadoequipo` AFTER DELETE ON `prestamoequipo` FOR EACH ROW UPDATE equipo SET idEstadoInventario = 1 WHERE idEquipo = prestamoequipo.idEquipo
 $$
@@ -244,7 +234,6 @@ DELIMITER ;
 -- Estructura de tabla para la tabla `prestamosuministro`
 --
 
-DROP TABLE IF EXISTS `prestamosuministro`;
 CREATE TABLE `prestamosuministro` (
   `idPrestamoSuministro` int(11) NOT NULL,
   `idPrestamo` int(11) NOT NULL,
@@ -267,7 +256,6 @@ INSERT INTO `prestamosuministro` (`idPrestamoSuministro`, `idPrestamo`, `idSumin
 -- Estructura de tabla para la tabla `reporte`
 --
 
-DROP TABLE IF EXISTS `reporte`;
 CREATE TABLE `reporte` (
   `idReporte` int(11) NOT NULL,
   `tituloReporte` varchar(50) DEFAULT NULL,
@@ -275,27 +263,12 @@ CREATE TABLE `reporte` (
   `fechaReporte` date DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `reporte`
---
-
-INSERT INTO `reporte` (`idReporte`, `tituloReporte`, `idTipoReporte`, `fechaReporte`) VALUES
-(1, 'Primer Reporte', 4, '2021-07-23'),
-(2, 'Segundo Reporte', 3, '2021-07-28'),
-(3, 'Reporte de daños a Taladro', 1, '2021-07-28'),
-(4, 'Cuarto reporte', 4, '2021-07-22'),
-(5, 'Quinto Reporte', 4, '2021-07-20'),
-(6, 'Reporte 6', 2, '2021-07-02'),
-(7, 'Reporte 7', 3, '2021-06-28'),
-(8, 'Reporte 8', 4, '2021-08-11');
-
 -- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `suministro`
 --
 
-DROP TABLE IF EXISTS `suministro`;
 CREATE TABLE `suministro` (
   `idSuministro` varchar(25) NOT NULL,
   `idTipoSuministro` varchar(25) NOT NULL,
@@ -310,7 +283,7 @@ CREATE TABLE `suministro` (
 
 INSERT INTO `suministro` (`idSuministro`, `idTipoSuministro`, `idCondicionActual`, `idEstadoInventario`, `fechaInclusion`) VALUES
 ('1', '1', 1, 1, '2021-07-27'),
-('2', '2', 1, 1, '2021-07-27'),
+('2', '2', 2, 1, '2021-07-27'),
 ('3', '3', 1, 2, '2021-08-03'),
 ('4', '4', 1, 1, '2021-08-11');
 
@@ -320,7 +293,6 @@ INSERT INTO `suministro` (`idSuministro`, `idTipoSuministro`, `idCondicionActual
 -- Estructura de tabla para la tabla `tecnico`
 --
 
-DROP TABLE IF EXISTS `tecnico`;
 CREATE TABLE `tecnico` (
   `idTecnico` varchar(25) NOT NULL,
   `primerNombre` varchar(50) NOT NULL,
@@ -347,7 +319,6 @@ INSERT INTO `tecnico` (`idTecnico`, `primerNombre`, `segundoNombre`, `primerApel
 -- Estructura de tabla para la tabla `tipoequipo`
 --
 
-DROP TABLE IF EXISTS `tipoequipo`;
 CREATE TABLE `tipoequipo` (
   `idTipoEquipo` varchar(25) NOT NULL,
   `nombreTipoEquipo` varchar(50) NOT NULL,
@@ -372,7 +343,6 @@ INSERT INTO `tipoequipo` (`idTipoEquipo`, `nombreTipoEquipo`, `descripcionTipoEq
 -- Estructura de tabla para la tabla `tiporeporte`
 --
 
-DROP TABLE IF EXISTS `tiporeporte`;
 CREATE TABLE `tiporeporte` (
   `idTipoReporte` int(11) NOT NULL,
   `nombreTipoReporte` varchar(50) NOT NULL,
@@ -385,11 +355,12 @@ CREATE TABLE `tiporeporte` (
 --
 
 INSERT INTO `tiporeporte` (`idTipoReporte`, `nombreTipoReporte`, `detalleTipoReporte`, `queryTipoReporte`) VALUES
-(1, 'Daño de equipo', 'Se reporta daños en equipo', 'Lorem ipsum'),
-(2, 'Robo', 'Se reporta el robo de un suministro/equipo.', 'Lorem Ipsum'),
-(3, 'Informe de Técnico-Préstamos-Daños', 'Detalla \r\nlos técnicos que han efectuado devoluciones \r\ncon daños en el equipo.', 'Lorem Ipsum'),
-(4, 'Informe de Técnico-Préstamos-Pérdidas', 'Detalla los técnicos que han efectuado \r\ndevoluciones con pérdidas o robos en el \r\nequipo.', 'Lorem Ipsum'),
-(5, 'Detalle daño 5', 'Lorem ipsum', 'Query');
+(1, 'Equipos Dañados', ' Detalla los equipos que se encuentran actualmente con un daño.', ''),
+(2, 'Suministros Dañados', 'Detalla los suministros que se encuentran actualmente con un daño.', ''),
+(3, 'Préstamos Atrasados', 'Detalla los préstamos que sobrepasan la fecha prevista de devolución.', ''),
+(4, 'Informe de Técnico-Préstamos-Daños', 'Detalla los técnicos que han efectuado devoluciones con daños en el equipo.\r\n', ''),
+(5, 'Informe de Técnico-Préstamos-Pérdidas', 'Detalla los técnicos que han efectuado devoluciones con pérdidas o robos en el equipo.', ''),
+(6, 'Equipos con Inventario Bajo', 'Detalla los tipos de equipo que tienen una cantidad de unidades en inventario menores a su cantidad mínima de existencias.', '');
 
 -- --------------------------------------------------------
 
@@ -397,7 +368,6 @@ INSERT INTO `tiporeporte` (`idTipoReporte`, `nombreTipoReporte`, `detalleTipoRep
 -- Estructura de tabla para la tabla `tiposuministro`
 --
 
-DROP TABLE IF EXISTS `tiposuministro`;
 CREATE TABLE `tiposuministro` (
   `idTipoSuministro` varchar(25) NOT NULL,
   `nombreTipoSuministro` varchar(50) NOT NULL,
@@ -425,7 +395,6 @@ INSERT INTO `tiposuministro` (`idTipoSuministro`, `nombreTipoSuministro`, `descr
 -- Estructura de tabla para la tabla `unidadessuministro`
 --
 
-DROP TABLE IF EXISTS `unidadessuministro`;
 CREATE TABLE `unidadessuministro` (
   `idUnidades` int(11) NOT NULL,
   `cantidad` int(11) NOT NULL
@@ -645,13 +614,13 @@ ALTER TABLE `prestamosuministro`
 -- AUTO_INCREMENT de la tabla `reporte`
 --
 ALTER TABLE `reporte`
-  MODIFY `idReporte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `idReporte` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `tiporeporte`
 --
 ALTER TABLE `tiporeporte`
-  MODIFY `idTipoReporte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idTipoReporte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `unidadessuministro`
