@@ -57,7 +57,7 @@
                 <div class="dropdown-divider" id="dropdown-divider-form"></div>
                 <div class="col-md-12 col-xl-12 col-sm-12" >
                     <label for="fechaInclusion" class='label_form'>Fecha de Inclusión: </label>
-                    <input type="text" class="col-form-label" id="input_form" name="fechaInclusion" placeholder="<?php echo $value->fechaInclusion; ?>" readonly>
+                    <input type="date" class="col-form-label" id="input_form" name="fechaInclusion" value="<?php echo $value->fechaInclusion; ?>" required>
                 </div>
                 <br>
                 <div class="dropdown-divider" id="dropdown-divider-form"></div>
