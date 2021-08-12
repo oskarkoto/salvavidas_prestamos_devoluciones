@@ -44,6 +44,21 @@ class Reporte {
         return $rows;
     }         
     
+    function seleccionarReporte($idReporte = "") {
+        $query = "SELECT * FROM reporte";
+        if ($idReporte) {
+            $query .= " where idReporte = '$idReporte'";
+        }
+        $pdo = new Connection();
+        $pdo = $pdo->open();
+        $result = $pdo->query($query);
+        $rows = [];
+        foreach ($result->fetchAll() as $row) {
+            $rows[] = new Reporte($row['tituloReporte'],$row['idTipoReporte'],$row['fechaReporte'],$row['idReporte']);
+        }
+        return $rows; 
+    }      
+
     /**
      * Actualiza la información del reporte.
      * NO se requiere en el sistema.
