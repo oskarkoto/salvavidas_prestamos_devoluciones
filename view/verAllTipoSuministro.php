@@ -37,7 +37,7 @@
                 <th scope="col">ID</th>
                 <th scope="col">Nombre</th>
                 <th scope="col">Descripción</th>
-                <th scope="col">Categoria</th>
+                <th scope="col">Categoría</th>
                 <th scope="col">Unidades</th>
                 <th scope="col">Marca</th>
                 <th scope="col">Existencia Mínima</th>

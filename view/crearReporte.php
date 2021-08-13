@@ -8,7 +8,6 @@
     </div>
     <form method="POST" action="?c=crearReporte" class='formulario'>        
         <div class="form-group" align="center" >
-            <div class="dropdown-divider" id="dropdown-divider-form"></div>
             <div class="col-md-12 col-xl-12 col-sm-12" >
                 <label for="idTipoReporte" class='label_form'>Tipo:  </label>
                 <select class="col-sm-2 col-form-label" name="idTipoReporte" id="input_form" required>

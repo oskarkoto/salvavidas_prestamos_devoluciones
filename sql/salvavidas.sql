@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-08-2021 a las 02:46:19
+-- Tiempo de generación: 13-08-2021 a las 08:21:50
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 7.3.27
 
@@ -180,7 +180,7 @@ CREATE TABLE `estadoinventario` (
 --
 
 INSERT INTO `estadoinventario` (`idEstadoInventario`, `descripcionEstadoInventario`) VALUES
-(1, 'En stock'),
+(1, 'Inventario'),
 (2, 'Prestado');
 
 -- --------------------------------------------------------
@@ -568,13 +568,17 @@ CREATE TABLE `reporte` (
 --
 
 INSERT INTO `reporte` (`idReporte`, `tituloReporte`, `idTipoReporte`, `fechaReporte`) VALUES
-(1, 'Equipos Dañados', 4, '2021-07-23'),
-(2, 'Suministros Dañados', 3, '2021-07-28'),
-(3, 'Préstamos atrasados', 1, '2021-07-28'),
-(4, 'Informe de Técnico-Préstamos-Daños', 4, '2021-07-22'),
-(5, 'Informe de Técnico-Préstamos-Pérdidas', 4, '2021-07-20'),
-(6, 'Equipos con inventario bajo', 2, '2021-07-02'),
-(7, 'Suministros con inventario bajo', 1, '2021-08-12');
+(1, 'Reporte', 4, '2021-07-23'),
+(2, 'Reporte', 3, '2021-07-28'),
+(3, 'Reporte', 1, '2021-07-28'),
+(4, 'Reporte', 4, '2021-07-22'),
+(5, 'Reporte', 4, '2021-07-20'),
+(6, 'Reporte', 2, '2021-07-02'),
+(10, 'Reporte', 7, '2021-08-13'),
+(11, 'Reporte', 1, '2021-08-13'),
+(12, 'Reporte', 6, '2021-08-13'),
+(13, 'Reporte', 3, '2021-08-13'),
+(14, 'Reporte', 1, '2021-08-13');
 
 -- --------------------------------------------------------
 
@@ -1090,7 +1094,7 @@ ALTER TABLE `prestamosuministro`
 -- AUTO_INCREMENT de la tabla `reporte`
 --
 ALTER TABLE `reporte`
-  MODIFY `idReporte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `idReporte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `tiporeporte`

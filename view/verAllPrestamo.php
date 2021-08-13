@@ -33,9 +33,9 @@
         <thead>
             <tr>
                 <th scope="col">ID</th>
-                <th scope="col">Tecnico</th>
-                <th scope="col">Fecha Prestamo</th>
-                <th scope="col">Fecha Devolucion</th>
+                <th scope="col">Técnico</th>
+                <th scope="col">Fecha Préstamo</th>
+                <th scope="col">Fecha Devolución</th>
                 <th scope="col">Cliente</th>
                 <th scope="col">Opciones</th>
             </tr>
