@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-08-2021 a las 19:28:39
+-- Tiempo de generación: 14-08-2021 a las 19:12:04
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 7.3.27
 
@@ -33,6 +33,7 @@ CREATE TABLE `categoriasuministro` (
   `idCategoria` int(11) NOT NULL,
   `descripcionCategoria` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 
 --
 -- Volcado de datos para la tabla `categoriasuministro`
@@ -84,8 +85,6 @@ CREATE TABLE `devolucion` (
 --
 
 INSERT INTO `devolucion` (`idDevolucion`, `idPrestamo`, `fechaRealDevolucion`, `idEstadoDevolucionGeneral`) VALUES
-(1, 2, '2021-08-11', 2),
-(1, 2, '2021-08-11', 2),
 (1, 2, '2021-08-11', 2);
 
 -- --------------------------------------------------------
@@ -102,23 +101,13 @@ CREATE TABLE `equipo` (
   `fechaInclusion` date DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `equipo`
---
-
-INSERT INTO `equipo` (`idEquipo`, `idTipoEquipo`, `idCondicionActual`, `idEstadoInventario`, `fechaInclusion`) VALUES
-('1', '1', 1, 1, '2021-08-01'),
-('2', '2', 2, 2, '2021-07-27'),
-('3', '3', 1, 2, '2021-07-30'),
-('4', '4', 2, 2, '2021-08-07'),
-('5', '3', 1, 2, '2021-08-11');
-
 -- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `estadodevolucion`
 --
 
+DROP TABLE IF EXISTS `estadodevolucion`;
 CREATE TABLE `estadodevolucion` (
   `idEstadoDevolucion` int(11) NOT NULL,
   `descripcionEstadoDevolucion` varchar(50) DEFAULT NULL
@@ -157,18 +146,6 @@ INSERT INTO `estadodevoluciongeneral` (`idEstadoDevolucionGeneral`, `descripcion
 (3, 'Irreparable'),
 (4, 'Gasto de uso'),
 (5, 'Perdido'),
-(6, 'Robado'),
-(1, 'Buen Estado'),
-(2, 'Daños reparables'),
-(3, 'Irreparable'),
-(4, 'Gasto de uso'),
-(5, 'Perdido'),
-(6, 'Robado'),
-(1, 'Buen Estado'),
-(2, 'Daños reparables'),
-(3, 'Irreparable'),
-(4, 'Gasto de uso'),
-(5, 'Perdido'),
 (6, 'Robado');
 
 -- --------------------------------------------------------
@@ -193,238 +170,6 @@ INSERT INTO `estadoinventario` (`idEstadoInventario`, `descripcionEstadoInventar
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `pma__bookmark`
---
-
-CREATE TABLE `pma__bookmark` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `dbase` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `user` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `label` varchar(255) CHARACTER SET utf8 NOT NULL DEFAULT '',
-  `query` text COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Bookmarks';
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `pma__central_columns`
---
-
-CREATE TABLE `pma__central_columns` (
-  `db_name` varchar(64) COLLATE utf8_bin NOT NULL,
-  `col_name` varchar(64) COLLATE utf8_bin NOT NULL,
-  `col_type` varchar(64) COLLATE utf8_bin NOT NULL,
-  `col_length` text COLLATE utf8_bin DEFAULT NULL,
-  `col_collation` varchar(64) COLLATE utf8_bin NOT NULL,
-  `col_isNull` tinyint(1) NOT NULL,
-  `col_extra` varchar(255) COLLATE utf8_bin DEFAULT '',
-  `col_default` text COLLATE utf8_bin DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Central list of columns';
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `pma__column_info`
---
-
-CREATE TABLE `pma__column_info` (
-  `id` int(5) UNSIGNED NOT NULL,
-  `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `table_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `column_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `comment` varchar(255) CHARACTER SET utf8 NOT NULL DEFAULT '',
-  `mimetype` varchar(255) CHARACTER SET utf8 NOT NULL DEFAULT '',
-  `transformation` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `transformation_options` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `input_transformation` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `input_transformation_options` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT ''
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Column information for phpMyAdmin';
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `pma__designer_settings`
---
-
-CREATE TABLE `pma__designer_settings` (
-  `username` varchar(64) COLLATE utf8_bin NOT NULL,
-  `settings_data` text COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Settings related to Designer';
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `pma__export_templates`
---
-
-CREATE TABLE `pma__export_templates` (
-  `id` int(5) UNSIGNED NOT NULL,
-  `username` varchar(64) COLLATE utf8_bin NOT NULL,
-  `export_type` varchar(10) COLLATE utf8_bin NOT NULL,
-  `template_name` varchar(64) COLLATE utf8_bin NOT NULL,
-  `template_data` text COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Saved export templates';
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `pma__favorite`
---
-
-CREATE TABLE `pma__favorite` (
-  `username` varchar(64) COLLATE utf8_bin NOT NULL,
-  `tables` text COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Favorite tables';
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `pma__history`
---
-
-CREATE TABLE `pma__history` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `username` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `db` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `table` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `timevalue` timestamp NOT NULL DEFAULT current_timestamp(),
-  `sqlquery` text COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='SQL history for phpMyAdmin';
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `pma__navigationhiding`
---
-
-CREATE TABLE `pma__navigationhiding` (
-  `username` varchar(64) COLLATE utf8_bin NOT NULL,
-  `item_name` varchar(64) COLLATE utf8_bin NOT NULL,
-  `item_type` varchar(64) COLLATE utf8_bin NOT NULL,
-  `db_name` varchar(64) COLLATE utf8_bin NOT NULL,
-  `table_name` varchar(64) COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Hidden items of navigation tree';
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `pma__pdf_pages`
---
-
-CREATE TABLE `pma__pdf_pages` (
-  `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `page_nr` int(10) UNSIGNED NOT NULL,
-  `page_descr` varchar(50) CHARACTER SET utf8 NOT NULL DEFAULT ''
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='PDF relation pages for phpMyAdmin';
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `pma__recent`
---
-
-CREATE TABLE `pma__recent` (
-  `username` varchar(64) COLLATE utf8_bin NOT NULL,
-  `tables` text COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Recently accessed tables';
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `pma__table_coords`
---
-
-CREATE TABLE `pma__table_coords` (
-  `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `table_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `pdf_page_number` int(11) NOT NULL DEFAULT 0,
-  `x` float UNSIGNED NOT NULL DEFAULT 0,
-  `y` float UNSIGNED NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Table coordinates for phpMyAdmin PDF output';
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `pma__table_info`
---
-
-CREATE TABLE `pma__table_info` (
-  `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `table_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `display_field` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT ''
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Table information for phpMyAdmin';
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `pma__table_uiprefs`
---
-
-CREATE TABLE `pma__table_uiprefs` (
-  `username` varchar(64) COLLATE utf8_bin NOT NULL,
-  `db_name` varchar(64) COLLATE utf8_bin NOT NULL,
-  `table_name` varchar(64) COLLATE utf8_bin NOT NULL,
-  `prefs` text COLLATE utf8_bin NOT NULL,
-  `last_update` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Tables'' UI preferences';
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `pma__tracking`
---
-
-CREATE TABLE `pma__tracking` (
-  `db_name` varchar(64) COLLATE utf8_bin NOT NULL,
-  `table_name` varchar(64) COLLATE utf8_bin NOT NULL,
-  `version` int(10) UNSIGNED NOT NULL,
-  `date_created` datetime NOT NULL,
-  `date_updated` datetime NOT NULL,
-  `schema_snapshot` text COLLATE utf8_bin NOT NULL,
-  `schema_sql` text COLLATE utf8_bin DEFAULT NULL,
-  `data_sql` longtext COLLATE utf8_bin DEFAULT NULL,
-  `tracking` set('UPDATE','REPLACE','INSERT','DELETE','TRUNCATE','CREATE DATABASE','ALTER DATABASE','DROP DATABASE','CREATE TABLE','ALTER TABLE','RENAME TABLE','DROP TABLE','CREATE INDEX','DROP INDEX','CREATE VIEW','ALTER VIEW','DROP VIEW') COLLATE utf8_bin DEFAULT NULL,
-  `tracking_active` int(1) UNSIGNED NOT NULL DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Database changes tracking for phpMyAdmin';
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `pma__userconfig`
---
-
-CREATE TABLE `pma__userconfig` (
-  `username` varchar(64) COLLATE utf8_bin NOT NULL,
-  `timevalue` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `config_data` text COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='User preferences storage for phpMyAdmin';
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `pma__usergroups`
---
-
-CREATE TABLE `pma__usergroups` (
-  `usergroup` varchar(64) COLLATE utf8_bin NOT NULL,
-  `tab` varchar(64) COLLATE utf8_bin NOT NULL,
-  `allowed` enum('Y','N') COLLATE utf8_bin NOT NULL DEFAULT 'N'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='User groups with configured menu items';
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `pma__users`
---
-
-CREATE TABLE `pma__users` (
-  `username` varchar(64) COLLATE utf8_bin NOT NULL,
-  `usergroup` varchar(64) COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Users and their assignments to user groups';
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `prestamo`
 --
 
@@ -435,15 +180,6 @@ CREATE TABLE `prestamo` (
   `fechaEsperadaDevolucion` date DEFAULT NULL,
   `cliente` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `prestamo`
---
-
-INSERT INTO `prestamo` (`idPrestamo`, `idTecnico`, `fechaPrestamo`, `fechaEsperadaDevolucion`, `cliente`) VALUES
-(1, '1', '2021-07-26', '2021-07-30', 'Adam'),
-(2, '1', '2021-07-27', '2021-07-31', 'Luisa'),
-(3, '2', '2021-08-03', '2021-08-20', 'Marianna');
 
 -- --------------------------------------------------------
 
@@ -459,23 +195,14 @@ CREATE TABLE `prestamoequipo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `prestamoequipo`
---
-
-INSERT INTO `prestamoequipo` (`idPrestamoEquipo`, `idPrestamo`, `idEquipo`, `idEstadoDevolucion`) VALUES
-(1, 1, '1', 1),
-(2, 1, '2', 2),
-(3, 2, '3', 1),
-(4, 3, '4', 1),
-(5, 1, '5', 1);
-
---
 -- Disparadores `prestamoequipo`
 --
+DROP TRIGGER IF EXISTS `cambiarestadoequipo`;
 DELIMITER $$
 CREATE TRIGGER `cambiarestadoequipo` AFTER INSERT ON `prestamoequipo` FOR EACH ROW UPDATE equipo SET idEstadoInventario = 2 WHERE idEquipo = NEW.idEquipo
 $$
 DELIMITER ;
+DROP TRIGGER IF EXISTS `devolverestadoequipo`;
 DELIMITER $$
 CREATE TRIGGER `devolverestadoequipo` AFTER DELETE ON `prestamoequipo` FOR EACH ROW UPDATE equipo SET idEstadoInventario = 1 WHERE idEquipo = prestamoequipo.idEquipo
 $$
@@ -494,15 +221,6 @@ CREATE TABLE `prestamosuministro` (
   `idEstadoDevolucion` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `prestamosuministro`
---
-
-INSERT INTO `prestamosuministro` (`idPrestamoSuministro`, `idPrestamo`, `idSuministro`, `idEstadoDevolucion`) VALUES
-(1, 1, '2', 1),
-(2, 3, '3', 1),
-(3, 1, '1', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -515,23 +233,6 @@ CREATE TABLE `reporte` (
   `idTipoReporte` int(11) NOT NULL,
   `fechaReporte` date DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `reporte`
---
-
-INSERT INTO `reporte` (`idReporte`, `tituloReporte`, `idTipoReporte`, `fechaReporte`) VALUES
-(1, 'Reporte', 4, '2021-07-23'),
-(2, 'Reporte', 3, '2021-07-28'),
-(3, 'Reporte', 1, '2021-07-28'),
-(4, 'Reporte', 4, '2021-07-22'),
-(5, 'Reporte', 4, '2021-07-20'),
-(6, 'Reporte', 2, '2021-07-02'),
-(10, 'Reporte', 7, '2021-08-13'),
-(11, 'Reporte', 1, '2021-08-13'),
-(12, 'Reporte', 6, '2021-08-13'),
-(13, 'Reporte', 3, '2021-08-13'),
-(14, 'Reporte', 1, '2021-08-13');
 
 -- --------------------------------------------------------
 
@@ -546,16 +247,6 @@ CREATE TABLE `suministro` (
   `idEstadoInventario` int(11) NOT NULL,
   `fechaInclusion` date DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `suministro`
---
-
-INSERT INTO `suministro` (`idSuministro`, `idTipoSuministro`, `idCondicionActual`, `idEstadoInventario`, `fechaInclusion`) VALUES
-('1', '1', 1, 1, '2021-07-27'),
-('2', '2', 1, 1, '2021-07-27'),
-('3', '3', 1, 2, '2021-08-03'),
-('4', '4', 1, 1, '2021-08-11');
 
 -- --------------------------------------------------------
 
@@ -575,14 +266,6 @@ CREATE TABLE `tecnico` (
   `fechaInclusion` date DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `tecnico`
---
-
-INSERT INTO `tecnico` (`idTecnico`, `primerNombre`, `segundoNombre`, `primerApellido`, `segundoApellido`, `telefono`, `correoElectronico`, `direccion`, `fechaInclusion`) VALUES
-('1', 'Manuel', '', 'Echeverria', 'Nuñez', '60452103', 'manuchev@gmail.com', 'Lorem ipsum 50m Sur', '0000-00-00'),
-('2', 'Maria', 'Paola', 'Herrera', 'Chavarría', '2244-0321', 'majohecha@hotmail.com', 'Lorem ipsum, lorem ipsum 30m ...', '0000-00-00');
-
 -- --------------------------------------------------------
 
 --
@@ -596,16 +279,6 @@ CREATE TABLE `tipoequipo` (
   `marcaTipoEquipo` varchar(50) DEFAULT NULL,
   `existenciaMinima` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `tipoequipo`
---
-
-INSERT INTO `tipoequipo` (`idTipoEquipo`, `nombreTipoEquipo`, `descripcionTipoEquipo`, `marcaTipoEquipo`, `existenciaMinima`) VALUES
-('1', 'Taladro', 'Lorem Ipsum', 'Lorem Ipsum', 4),
-('2', 'Desarmadores', 'Lorem ipsum', 'BLACK+DECKER', 10),
-('3', 'Multímetro', 'Lorem ipsum', 'Truper', 3),
-('4', 'Flexómetro', 'Lorem ipsum', 'Truper', 10);
 
 -- --------------------------------------------------------
 
@@ -649,17 +322,6 @@ CREATE TABLE `tiposuministro` (
   `existenciaMinima` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `tiposuministro`
---
-
-INSERT INTO `tiposuministro` (`idTipoSuministro`, `nombreTipoSuministro`, `descripcionTipoSuministro`, `idCategoria`, `idUnidades`, `marcaTipoSuministro`, `existenciaMinima`) VALUES
-('1', 'Cintas', 'Lorem Ipsum', 1, 2, 'Scotch', 5),
-('2', 'Cinta antielectrostática', 'Lorem impsum', 2, 2, 'Lorem ipsum 2', 1),
-('3', 'Alambre', 'Lorem ipsum', 2, 1, 'Trupper', 10),
-('4', 'Bombillas', 'Lorem ipsum', 2, 3, 'Sylvania', 10),
-('5', 'Gafas de seguridad', 'Lorem ipsum', 1, 4, 'ReadyMax', 10);
-
 -- --------------------------------------------------------
 
 --
@@ -671,20 +333,7 @@ CREATE TABLE `unidadessuministro` (
   `cantidad` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `unidadessuministro`
---
-
-INSERT INTO `unidadessuministro` (`idUnidades`, `cantidad`) VALUES
-(1, 1),
-(2, 2),
-(3, 10),
-(4, 5),
-(8, 15);
-
---
--- Índices para tablas volcadas
---
+----------------------------------------------------------
 
 --
 -- Indices de la tabla `categoriasuministro`
@@ -699,6 +348,15 @@ ALTER TABLE `categoriasuministro`
 ALTER TABLE `condicionactual`
   ADD PRIMARY KEY (`idCondicionActual`),
   ADD UNIQUE KEY `idCondicionActual` (`idCondicionActual`);
+
+--
+-- Indices de la tabla `devolucion`
+--
+ALTER TABLE `devolucion`
+  ADD PRIMARY KEY (`idDevolucion`),
+  ADD UNIQUE KEY `idDevolucion` (`idDevolucion`),
+  ADD KEY `idPrestamo` (`idPrestamo`),
+  ADD KEY `idEstadoDevolucionGeneral` (`idEstadoDevolucionGeneral`);
 
 --
 -- Indices de la tabla `equipo`
@@ -718,53 +376,18 @@ ALTER TABLE `estadodevolucion`
   ADD UNIQUE KEY `idEstadoDevolucion` (`idEstadoDevolucion`);
 
 --
+-- Indices de la tabla `estadodevoluciongeneral`
+--
+ALTER TABLE `estadodevoluciongeneral`
+  ADD PRIMARY KEY (`idEstadoDevolucionGeneral`),
+  ADD UNIQUE KEY `idEstadoDevolucionGeneral` (`idEstadoDevolucionGeneral`);
+
+--
 -- Indices de la tabla `estadoinventario`
 --
 ALTER TABLE `estadoinventario`
   ADD PRIMARY KEY (`idEstadoInventario`),
   ADD UNIQUE KEY `idEstadoInventario` (`idEstadoInventario`);
-
---
--- Indices de la tabla `pma__table_coords`
---
-ALTER TABLE `pma__table_coords`
-  ADD PRIMARY KEY (`db_name`,`table_name`,`pdf_page_number`);
-
---
--- Indices de la tabla `pma__table_info`
---
-ALTER TABLE `pma__table_info`
-  ADD PRIMARY KEY (`db_name`,`table_name`);
-
---
--- Indices de la tabla `pma__table_uiprefs`
---
-ALTER TABLE `pma__table_uiprefs`
-  ADD PRIMARY KEY (`username`,`db_name`,`table_name`);
-
---
--- Indices de la tabla `pma__tracking`
---
-ALTER TABLE `pma__tracking`
-  ADD PRIMARY KEY (`db_name`,`table_name`,`version`);
-
---
--- Indices de la tabla `pma__userconfig`
---
-ALTER TABLE `pma__userconfig`
-  ADD PRIMARY KEY (`username`);
-
---
--- Indices de la tabla `pma__usergroups`
---
-ALTER TABLE `pma__usergroups`
-  ADD PRIMARY KEY (`usergroup`,`tab`,`allowed`);
-
---
--- Indices de la tabla `pma__users`
---
-ALTER TABLE `pma__users`
-  ADD PRIMARY KEY (`username`,`usergroup`);
 
 --
 -- Indices de la tabla `prestamo`
@@ -857,65 +480,84 @@ ALTER TABLE `unidadessuministro`
 -- AUTO_INCREMENT de la tabla `categoriasuministro`
 --
 ALTER TABLE `categoriasuministro`
-  MODIFY `idCategoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idCategoria` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `condicionactual`
 --
 ALTER TABLE `condicionactual`
-  MODIFY `idCondicionActual` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idCondicionActual` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `devolucion`
+--
+ALTER TABLE `devolucion`
+  MODIFY `idDevolucion` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `estadodevolucion`
 --
 ALTER TABLE `estadodevolucion`
-  MODIFY `idEstadoDevolucion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idEstadoDevolucion` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `estadodevoluciongeneral`
+--
+ALTER TABLE `estadodevoluciongeneral`
+  MODIFY `idEstadoDevolucionGeneral` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `estadoinventario`
 --
 ALTER TABLE `estadoinventario`
-  MODIFY `idEstadoInventario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idEstadoInventario` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `prestamo`
 --
 ALTER TABLE `prestamo`
-  MODIFY `idPrestamo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idPrestamo` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `prestamoequipo`
 --
 ALTER TABLE `prestamoequipo`
-  MODIFY `idPrestamoEquipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idPrestamoEquipo` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `prestamosuministro`
 --
 ALTER TABLE `prestamosuministro`
-  MODIFY `idPrestamoSuministro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idPrestamoSuministro` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `reporte`
 --
 ALTER TABLE `reporte`
-  MODIFY `idReporte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `idReporte` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `tiporeporte`
 --
 ALTER TABLE `tiporeporte`
-  MODIFY `idTipoReporte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idTipoReporte` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `unidadessuministro`
 --
 ALTER TABLE `unidadessuministro`
-  MODIFY `idUnidades` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `idUnidades` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas
 --
+
+--
+-- Filtros para la tabla `devolucion`
+--
+ALTER TABLE `devolucion`
+  ADD CONSTRAINT `devolucion_ibfk_1` FOREIGN KEY (`idPrestamo`) REFERENCES `prestamo` (`idPrestamo`),
+  ADD CONSTRAINT `devolucion_ibfk_2` FOREIGN KEY (`idEstadoDevolucionGeneral`) REFERENCES `estadodevoluciongeneral` (`idEstadoDevolucionGeneral`);
 
 --
 -- Filtros para la tabla `equipo`
