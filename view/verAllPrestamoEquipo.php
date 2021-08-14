@@ -35,7 +35,7 @@
                 <th scope="col">ID</th>
                 <th scope="col">Préstamo</th>
                 <th scope="col">Equipo</th>
-                <th scope="col">Estado Devolución</th>
+                <th scope="col">Estado Actual</th>
                 <th scope="col">Opciones</th>
             </tr>
         </thead>

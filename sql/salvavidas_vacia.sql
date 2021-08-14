@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-08-2021 a las 19:12:04
--- Versión del servidor: 10.4.17-MariaDB
--- Versión de PHP: 7.3.27
+-- Tiempo de generación: 14-08-2021 a las 23:30:16
+-- Versión del servidor: 10.4.18-MariaDB
+-- Versión de PHP: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -33,7 +33,6 @@ CREATE TABLE `categoriasuministro` (
   `idCategoria` int(11) NOT NULL,
   `descripcionCategoria` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
 
 --
 -- Volcado de datos para la tabla `categoriasuministro`
@@ -66,7 +65,6 @@ INSERT INTO `condicionactual` (`idCondicionActual`, `descripcionCondicionActual`
 (4, 'Gasto de Uso'),
 (5, 'Perdido'),
 (6, 'Robado');
-
 -- --------------------------------------------------------
 
 --
@@ -80,12 +78,6 @@ CREATE TABLE `devolucion` (
   `idEstadoDevolucionGeneral` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `devolucion`
---
-
-INSERT INTO `devolucion` (`idDevolucion`, `idPrestamo`, `fechaRealDevolucion`, `idEstadoDevolucionGeneral`) VALUES
-(1, 2, '2021-08-11', 2);
 
 -- --------------------------------------------------------
 
@@ -107,7 +99,6 @@ CREATE TABLE `equipo` (
 -- Estructura de tabla para la tabla `estadodevolucion`
 --
 
-DROP TABLE IF EXISTS `estadodevolucion`;
 CREATE TABLE `estadodevolucion` (
   `idEstadoDevolucion` int(11) NOT NULL,
   `descripcionEstadoDevolucion` varchar(50) DEFAULT NULL
@@ -141,7 +132,7 @@ CREATE TABLE `estadodevoluciongeneral` (
 --
 
 INSERT INTO `estadodevoluciongeneral` (`idEstadoDevolucionGeneral`, `descripcionEstadoDevolucionGeneral`) VALUES
-(1, 'Buen Estado'),
+(1, 'Buen estado'),
 (2, 'Daños reparables'),
 (3, 'Irreparable'),
 (4, 'Gasto de uso'),
@@ -197,12 +188,10 @@ CREATE TABLE `prestamoequipo` (
 --
 -- Disparadores `prestamoequipo`
 --
-DROP TRIGGER IF EXISTS `cambiarestadoequipo`;
 DELIMITER $$
 CREATE TRIGGER `cambiarestadoequipo` AFTER INSERT ON `prestamoequipo` FOR EACH ROW UPDATE equipo SET idEstadoInventario = 2 WHERE idEquipo = NEW.idEquipo
 $$
 DELIMITER ;
-DROP TRIGGER IF EXISTS `devolverestadoequipo`;
 DELIMITER $$
 CREATE TRIGGER `devolverestadoequipo` AFTER DELETE ON `prestamoequipo` FOR EACH ROW UPDATE equipo SET idEstadoInventario = 1 WHERE idEquipo = prestamoequipo.idEquipo
 $$
@@ -298,13 +287,12 @@ CREATE TABLE `tiporeporte` (
 --
 
 INSERT INTO `tiporeporte` (`idTipoReporte`, `nombreTipoReporte`, `detalleTipoReporte`, `queryTipoReporte`) VALUES
-(1, 'Equipos Dañados', 'Se reporta daños en equipo', 'Lorem ipsum'),
-(2, 'Suministros Dañados', 'Se reporta el robo de un suministro/equipo.', 'Lorem Ipsum'),
-(3, 'Préstamos atrasados', 'Detalla \r\nlos técnicos que han efectuado devoluciones \r\ncon daños en el equipo.', 'Lorem Ipsum'),
-(4, 'Informe de Técnico-Préstamos-Daños', 'Detalla los técnicos que han efectuado \r\ndevoluciones con pérdidas o robos en el \r\nequipo.', 'Lorem Ipsum'),
-(5, 'Informe de Técnico-Préstamos-Pérdidas', 'Lorem ipsum', 'Lorem ipsum'),
-(6, 'Equipos con inventario bajo', 'Detalla los tipos de equipo que tienen una cantidad de unidades en inventario menores a su cantidad mínima de existencias.\r\n', 'Lorem ipsum'),
-(7, 'Suministros con inventario bajo', 'Detalla los tipos de suministro que tienen una cantidad de unidades en inventario menores a su cantidad mínima de existencias.\r\n', 'Lorem ipsum');
+(1, 'Equipos Dañados', ' Detalla los equipos que se encuentran actualmente con un daño.', ''),
+(2, 'Suministros Dañados', 'Detalla los suministros que se encuentran actualmente con un daño.', ''),
+(3, 'Préstamos Atrasados', 'Detalla los préstamos que sobrepasan la fecha prevista de devolución.', ''),
+(4, 'Informe de Técnico-Préstamos-Daños', 'Detalla los técnicos que han efectuado devoluciones con daños en el equipo.\r\n', ''),
+(5, 'Informe de Técnico-Préstamos-Pérdidas', 'Detalla los técnicos que han efectuado devoluciones con pérdidas o robos en el equipo.', ''),
+(6, 'Equipos con Inventario Bajo', 'Detalla los tipos de equipo que tienen una cantidad de unidades en inventario menores a su cantidad mínima de existencias.', '');
 
 -- --------------------------------------------------------
 
@@ -333,7 +321,9 @@ CREATE TABLE `unidadessuministro` (
   `cantidad` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-----------------------------------------------------------
+--
+-- Índices para tablas volcadas
+--
 
 --
 -- Indices de la tabla `categoriasuministro`
@@ -480,73 +470,73 @@ ALTER TABLE `unidadessuministro`
 -- AUTO_INCREMENT de la tabla `categoriasuministro`
 --
 ALTER TABLE `categoriasuministro`
-  MODIFY `idCategoria` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idCategoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `condicionactual`
 --
 ALTER TABLE `condicionactual`
-  MODIFY `idCondicionActual` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idCondicionActual` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `devolucion`
 --
 ALTER TABLE `devolucion`
-  MODIFY `idDevolucion` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idDevolucion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `estadodevolucion`
 --
 ALTER TABLE `estadodevolucion`
-  MODIFY `idEstadoDevolucion` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idEstadoDevolucion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `estadodevoluciongeneral`
 --
 ALTER TABLE `estadodevoluciongeneral`
-  MODIFY `idEstadoDevolucionGeneral` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idEstadoDevolucionGeneral` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `estadoinventario`
 --
 ALTER TABLE `estadoinventario`
-  MODIFY `idEstadoInventario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idEstadoInventario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `prestamo`
 --
 ALTER TABLE `prestamo`
-  MODIFY `idPrestamo` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idPrestamo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `prestamoequipo`
 --
 ALTER TABLE `prestamoequipo`
-  MODIFY `idPrestamoEquipo` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idPrestamoEquipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `prestamosuministro`
 --
 ALTER TABLE `prestamosuministro`
-  MODIFY `idPrestamoSuministro` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idPrestamoSuministro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `reporte`
 --
 ALTER TABLE `reporte`
-  MODIFY `idReporte` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idReporte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `tiporeporte`
 --
 ALTER TABLE `tiporeporte`
-  MODIFY `idTipoReporte` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idTipoReporte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `unidadessuministro`
 --
 ALTER TABLE `unidadessuministro`
-  MODIFY `idUnidades` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idUnidades` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Restricciones para tablas volcadas

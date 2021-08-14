@@ -37,8 +37,7 @@
                 <td><?php echo $value->idDevolucion; ?></td>
                 <td><?php echo $value->idPrestamo; ?></td>
                 <td><?php echo $value->fechaRealDevolucion; ?></td>
-                <?php foreach ($allEstadoDevGnrl as $valor2) {  
-                if ($value->idEstadoDevolucionGeneral == $valor2->idEstadoDevolucionGeneral) { ?>
+                <?php foreach ($allEstadoDevGnrl as $valor2) { if ($value->idEstadoDevolucionGeneral == $valor2->idEstadoDevolucionGeneral){ ?>
                     <td><?php echo $valor2->descripcionEstadoDevolucionGeneral	; ?></td>
                 <?php } } ?>
                 <td>

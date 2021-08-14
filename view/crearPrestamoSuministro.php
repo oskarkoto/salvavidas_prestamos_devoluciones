@@ -32,7 +32,7 @@
             </div>
             <div class="dropdown-divider" id="dropdown-divider-form"></div>
             <div class="col-md-12 col-xl-12 col-sm-12" >
-                <label for="idEstadoDevolucion" class='label_form'>Estado de Devolución:  </label>
+                <label for="idEstadoDevolucion" class='label_form'>Estado actual:  </label>
                 <select class="col-sm-2 col-form-label" name="idEstadoDevolucion" id="input_form" required>
                 <?php foreach ($allEstadoDevolucion as $value) { ?>
                     <option value="<?php echo $value->idEstadoDevolucion; ?>"><?php echo $value->descripcionEstadoDevolucion; ?></option>
