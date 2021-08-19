@@ -348,101 +348,101 @@ Objetivos Específicos
 
 ## Página Principal
 
-![](RackMultipart20210819-4-1k9aygr_html_6f37779605256670.png)
+![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/DiagCUPP.png)
 
 ## Administración de Equipos
 
-![](RackMultipart20210819-4-1k9aygr_html_6aec19eb576c4db9.png)
+![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/DiagCUAE.png)
 
 ## Administración de Suministros
 
-![](RackMultipart20210819-4-1k9aygr_html_16aff0c96678ac60.png)
+![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/DiagCUAS.png)
 
 ## Inventario
 
-![](RackMultipart20210819-4-1k9aygr_html_672a59a9d3b245cb.png)
+![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/DiagCUI.png)
 
 ## Administración de Técnicos
 
-![](RackMultipart20210819-4-1k9aygr_html_bd760dbaeaeb90df.png)
+![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/DiagCUAT.png)
 
 ## Préstamos
 
-![](RackMultipart20210819-4-1k9aygr_html_aa0e994b62df3fdb.png)
+![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/DiagCUP.png)
 
 ## Devoluciones
 
-![](RackMultipart20210819-4-1k9aygr_html_cf2fb8175478b9d9.png)
+![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/DiagCUD.png)
 
 ## Reportes
 
-![](RackMultipart20210819-4-1k9aygr_html_4b966d31da26d283.png)
+![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/DiagCUR.png)
 
 ##
 
 
 ## Diagrama de casos de uso General del sistema
 
-![](RackMultipart20210819-4-1k9aygr_html_694a1afad7d9069d.png)
+![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/DiagCUGS.png)
 
 # **Diagrama de clases**
 
 ## Inventario
 
-![](RackMultipart20210819-4-1k9aygr_html_f4cb840e5f2b8176.png)
+![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/DiagCI.png)
 
 ##
 
 
 ## Técnicos
 
-![](RackMultipart20210819-4-1k9aygr_html_b12fb085992a0c78.png)
+![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/DiagCT.png)
 
 ## Préstamos
 
-![](RackMultipart20210819-4-1k9aygr_html_736d894f2e8e6433.png)
+![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/DiagCP.png)
 
 ## Devoluciones
 
-![](RackMultipart20210819-4-1k9aygr_html_e8cc7489ae632f3c.png)
+![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/DiagCD.png)
 
 ## Reportes
 
-![](RackMultipart20210819-4-1k9aygr_html_a3e1fd99cd34e949.png)
+![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/DiagCR.png)
 
 ## Diagrama General de Clases
 
-![](RackMultipart20210819-4-1k9aygr_html_2592f1ebb04c7a75.png)
+![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/DiagCG.png)
 
 # **Diagrama de secuencia**
 
-![](RackMultipart20210819-4-1k9aygr_html_dcf778575b4bac61.png)
+![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/DiagS1.png)
 
-![](RackMultipart20210819-4-1k9aygr_html_1bc7007f917c55a0.png)
+![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/DiagS2.png)
 
-![](RackMultipart20210819-4-1k9aygr_html_2325df376da933d7.png)
+![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/DiagS3.png)
 
-![](RackMultipart20210819-4-1k9aygr_html_e5e763e9a7a0a00f.png)
+![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/DiagS4.png)
 
-![](RackMultipart20210819-4-1k9aygr_html_e1f8fde0572417b0.png)
+![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/DiagS5.png)
 
 #
 
 # **Diagrama de colaboración**
 
-![](RackMultipart20210819-4-1k9aygr_html_5e2890304d9832f6.png)
+![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/DiagC.png)
 
 # **Diagrama de componentes**
 
-![](RackMultipart20210819-4-1k9aygr_html_8203ea9a890acff2.jpg)
+![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/DiagCs.png)
 
 #
 
 # **Diagrama de despliegue**
 
-![](RackMultipart20210819-4-1k9aygr_html_241e24a166ac2594.png)
+![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/DiagD1.png)
 
-![](RackMultipart20210819-4-1k9aygr_html_719ad00b87caf6f.png)
+![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/DiagD2.png)
 
 #
 
@@ -454,64 +454,62 @@ El contrato se adjunta en un documento anexo.
 
 ## Página Principal
 
-![](RackMultipart20210819-4-1k9aygr_html_2b43fa1cf0b34165.jpg)
+![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuPP.png)
 
 **Inventario**
 
-![](RackMultipart20210819-4-1k9aygr_html_fb67c8ddcd7e8f26.jpg) ![](RackMultipart20210819-4-1k9aygr_html_ce224cbc479e19d3.jpg) ![](RackMultipart20210819-4-1k9aygr_html_716b2f33511ec85e.jpg) ![](RackMultipart20210819-4-1k9aygr_html_76403282911acc34.jpg)
+![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuI1.png) ![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuI2.png) ![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuI3.png) ![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuI4.png)
 
 **Equipos**
 
-![](RackMultipart20210819-4-1k9aygr_html_75941bb9fdd57a5f.jpg) ![](RackMultipart20210819-4-1k9aygr_html_c1dd697588512707.jpg)
+![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuE1.png) ![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuE2.png)
 
 ## Suministros
 
-![](RackMultipart20210819-4-1k9aygr_html_4e85dc4202331804.jpg)
+![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuS1.png)
 
-![](RackMultipart20210819-4-1k9aygr_html_f798cb51040cb78.jpg)
+![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuS2.png)
 
 # **Técnico**
 
-![](RackMultipart20210819-4-1k9aygr_html_b284b8dfaf9883b8.jpg) ![](RackMultipart20210819-4-1k9aygr_html_5d5769df3b3e522a.jpg)
+![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuT1.png) ![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuT2.png)
 
-# ![](RackMultipart20210819-4-1k9aygr_html_cae0dfc27af0184d.jpg) **Préstamos**
- ![](RackMultipart20210819-4-1k9aygr_html_35b55a8585f0856e.jpg)
+# **Préstamos**
+ ![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuP1.png) 
+ ![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuP2.png)
+ ![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuP3.png)
 
-![](RackMultipart20210819-4-1k9aygr_html_7f06a09dd725aafc.jpg)
+# **Préstamo de Equipo**![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuPE1.png)
 
-![](RackMultipart20210819-4-1k9aygr_html_9ce5e3496fbc396d.jpg)
+![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuPE2.png)
 
-# **Préstamo de Equipo**![](RackMultipart20210819-4-1k9aygr_html_2133b513b6424c51.jpg)
-
-![](RackMultipart20210819-4-1k9aygr_html_4805edde73ce5cbe.jpg)
-
-![](RackMultipart20210819-4-1k9aygr_html_d2ccdc7bd96600b2.jpg)
+![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuPE3.png)
 
 # **Préstamo de Suministro**
 
-![](RackMultipart20210819-4-1k9aygr_html_658d266605ed8a1b.jpg)
+![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuPS1.png)
 
-## ![](RackMultipart20210819-4-1k9aygr_html_34ed1c69904f02b1.jpg)
+## ![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuPS2.png)
 
-![](RackMultipart20210819-4-1k9aygr_html_d86c32ca442b1094.jpg)
+![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuPS3.png)
 
-## Devoluciones ![](RackMultipart20210819-4-1k9aygr_html_a4db04fa78d17d87.jpg)
+## Devoluciones ![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuD1.png)
 
-![](RackMultipart20210819-4-1k9aygr_html_a99d4aa83a581533.jpg)
+![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuD2.png)
 
-![](RackMultipart20210819-4-1k9aygr_html_143dc1cf74d0b5fd.jpg)
+![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuD3.png)
 
-![](RackMultipart20210819-4-1k9aygr_html_d5fc8d436434891f.jpg)
+![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuD4.png)
 
-![](RackMultipart20210819-4-1k9aygr_html_2ea08a147dc30b28.jpg)
+![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuD5.png)
 
-![](RackMultipart20210819-4-1k9aygr_html_5c71db31b68b8687.jpg)
+![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuD6.png)
 
 ## Reportes
 
-![](RackMultipart20210819-4-1k9aygr_html_5646032ccb5d1d29.jpg)
+![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuR1.png)
 
-![](RackMultipart20210819-4-1k9aygr_html_97a0e018720a5677.jpg)
+![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuR2.png)
 
 # **Plan de pruebas con las respectivas evidencias sobre la funcionalidad del sistema**
 Se adjunta el Plan de pruebas del Sistema en un archivo por separado.
