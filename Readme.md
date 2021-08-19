@@ -352,97 +352,97 @@ Objetivos Específicos
 
 ## Administración de Equipos
 
-![](/screenshots/DiagCUAE.png)
+![](/screenshots/DiagCUAE.png?raw=true)
 
 ## Administración de Suministros
 
-![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/DiagCUAS.png?raw=true)
+![](/screenshots/DiagCUAS.png?raw=true)
 
 ## Inventario
 
-![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/DiagCUI.png?raw=true)
+![](/screenshots/DiagCUI.png?raw=true)
 
 ## Administración de Técnicos
 
-![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/DiagCUAT.png?raw=true)
+![](/screenshots/DiagCUAT.png?raw=true)
 
 ## Préstamos
 
-![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/DiagCUP.png?raw=true)
+![](/screenshots/DiagCUP.png?raw=true)
 
 ## Devoluciones
 
-![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/DiagCUD.png?raw=true)
+![](/screenshots/DiagCUD.png?raw=true)
 
 ## Reportes
 
-![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/DiagCUR.png?raw=true)
+![](/screenshots/DiagCUR.png?raw=true)
 
 ##
 
 
 ## Diagrama de casos de uso General del sistema
 
-![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/DiagCUGS.png?raw=true)
+![](/screenshots/DiagCUGS.png?raw=true)
 
 # **Diagrama de clases**
 
 ## Inventario
 
-![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/DiagCI.png?raw=true)
+![](/screenshots/DiagCI.png?raw=true)
 
 ##
 
 
 ## Técnicos
 
-![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/DiagCT.png?raw=true)
+![](/screenshots/DiagCT.png?raw=true)
 
 ## Préstamos
 
-![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/DiagCP.png?raw=true)
+![](/screenshots/DiagCP.png?raw=true)
 
 ## Devoluciones
 
-![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/DiagCD.png?raw=true)
+![](/screenshots/DiagCD.png?raw=true)
 
 ## Reportes
 
-![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/DiagCR.png?raw=true)
+![](/screenshots/DiagCR.png?raw=true)
 
 ## Diagrama General de Clases
 
-![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/DiagCG.png?raw=true)
+![](/screenshots/DiagCG.png?raw=true)
 
 # **Diagrama de secuencia**
 
-![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/DiagS1.png?raw=true)
+![](/screenshots/DiagS1.png?raw=true)
 
-![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/DiagS2.png?raw=true)
+![](/screenshots/DiagS2.png?raw=true)
 
-![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/DiagS3.png?raw=true)
+![](/screenshots/DiagS3.png?raw=true)
 
-![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/DiagS4.png?raw=true)
+![](/screenshots/DiagS4.png?raw=true)
 
-![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/DiagS5.png?raw=true)
+![](/screenshots/DiagS5.png?raw=true)
 
 #
 
 # **Diagrama de colaboración**
 
-![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/DiagC.png?raw=true)
+![](/screenshots/DiagC.png?raw=true)
 
 # **Diagrama de componentes**
 
-![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/DiagCs.png?raw=true)
+![](/screenshots/DiagCs.png?raw=true)
 
 #
 
 # **Diagrama de despliegue**
 
-![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/DiagD1.png?raw=true)
+![](/screenshots/DiagD1.png?raw=true)
 
-![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/DiagD2.png?raw=true)
+![](/screenshots/DiagD2.png?raw=true)
 
 #
 
@@ -454,67 +454,69 @@ El contrato se adjunta en un documento anexo.
 
 ## Página Principal
 
-![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuPP.png?raw=true)
+![](/screenshots/MuPP.png?raw=true)
 
 **Inventario**
 
-![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuI1.png?raw=true)
-![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuI2.png?raw=true) 
-![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuI3.png?raw=true) 
-![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuI4.png?raw=true)
+![](/screenshots/MuI1.png?raw=true)
+![](/screenshots/MuI2.png?raw=true) 
+![](/screenshots/MuI3.png?raw=true) 
+![](/screenshots/MuI4.png?raw=true)
 
 **Equipos**
 
-![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuE1.png?raw=true)
-![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuE2.png?raw=true)
+![](/screenshots/MuE1.png?raw=true)
+![](/screenshots/MuE2.png?raw=true)
 
 ## Suministros
 
-![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuS1.png?raw=true)
+![](/screenshots/MuS1.png?raw=true)
 
-![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuS2.png?raw=true)
+![](/screenshots/MuS2.png?raw=true)
 
 # **Técnico**
 
-![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuT1.png?raw=true) 
-![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuT2.png?raw=true)
+![](/screenshots/MuT1.png?raw=true) 
+![](/screenshots/MuT2.png?raw=true)
 
 # **Préstamos**
- ![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuP1.png?raw=true) 
- ![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuP2.png?raw=true)
- ![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuP3.png?raw=true)
+ ![](/screenshots/MuP1.png?raw=true) 
+ ![](/screenshots/MuP2.png?raw=true)
+ ![](/screenshots/MuP3.png?raw=true)
 
-# **Préstamo de Equipo**![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuPE1.png?raw=true)
+# **Préstamo de Equipo**
+![](/screenshots/MuPE1.png?raw=true)
 
-![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuPE2.png?raw=true)
+![](/screenshots/MuPE2.png?raw=true)
 
-![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuPE3.png?raw=true)
+![](/screenshots/MuPE3.png?raw=true)
 
 # **Préstamo de Suministro**
 
-![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuPS1.png?raw=true)
+![](/screenshots/MuPS1.png?raw=true)
 
-## ![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuPS2.png?raw=true)
+## ![](/screenshots/MuPS2.png?raw=true)
 
-![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuPS3.png?raw=true)
+![](/screenshots/MuPS3.png?raw=true)
 
-## Devoluciones ![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuD1.png?raw=true)
+## Devoluciones 
+![](/screenshots/MuD1.png?raw=true)
 
-![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuD2.png?raw=true)
+![](/screenshots/MuD2.png?raw=true)
 
-![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuD3.png?raw=true)
+![](/screenshots/MuD3.png?raw=true)
 
-![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuD4.png?raw=true)
+![](/screenshots/MuD4.png?raw=true)
 
-![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuD5.png?raw=true)
+![](/screenshots/MuD5.png?raw=true)
 
-![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuD6.png?raw=true)
+![](/screenshots/MuD6.png?raw=true)
 
 ## Reportes
 
-![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuR1.png?raw=true)
+![](/screenshots/MuR1.png?raw=true)
 
-![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/MuR2.png?raw=true)
+![](/screenshots/MuR2.png?raw=true)
 
 # **Plan de pruebas con las respectivas evidencias sobre la funcionalidad del sistema**
 Se adjunta el Plan de pruebas del Sistema en un archivo por separado.
