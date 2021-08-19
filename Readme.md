@@ -519,7 +519,262 @@ El contrato se adjunta en un documento anexo.
 ![](/screenshots/MuR2.png?raw=true)
 
 # **Plan de pruebas con las respectivas evidencias sobre la funcionalidad del sistema**
-Se adjunta el Plan de pruebas del Sistema en un archivo por separado.
+
+**Página Principal:**
+
+| **Nombre del Caso de Prueba** | _Ingreso a la página principal y sus distintas funciones_ |
+| --- | --- |
+| **Aplicación/Módulo** | Página principal |
+| **Identificador y Nombre del Caso de Uso** | _ **Página Principal** _ |
+ |
+ |
+ |
+ |
+ |
+ |
+| **Secuencia normal** | _[xx a yy]_ |
+| **Objetivo** | _Probar que el usuario puede acceder al menú principal del sistema y puede ingresar a los distintos del sistema._ |
+| **Pasos de ejecución** | _-El usuario debe ingresar a su navegador e ingresar a la página principal utilizando el URL proveído
+ -El usuario debe ingresar a los distintos menús disponibles_ |
+| **Precondición** | _- El dispositivo a utilizar debe estar conectado a la intranet de la empresa._ |
+| **Escenario** | **Descripción** | **Resultado Esperado** | **Resultado** | **Prioridad** |
+| **1- Se da click al navegador de preferencia** | 1.1- apertura del navegador por parte del usuario | Se abre el navegador de preferencia y permite al usuario agregar el URL | Se logró ingresar al navegador | Media |
+| **2- Se ingresa el URL: xxxxxxx dentro de la barra de búsqueda del navegador y presione enter en el teclado** | 2.2- El usuario ingresa la dirección de la página y procede a ingresar | El menú principal del sistema se inicia y se le muestran las distintas opciones que tiene al usuario | Se ingresó al sistema de manera exitosa | Media |
+| **3- Seleccione la opción de ingresar al sistema de administrar inventario** | 3.1- El usuario ingresa al sistema de inventarios | La página direccióna la interfaz de inventario | Se ingresó a inventario de manera exitosa | Alta |
+| **4- Seleccione la opción de ingresar al sistema de administrar técnicos** | 4.1- El usuario ingresa al sistema de inventarios | La página redirecciona a la interfaz de técnicos | Se ingresó a técnicos de manera exitosa. | Alta |
+| **5-Seleccione la opción de ingresar al sistema de devoluciones** | 5.1- El usuario ingresa al sistema de devoluciones | La página dirección a la interfaz de devoluciones | Se ingresa a la interfaz de manera exitosa | Alta |
+| **6- Seleccione la opción de ingresar al sistema de administrar préstamos** | 6.1- El usuario ingresa al sistema de préstamos | La página dirección a la interfaz de préstamos | Se ingresa a la interfaz de préstamos | Alta |
+| **7- Seleccione la opción de ingresar al sistema de reportes** | 7.1El usuario ingresa al sistema de reportes | La página redirecciona a la interfaz de reportes | Se ingresa a la | Alta |
+| **Comentarios** |
+ |
+
+**Administración de equipos:**
+
+| **Nombre del Caso de Prueba** | _Ingreso a la página de administración de equipos y sus funciones_ |
+| --- | --- |
+| **Aplicación/Módulo** | Administración de equipos |
+| **Identificador y Nombre del Caso de Uso** | _ **Administración de equipos** _ |
+ |
+ |
+ |
+ |
+ |
+ |
+| **Secuencia normal** | _[xx a yy]_ |
+| **Objetivo** | _Probar que el usuario puede acceder al menu de administracion de equipos y realizar las funciones disponibles en este_ |
+| **Pasos de ejecución** | _-El usuario debe ingresar al sistema de registro de préstamo y devolución de equipo y control de suministros.__-El usuario debe ser capaz de elegir el menú (vista del sistema) que desea observar; ya sea de Administración de suministros o bien, de Administración de equipo. (A1)__-El sistema debe mostrar al usuario la cantidad de unidades en inventario, unidades prestadas y unidades dañadas para cada tipo de equipo y tipo de suministro.__._ |
+| **Precondición** | _- El dispositivo a utilizar debe estar conectado a la intranet de la empresa.__-El usuario ya se encuentra en la página de inventario_ |
+| **Escenario** | **Descripción** | **Resultado Esperado** | **Resultado** | **Prioridad** |
+| **1- Ingreso a la opción equipos** | 1.1- El el menú de despliegue escoger la opción de equipos | - Se despliega el menú y permite escoger la opción de equipos
+- Se despliega la información de equipos | Se seleccionó la opción de equipos y la información de los mismos se pudo visualizar de manera exitosa. | Alta |
+| **2- Ingreso a la opción tipo de equipo** | 2.2- El el menú de despliegue escoger la opción de tipo de equipos | - Se despliega el menú y permite escoger la opción de tipo de equipos
+- Se despliega la información de tipo de equipos | Se seleccionó la opción de equipos y la información de los mismos se pudo visualizar de manera exitosa. | Alta |
+| **3- Agregar información válida de equipos** | 3.1- Seleccione la opción añadir3.2- Seleccione la caja de texto respecto al dato que desea ingresar3.3- Ingrese la información válida del dato3.4- Guardar información | -el sistema permite crear un elemento nuevo y muestra los espacio donde ingresar información
+-El usuario puede ingresar la información válida.
+-la nueva información es grabada | Se pudo ingresar un nuevo dato de equipo de manera exitosa | Alta |
+| **4- Agregar información válida de tipo de equipos** | 4.1- Seleccione la opción de añadir4.2- Seleccione la caja de texto respecto al dato que desea ingresar4.3- Ingrese la información válida del dato4.4- Guardar información | -el sistema permite crear un elemento nuevo y muestra los espacios donde ingresar información
+-El usuario puede ingresar la información válida.
+-la nueva información es grabada | Se pudo ingresar un nuevo dato de tipo de equipo de manera exitosa | Alta |
+| **5- Modificar con información válida de equipos** | 5.1- Seleccione la opción de editar equipo5.2- Seleccione el equipo que desea modificar5.3- Ingrese la información válida del dato5.4- Guardar información | -el sistema permite modificar la información
+-El usuario modifica la información válida.
+-la nueva información es grabada | Se logró editar los detalles de equipo | Alta |
+| **6- Modificar con información válida de tipo de equipos** | 6.1- Seleccione la opción de editar tipo de equipo6.2- Seleccione el tipo de equipo que desea modificar6.3- Ingrese la información válida del dato6.4- Guardar información | -el sistema permite modificar la información
+-El usuario modifica la información válida.
+-la nueva información es grabada | Se editaron los detalles de equipo | Alta |
+| **7- Eliminar información de equipos** | 7.1- Seleccione la opción de eliminar equipo
+7.2- Seleccione el equipo que desea borrar7.3- Guardar información | - El sistema elimina el equipo seleccionado
+- Se muestra un mensaje reportando &quot;Equipo eliminado&quot; | Se eliminó el equipo de manera exitosa. | Alta |
+| **8- Eliminar tipos de equipos** | 8.1- Seleccione la opción de eliminar el tipo de equipo8.2- Seleccione el tipo de equipo que desea borrar8.3- Guardar información | - El sistema elimina el tipo de equipo seleccionado
+- Se muestra un mensaje reportando &quot;Tipo de Equipo eliminado&quot; | Se eliminó el tipo de equipo de manera exitosa. | Alta |
+| **Comentarios** |
+ |
+ |
+ |
+ |
+
+**Administración de Suministros:**
+
+| **Nombre del Caso de Prueba** | _Ingreso a la pagina de administracion de suministros y sus funciones_ |
+| --- | --- |
+| **Aplicación/Módulo** | Inventario |
+| **Identificador y Nombre del Caso de Uso** | _ **Inventario** _ |
+ |
+ |
+ |
+ |
+ |
+ |
+| **Secuencia normal** | _[xx a yy]_ |
+| **Objetivo** | _Probar que el usuario puede acceder al inventario y realizar acciones de administración de suministros._ |
+| **Pasos de ejecución** | _-El usuario debe ingresar al sistema de registro de préstamo y devolución de suministro y control de suministros.__-El usuario debe ser capaz de elegir el menú (vista del sistema) que desea observar; ya sea de Administración de suministros o bien, de Administración de suministro. (A1)__-El sistema debe mostrar al usuario la cantidad de unidades en inventario, unidades prestadas y unidades dañadas para cada tipo de suministro y tipo de suministro.__._ |
+| **Precondición** | _- El dispositivo a utilizar debe estar conectado a la intranet de la empresa.__-El usuario ya se encuentra en la página de suministros_ |
+| **Escenario** | **Descripción** | **Resultado Esperado** | **Resultado** | **Prioridad** |
+| **1- Ingreso a la opción suministros** | 1.1- El el menú de despliegue escoger la opción de suministros | - Se despliega el menú y permite escoger la opción de suministro
+- Se despliega la información de suministros | Se selecciona la opción de equipos y la información de los mismos se pudo visualizar de manera exitosa. | Alta |
+| **2- Ingreso a la opción tipo de suministro** | 2.2- El el menú de despliegue escoger la opción de tipo de suministro | - Se despliega el menú y permite escoger la opción de tipo de suministro
+- Se despliega la información de tipo de suministro | Se selecciona la opción de tipo de suministro y la información de los mismos se pudo visualizar de manera exitosa. | Alta |
+| **3- Agregar información válida de suministro** | 3.1- Seleccione la opción añadir3.2- Seleccione la caja de texto respecto al dato que desea ingresar3.3- Ingrese la información válida del dato3.4- Guardar información | -el sistema permite crear un elemento nuevo y muestra los espacio donde ingresar información
+-El usuario puede ingresar la información válida.
+-la nueva información es grabada | Se pudo ingresar un nuevo dato de suministro de manera exitosa | Alta |
+| **4- Agregar información válida de tipo de suministro** | 4.1- Seleccione la opción de añadir4.2- Seleccione la caja de texto respecto al dato que desea ingresar4.3- Ingrese la información válida del dato4.4- Guardar información | -el sistema permite crear un elemento nuevo y muestra los espacios donde ingresar información
+-El usuario puede ingresar la información válida.
+-la nueva información es grabada | Se pudo ingresar un nuevo dato de tipo de suministro de manera exitosa | Alta |
+| **5- Modificar con información válida de suministro** | 5.1- Seleccione la opción de editar equipo5.2- Seleccione el equipo que desea modificar5.3- Ingrese la información válida del dato5.4- Guardar información | -el sistema permite modificar la información
+-El usuario modifica la información válida.
+-la nueva información es grabada | Se logró editar los detalles de equipo | Alta |
+| **6- Modificar con información válida de tipo de suministro** | 6.1- Seleccione la opción de editar tipo de equipo6.2- Seleccione el tipo de equipo que desea modificar6.3- Ingrese la información válida del dato6.4- Guardar información | -el sistema permite modificar la información
+-El usuario modifica la información válida.
+-la nueva información es grabada | Se editaron los detalles de equipo | Alta |
+| **7- Eliminar información de suministro** | 7.1- Seleccione la opción de eliminar equipo
+7.2- Seleccione el equipo que desea borrar7.3- Guardar información | - El sistema elimina el equipo seleccionado
+- Se muestra un mensaje reportando &quot;Equipo eliminado&quot; | Se eliminó el equipo de manera exitosa. | Alta |
+| **8- Eliminar tipos de suministro** | 8.1- Seleccione la opción de eliminar el tipo de equipo8.2- Seleccione el tipo de equipo que desea borrar8.3- Guardar información | - El sistema elimina el tipo de equipo seleccionado
+- Se muestra un mensaje reportando &quot;Tipo de Equipo eliminado&quot; | Se eliminó el tipo de equipo de manera exitosa. | Alta |
+| **Comentarios** |
+ |
+ |
+ |
+ |
+
+**Inventario:**
+
+**Administración de Técnicos:**
+
+| **Nombre del Caso de Prueba** | _Ingreso a la pagina de administracion de y sus funciones_ |
+| --- | --- |
+| **Aplicación/Módulo** | Administracion de tecnicos |
+| **Identificador y Nombre del Caso de Uso** | _ **Administracion de tecnicos** _ |
+ |
+ |
+ |
+ |
+ |
+ |
+| **Secuencia normal** | _[xx a yy]_ |
+| **Objetivo** | _Probar que el usuario puede acceder al menu de administracion de técnicos y realizar las funciones disponibles en este_ |
+| **Pasos de ejecución** | _-El usuario debe ingresar al sistema de registro de préstamo y devolución de equipo y control de suministros. __-El usuario busca la opción que desea realizar con respecto al menú de técnicos: registrar, modificar o eliminar.__ -El usuario debe poder ingresar la siguiente información sobre los técnicos: identificación, primer nombre, segundo nombre, primer apellido, segundo apellido, teléfono, correo electrónico, dirección y fecha de inclusión al sistema._ |
+| **Precondición** | _- El dispositivo a utilizar debe estar conectado a la intranet de la empresa.__- El usuario ya se encuentra en la página de técnicos_ |
+| **Escenario** | **Descripción** | **Resultado Esperado** | **Resultado** | **Prioridad** |
+| **1.- Agregar informacion valida de tecnicos** | 1.1- Seleccione la opción de crear técnico1.2- Seleccione la caja de texto respecto al dato que desea ingresar1.3- Ingrese la información válida del dato1.4- Guardar información | -el sistema permite crear un elemento nuevo y muestra los espacios donde ingresar información
+-El usuario puede ingresar la información válida.
+-la nueva información es grabada | Se pudo ingresar los datos del técnico y crear un dato nuevo en el sistema. | Alta |
+| **2- Modificar con información válida de técnicos** | 2.1- Seleccione la opción de modificar técnico2.2- Seleccione el técnico que desea modificar2.3- Ingrese la información válida del dato2.4- Guardar información | -el sistema permite modificar la información
+-El usuario modifica la información válida.
+-la nueva información es grabada | Se logró editar los detalles de técnico | Alta |
+| **3- Eliminar información de técnicos** | 3.1- Selecciona la opción de borrar técnico3.2- Seleccione el técnico que desea borrar3.3- Guardar información | - El sistema elimina el técnico seleccionado
+- Se muestra un mensaje reportando &quot;técnico eliminado&quot; | Se eliminó el técnico de manera exitosa. | Alta |
+| **4- Crear técnico con información inválida** | 4.1- Seleccione la opción de crear técnico4.2- Seleccione la caja de texto respecto al dato que desea ingresar4.3- Ingrese la información inválida del dato4.4- Guardar información | -mensaje de error aparece reportando al usuario que la información agregada es errónea, la forma correcta de ingresar la información es: xxxxx | El sistema no permitió la creación del técnico | Alta |
+| **5- Modificar con información inválida de técnicos** | 5.1- Seleccione la opción de modificar técnico5.2- Seleccione el técnico que desea modificar5.3- Ingrese la información inválida del dato5.4- Guardar | -mensaje de error aparece reportando al usuario que la información agregada es errónea, la forma correcta de ingresar la información es: xxxxx | El sistema no permitió realizar el cambio de información. | Alta |
+| **6- Modificar con información inválida de tipo de** | 6.1- Seleccione la opción de modificar tipo de técnico6.2- Seleccione el tipo de técnico que desea modificar6.3- Ingrese la información inválida del dato6.4- Guardar información | -mensaje de error aparece reportándose al usuario que la información agregada es errónea, la forma correcta de ingresar la información es: xxxxx | El sistema no permitió modificar la información. | Alta |
+| **Comentarios** |
+ |
+ |
+ |
+ |
+
+**Préstamos:**
+
+| **Nombre del Caso de Prueba** | _Préstamo_ |
+| --- | --- |
+| **Aplicación/Módulo** | Préstamos |
+| **Identificador y Nombre del Caso de Uso** | _ **Préstamos** _ |
+ |
+ |
+ |
+ |
+ |
+ |
+| **Secuencia normal** | _[xx a yy]_ |
+| **Objetivo** | _Probar que el usuario puede acceder al menú de devoluciones y realizar las funciones en este._ |
+| **Pasos de ejecución** | _-El usuario debe ingresar al sistema de registro de préstamo y devolución de equipo y control de suministros. __-El usuario busca el menú de préstamos para crear uno nuevo.__ -El usuario debe colocar la siguiente información ligada a los préstamos: técnico responsable, fecha de préstamo, fecha esperada de devolución, fecha real de devolución y el cliente. (E1)__-El usuario, además, procede a colocar información sobre equipo que se vaya a prestar (pueden ser uno o más) la cual considera: tipo de equipo, identificador de equipo y condición actual del equipo. (A1)(A3) (E2)_ |
+| **Precondición** | _- El dispositivo a utilizar debe estar conectado a la intranet de la empresa.__- El usuario ya se encuentra en la página de técnicos_ |
+| **Escenario** | **Descripción** | **Resultado Esperado** | **Resultado** | **Prioridad** |
+| **1.- Añadir préstamo con equipos y suministros disponibles** | 1.1- Seleccione la opción de añadir préstamo1.2- Ingrese la información válida de equipos1.3- Guarde la información | -Se muestran los espacios para insertar información
+-La información es ingresada de manera exitosa
+-Un mensaje aparece que reporta &#39;préstamo creado con el siguiente id:xxxx | Se logró crear un préstamo con los detalles requeridos | Alta |
+| **2- Creación de préstamo con equipo dañado** | 2.1- Seleccione opción de crear préstamo2.2- Ingrese un equipo que se encuentra dañado2.3- Ingrese el resto de los datos correctamente2.4- Cree el préstamo | -El sistema no permite escoger un equipo que se encuentre dañado | El sistema no permitió seleccionar el equipo que se encuentra dañado | Alta |
+| **3- Creación de préstamo con equipo no disponible** | 3.1- Seleccione opcion de crear préstamo3.2- Ingrese un equipo que no se encuentra disponible3.3- Ingrese el resto de los datos correctamente3.4- Cree el préstamo | -El sistema no permite escoger un equipo que se encuentre no disponible. | El sistema no permitió seleccionar el equipo que se encuentra no disponible | Alta |
+| **4- Creación de préstamo con suministros no disponible** | 4.1- Seleccione opcion de crear préstamo4.2- Ingrese un suministro que no se encuentra disponible4.3- Ingrese el resto de los datos correctamente4.4- Cree el préstamo | -El sistema no permite escoger un suministro que se encuentre no disponible. | El sistema no permitió seleccionar el suministro que se encuentra no disponible. | Alta |
+| **5- Creación de préstamo con técnico que no se encuentra disponible** | 5.1- Seleccione opción de crear préstamo5.2- Ingrese un técnico que no se encuentra disponible5.3- Ingrese el resto de los datos correctamente5.4- Cree el préstamo | -El sistema no permite escoger un técnico que no está disponible | El sistema no permitió la selección de un técnico no disponible. | Alta |
+| **Comentarios** |
+ |
+ |
+ |
+ |
+
+**Devolución:**
+
+| **Nombre del Caso de Prueba** | _Ingreso a la página de devoluciones_ |
+| --- | --- |
+| **Aplicación/Módulo** | Devolución |
+| **Identificador y Nombre del Caso de Uso** | _ **Devolución** _ |
+ |
+ |
+ |
+ |
+ |
+ |
+| **Secuencia normal** | _[xx a yy]_ |
+| **Objetivo** | _Probar que el usuario puede acceder al menú de devoluciones y realizar las funciones en este._ |
+| **Pasos de ejecución** | _-El usuario debe verificar que puede ingresar al sistema sin problemas.__-El sistema debe funcionar en plataforma web (intranet) en cualquier dispositivo (móvil, Tablet, laptop, computadora).__-El usuario debe verificar que exista un préstamo vigente para proceder a realizar el registro de devolución._
+ |
+| **Precondición** | _- El dispositivo a utilizar debe estar conectado a la intranet de la empresa.__- El usuario ya se encuentra en la página de devoluciones._ |
+| **Escenario** | **Descripción** | **Resultado Esperado** | **Resultado** | **Prioridad** |
+| **1.- Ingreso al sistema de devoluciones** | 1.1- Seleccione la opción del menú de devolución | se redirecciona al usuario a la página de devolución | Se muestra la interfaz de devolución | Alta |
+| **2- Creación de reporte de devolución** | 2.1 Seleccione la caja de texto respecto al dato que desea ingresar2.2 Ingrese la información válida de equipos y suministros2.3 Ingrese el ID de préstamo2.3 Guarde la información | -El marcador se remueve y él se puede ingresar información-La información es ingresada de manera exitosa-Un mensaje aparece que reporta &quot;devolución reportada con el siguiente id:xxxx&quot; | Se logró ingresar los datos de la , se pudo indicar el estado del equipo de manera correcta y se generó el id de devolución | Alta |
+| **3- Creación de reporte de devolución con id de préstamo incorrecto** | 3.1 Seleccione la caja de texto respecto al dato que desea ingresar3.2 Ingrese un id de préstamo incorrecto3.3 Ingrese el resto de los datos correctamente3.4 Cree La devolución | -El sistema no permite la selección de un ID que no existe. | El sistema no permitió la selección de un id inexistente o inserción del mismo. | Alta |
+| **Comentarios** |
+ |
+ |
+ |
+ |
+
+**Reportes:**
+
+| **Nombre del Caso de Prueba** | _Ingreso a la página de reportes_ |
+| --- | --- |
+| **Aplicación/Módulo** | Reportes |
+| **Identificador y Nombre del Caso de Uso** | _ **Reportes** _ |
+ |
+ |
+ |
+ |
+ |
+ |
+| **Secuencia normal** | _[xx a yy]_ |
+| **Objetivo** | _Probar que el usuario puede acceder al menú de reportes y realizar las funciones en este._ |
+| **Pasos de ejecución** | _-El usuario debe ingresar al sistema de registro de préstamo y devolución de equipo y control de suministros.__-El usuario puede generar reportes con informes de los siguientes puntos: equipos dañados el cual detalla equipos que se encuentren con un daño, suministros dañados el cual detalla suministros que se encuentren con un daño, préstamos atrasados el cual refleja aquellos préstamos que sobrepasan la fecha prevista de devolución y además, no tienen un registro de devolución, informe técnico-préstamos-daños que detalla una lista de técnicos que efectúen devoluciones con daños en equipos, informe técnico-préstamos-pérdidas que detalla qué técnicos efectuaron devoluciones con pérdida o robo de equipo, equipo con inventario bajo detalla tipos de equipo que tienen una cantidad de unidades en inventario menor a la cantidad mínima de existencias, suministros con inventario bajo detalla tipos de suministro que tienen una cantidad de unidades en inventario muy baja o en cero._
+
+ |
+| **Precondición** | _- El dispositivo a utilizar debe estar conectado a la intranet de la empresa.__- El usuario ya se encuentra en la página de devoluciones._ |
+| **Escenario** | **Descripción** | **Resultado Esperado** | **Resultado** | **Prioridad** |
+| **1- Generar un reporte de equipos dañados** | 1.1 Seleccione la opción de reporte de equipos dañados1.2 Click en el botón de exportar | -Se resalta la opción seleccionada
+-se genera un documento con el respaldo solicitado
+- Se muestra un mensaje diciendo: &quot;Se genero el reporte de equipos dañados&quot; | Se genero el reporte el cual puede ser convertido a Excel sin ningún problema | Alta |
+| **2- Generar un reporte de suministros dañados** | 2.1 Seleccione la opción de reporte de suministros dañados2.2 Click en el botón de exportar | -Se resalta la opción seleccionada
+-se genera un documento con el respaldo solicitado
+- Se muestra un mensaje diciendo: &quot;Se genero el reporte de suministros dañados&quot; |
+ | Alta |
+| **3- Generar un reporte de préstamos atrasados** | 3.1 Seleccione la opción de reporte de préstamos atrasados3.2 Click en el botón de exportar | -Se resalta la opción seleccionada
+-se genera un documento con el respaldo solicitado
+- Se muestra un mensaje diciendo: &quot;Se genero el reporte de préstamos atrasados&quot; | Se genero el reporte el cual puede ser convertido a Excel sin ningún problema | Alta |
+| **4- Generar un reporte de técnico-préstamos-daños** | 4.1 Seleccione la opción de reporte de técnico-préstamos-daños4.2 Click en el botón de exportar | -Se resalta la opción seleccionada
+-se genera un documento con el respaldo solicitado
+- Se muestra un mensaje diciendo: &quot;Se genero el reporte de técnico-préstamos-daños&quot; | Se genero el reporte el cual puede ser convertido a Excel sin ningún problema | Alta |
+| **5- Generar un reporte de técnico-préstamos-pérdidas** | 5.1 Seleccione la opción de reporte de técnico-préstamos-pérdidas5.2 Click en el botón de exportar | -Se resalta la opción seleccionada
+-se genera un documento con el respaldo solicitado
+- Se muestra un mensaje diciendo: &quot;Se genero el reporte de técnico-préstamos-pérdidas&quot; | Se genero el reporte el cual puede ser convertido a Excel sin ningún problema | Alta |
+| **6- Generar un reporte de equipo con inventario bajo** | 6.1 Seleccione la opción de reporte de equipo con inventario bajo6.2 Click en el botón de exportar | -Se resalta la opción seleccionada
+-se genera un documento con el respaldo solicitado
+- Se muestra un mensaje diciendo: &quot;Se genero el reporte de equipo con inventario bajo&quot; | Se genero el reporte el cual puede ser convertido a Excel sin ningún problema | Alta |
+| **7- Generar un reporte de suministro con inventario bajo** | 7.1 Seleccione la opción de reporte de Suministros bajos7.2 Click en el botón de exportar | -Se resalta la opción seleccionada
+-se genera un documento con el respaldo solicitado
+- Se muestra un mensaje diciendo: &quot;Se genero el reporte de suministros con inventario bajo&quot; | Se genero el reporte el cual puede ser convertido a Excel sin ningún problema | Alta |
+| **Comentarios** |
+ |
+ |
+ |
+ |
 
 
 # **Manual de usuario del sistema**
