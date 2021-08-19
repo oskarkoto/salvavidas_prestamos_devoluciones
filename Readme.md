@@ -771,10 +771,6 @@ El contrato se adjunta en un documento anexo.
 -se genera un documento con el respaldo solicitado
 - Se muestra un mensaje diciendo: &quot;Se genero el reporte de suministros con inventario bajo&quot; | Se genero el reporte el cual puede ser convertido a Excel sin ningún problema | Alta |
 | **Comentarios** |
- |
- |
- |
- |
 
 
 # **Manual de usuario del sistema**
