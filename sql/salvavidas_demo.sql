@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-08-2021 a las 23:30:16
--- Versión del servidor: 10.4.18-MariaDB
--- Versión de PHP: 8.0.3
+-- Tiempo de generación: 19-08-2021 a las 21:19:55
+-- Versión del servidor: 10.4.17-MariaDB
+-- Versión de PHP: 7.3.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,6 +29,7 @@ USE `salvavidas`;
 -- Estructura de tabla para la tabla `categoriasuministro`
 --
 
+DROP TABLE IF EXISTS `categoriasuministro`;
 CREATE TABLE `categoriasuministro` (
   `idCategoria` int(11) NOT NULL,
   `descripcionCategoria` varchar(50) NOT NULL
@@ -49,6 +50,7 @@ INSERT INTO `categoriasuministro` (`idCategoria`, `descripcionCategoria`) VALUES
 -- Estructura de tabla para la tabla `condicionactual`
 --
 
+DROP TABLE IF EXISTS `condicionactual`;
 CREATE TABLE `condicionactual` (
   `idCondicionActual` int(11) NOT NULL,
   `descripcionCondicionActual` varchar(50) DEFAULT NULL
@@ -65,12 +67,14 @@ INSERT INTO `condicionactual` (`idCondicionActual`, `descripcionCondicionActual`
 (4, 'Gasto de Uso'),
 (5, 'Perdido'),
 (6, 'Robado');
+
 -- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `devolucion`
 --
 
+DROP TABLE IF EXISTS `devolucion`;
 CREATE TABLE `devolucion` (
   `idDevolucion` int(11) NOT NULL,
   `idPrestamo` int(11) NOT NULL,
@@ -85,8 +89,7 @@ CREATE TABLE `devolucion` (
 INSERT INTO `devolucion` (`idDevolucion`, `idPrestamo`, `fechaRealDevolucion`, `idEstadoDevolucionGeneral`) VALUES
 (1, 2, '2021-08-11', 2),
 (2, 1, '2021-08-11', 4),
-(6, 5, '2021-08-28', 3),
-(10, 10, '2021-08-14', 3);
+(3, 5, '2021-08-28', 3);
 
 -- --------------------------------------------------------
 
@@ -94,6 +97,7 @@ INSERT INTO `devolucion` (`idDevolucion`, `idPrestamo`, `fechaRealDevolucion`, `
 -- Estructura de tabla para la tabla `equipo`
 --
 
+DROP TABLE IF EXISTS `equipo`;
 CREATE TABLE `equipo` (
   `idEquipo` varchar(25) NOT NULL,
   `idTipoEquipo` varchar(25) NOT NULL,
@@ -112,7 +116,7 @@ INSERT INTO `equipo` (`idEquipo`, `idTipoEquipo`, `idCondicionActual`, `idEstado
 ('3', '3', 1, 2, '2021-07-30'),
 ('4', '4', 2, 2, '2021-08-07'),
 ('5', '3', 1, 2, '2021-08-11'),
-('ID-T01', '1', 1, 1, '2021-08-14');
+('ID-T02', '1', 1, 1, '2021-08-14');
 
 -- --------------------------------------------------------
 
@@ -120,6 +124,7 @@ INSERT INTO `equipo` (`idEquipo`, `idTipoEquipo`, `idCondicionActual`, `idEstado
 -- Estructura de tabla para la tabla `estadodevolucion`
 --
 
+DROP TABLE IF EXISTS `estadodevolucion`;
 CREATE TABLE `estadodevolucion` (
   `idEstadoDevolucion` int(11) NOT NULL,
   `descripcionEstadoDevolucion` varchar(50) DEFAULT NULL
@@ -143,6 +148,7 @@ INSERT INTO `estadodevolucion` (`idEstadoDevolucion`, `descripcionEstadoDevoluci
 -- Estructura de tabla para la tabla `estadodevoluciongeneral`
 --
 
+DROP TABLE IF EXISTS `estadodevoluciongeneral`;
 CREATE TABLE `estadodevoluciongeneral` (
   `idEstadoDevolucionGeneral` int(11) NOT NULL,
   `descripcionEstadoDevolucionGeneral` varchar(50) DEFAULT NULL
@@ -166,6 +172,7 @@ INSERT INTO `estadodevoluciongeneral` (`idEstadoDevolucionGeneral`, `descripcion
 -- Estructura de tabla para la tabla `estadoinventario`
 --
 
+DROP TABLE IF EXISTS `estadoinventario`;
 CREATE TABLE `estadoinventario` (
   `idEstadoInventario` int(11) NOT NULL,
   `descripcionEstadoInventario` varchar(50) DEFAULT NULL
@@ -177,7 +184,8 @@ CREATE TABLE `estadoinventario` (
 
 INSERT INTO `estadoinventario` (`idEstadoInventario`, `descripcionEstadoInventario`) VALUES
 (1, 'Inventario'),
-(2, 'Prestado');
+(2, 'Prestado'),
+(3, 'Dañado');
 
 -- --------------------------------------------------------
 
@@ -185,6 +193,7 @@ INSERT INTO `estadoinventario` (`idEstadoInventario`, `descripcionEstadoInventar
 -- Estructura de tabla para la tabla `prestamo`
 --
 
+DROP TABLE IF EXISTS `prestamo`;
 CREATE TABLE `prestamo` (
   `idPrestamo` int(11) NOT NULL,
   `idTecnico` varchar(25) NOT NULL,
@@ -202,7 +211,7 @@ INSERT INTO `prestamo` (`idPrestamo`, `idTecnico`, `fechaPrestamo`, `fechaEspera
 (2, '1', '2021-07-27', '2021-07-31', 'Luisa'),
 (3, '2', '2021-08-03', '2021-08-20', 'Marianna'),
 (5, '2', '2021-08-14', '2021-08-21', 'ULATINA'),
-(10, '1', '2021-08-14', '2021-08-15', 'Carlos');
+(6, '1', '2021-08-14', '2021-08-15', 'Carlos');
 
 -- --------------------------------------------------------
 
@@ -210,6 +219,7 @@ INSERT INTO `prestamo` (`idPrestamo`, `idTecnico`, `fechaPrestamo`, `fechaEspera
 -- Estructura de tabla para la tabla `prestamoequipo`
 --
 
+DROP TABLE IF EXISTS `prestamoequipo`;
 CREATE TABLE `prestamoequipo` (
   `idPrestamoEquipo` int(11) NOT NULL,
   `idPrestamo` int(11) NOT NULL,
@@ -231,10 +241,12 @@ INSERT INTO `prestamoequipo` (`idPrestamoEquipo`, `idPrestamo`, `idEquipo`, `idE
 --
 -- Disparadores `prestamoequipo`
 --
+DROP TRIGGER IF EXISTS `cambiarestadoequipo`;
 DELIMITER $$
 CREATE TRIGGER `cambiarestadoequipo` AFTER INSERT ON `prestamoequipo` FOR EACH ROW UPDATE equipo SET idEstadoInventario = 2 WHERE idEquipo = NEW.idEquipo
 $$
 DELIMITER ;
+DROP TRIGGER IF EXISTS `devolverestadoequipo`;
 DELIMITER $$
 CREATE TRIGGER `devolverestadoequipo` AFTER DELETE ON `prestamoequipo` FOR EACH ROW UPDATE equipo SET idEstadoInventario = 1 WHERE idEquipo = prestamoequipo.idEquipo
 $$
@@ -246,6 +258,7 @@ DELIMITER ;
 -- Estructura de tabla para la tabla `prestamosuministro`
 --
 
+DROP TABLE IF EXISTS `prestamosuministro`;
 CREATE TABLE `prestamosuministro` (
   `idPrestamoSuministro` int(11) NOT NULL,
   `idPrestamo` int(11) NOT NULL,
@@ -253,6 +266,14 @@ CREATE TABLE `prestamosuministro` (
   `idEstadoDevolucion` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `prestamosuministro`
+--
+
+INSERT INTO `prestamosuministro` (`idPrestamoSuministro`, `idPrestamo`, `idSuministro`, `idEstadoDevolucion`) VALUES
+(1, 1, '1', 1),
+(2, 2, 'ID-M', 1),
+(3, 1, '2', 1);
 
 -- --------------------------------------------------------
 
@@ -260,6 +281,7 @@ CREATE TABLE `prestamosuministro` (
 -- Estructura de tabla para la tabla `reporte`
 --
 
+DROP TABLE IF EXISTS `reporte`;
 CREATE TABLE `reporte` (
   `idReporte` int(11) NOT NULL,
   `tituloReporte` varchar(50) DEFAULT NULL,
@@ -267,6 +289,12 @@ CREATE TABLE `reporte` (
   `fechaReporte` date DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `reporte`
+--
+
+INSERT INTO `reporte` (`idReporte`, `tituloReporte`, `idTipoReporte`, `fechaReporte`) VALUES
+(14, 'Reporte', 1, '2021-08-19');
 
 -- --------------------------------------------------------
 
@@ -274,6 +302,7 @@ CREATE TABLE `reporte` (
 -- Estructura de tabla para la tabla `suministro`
 --
 
+DROP TABLE IF EXISTS `suministro`;
 CREATE TABLE `suministro` (
   `idSuministro` varchar(25) NOT NULL,
   `idTipoSuministro` varchar(25) NOT NULL,
@@ -300,6 +329,7 @@ INSERT INTO `suministro` (`idSuministro`, `idTipoSuministro`, `idCondicionActual
 -- Estructura de tabla para la tabla `tecnico`
 --
 
+DROP TABLE IF EXISTS `tecnico`;
 CREATE TABLE `tecnico` (
   `idTecnico` varchar(25) NOT NULL,
   `primerNombre` varchar(50) NOT NULL,
@@ -326,6 +356,7 @@ INSERT INTO `tecnico` (`idTecnico`, `primerNombre`, `segundoNombre`, `primerApel
 -- Estructura de tabla para la tabla `tipoequipo`
 --
 
+DROP TABLE IF EXISTS `tipoequipo`;
 CREATE TABLE `tipoequipo` (
   `idTipoEquipo` varchar(25) NOT NULL,
   `nombreTipoEquipo` varchar(50) NOT NULL,
@@ -351,6 +382,7 @@ INSERT INTO `tipoequipo` (`idTipoEquipo`, `nombreTipoEquipo`, `descripcionTipoEq
 -- Estructura de tabla para la tabla `tiporeporte`
 --
 
+DROP TABLE IF EXISTS `tiporeporte`;
 CREATE TABLE `tiporeporte` (
   `idTipoReporte` int(11) NOT NULL,
   `nombreTipoReporte` varchar(50) NOT NULL,
@@ -376,6 +408,7 @@ INSERT INTO `tiporeporte` (`idTipoReporte`, `nombreTipoReporte`, `detalleTipoRep
 -- Estructura de tabla para la tabla `tiposuministro`
 --
 
+DROP TABLE IF EXISTS `tiposuministro`;
 CREATE TABLE `tiposuministro` (
   `idTipoSuministro` varchar(25) NOT NULL,
   `nombreTipoSuministro` varchar(50) NOT NULL,
@@ -406,6 +439,7 @@ INSERT INTO `tiposuministro` (`idTipoSuministro`, `nombreTipoSuministro`, `descr
 -- Estructura de tabla para la tabla `unidadessuministro`
 --
 
+DROP TABLE IF EXISTS `unidadessuministro`;
 CREATE TABLE `unidadessuministro` (
   `idUnidades` int(11) NOT NULL,
   `cantidad` int(11) NOT NULL
@@ -578,7 +612,7 @@ ALTER TABLE `categoriasuministro`
 -- AUTO_INCREMENT de la tabla `condicionactual`
 --
 ALTER TABLE `condicionactual`
-  MODIFY `idCondicionActual` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idCondicionActual` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `devolucion`
@@ -590,19 +624,19 @@ ALTER TABLE `devolucion`
 -- AUTO_INCREMENT de la tabla `estadodevolucion`
 --
 ALTER TABLE `estadodevolucion`
-  MODIFY `idEstadoDevolucion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idEstadoDevolucion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `estadodevoluciongeneral`
 --
 ALTER TABLE `estadodevoluciongeneral`
-  MODIFY `idEstadoDevolucionGeneral` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idEstadoDevolucionGeneral` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `estadoinventario`
 --
 ALTER TABLE `estadoinventario`
-  MODIFY `idEstadoInventario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idEstadoInventario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `prestamo`
@@ -620,13 +654,13 @@ ALTER TABLE `prestamoequipo`
 -- AUTO_INCREMENT de la tabla `prestamosuministro`
 --
 ALTER TABLE `prestamosuministro`
-  MODIFY `idPrestamoSuministro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `idPrestamoSuministro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `reporte`
 --
 ALTER TABLE `reporte`
-  MODIFY `idReporte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `idReporte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `tiporeporte`

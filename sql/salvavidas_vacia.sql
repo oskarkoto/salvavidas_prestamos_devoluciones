@@ -156,7 +156,8 @@ CREATE TABLE `estadoinventario` (
 
 INSERT INTO `estadoinventario` (`idEstadoInventario`, `descripcionEstadoInventario`) VALUES
 (1, 'Inventario'),
-(2, 'Prestado');
+(2, 'Prestado'),
+(3, 'Dañado');
 
 -- --------------------------------------------------------
 
