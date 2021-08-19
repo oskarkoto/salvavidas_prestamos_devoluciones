@@ -348,11 +348,11 @@ Objetivos Específicos
 
 ## Página Principal
 
-![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/DiagCUPP.png?raw=true)
+![](/screenshots/DiagCUPP.png?raw=true)
 
 ## Administración de Equipos
 
-![](https://github.com/oskarkoto/slvavidas_prestamos_devoluciones/blob/media/DiagCUAE.png?raw=true)
+![](/screenshots/DiagCUAE.png)
 
 ## Administración de Suministros
 
