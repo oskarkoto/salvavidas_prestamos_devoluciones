@@ -1,29 +1,3 @@
-**Proyecto: SALVAVIDAS - Sistema de Control y Manejo de Préstamos y Devoluciones de Equipo y Suministros**
-
-Oscar Roberto Coto Calderón
-
-Steven Gabriel Dávila Corea
-
-Juan Carlos Gaitán Putoy
-
-Teresita de Jesús Guido López
-
-Mauricio Jesús Mondragón Hernández
-
-Universidad Latina de Costa Rica
-
-Facultad de Ingenierías
-
-Escuela de Ingeniería en Sistemas Computacionales
-
-BIS15 - Análisis y Diseño de Sistemas II
-
-Prof. Jacqueline Méndez Montero
-
-Heredia, Costa Rica
-
-20 de agosto, 2021
-
 # **Introducción**
 
 En un mundo globalizado, la competencia en el mercado implica para las empresas introducir mejoras en cada una de las aristas y matrices de negocio con el fin de controlar los costos, gastos y ganancias en su operación, y por consecuencia, mejorar la experiencia del cliente.
