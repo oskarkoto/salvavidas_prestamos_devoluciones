@@ -1,3 +1,14 @@
+# **Salvavidas S.A. Equipment & Supplies Loans and Returns Management System**
+
+Buit with PHP / MySQL using MVC design pattern
+
+2021
+Costa Rica
+
+
+
+
+
 # **Introducción**
 
 En un mundo globalizado, la competencia en el mercado implica para las empresas introducir mejoras en cada una de las aristas y matrices de negocio con el fin de controlar los costos, gastos y ganancias en su operación, y por consecuencia, mejorar la experiencia del cliente.
